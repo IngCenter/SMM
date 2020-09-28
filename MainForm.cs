@@ -60,5 +60,9 @@ namespace WindowsFormsApp2
             af.Show();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
