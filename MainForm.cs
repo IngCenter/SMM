@@ -31,8 +31,6 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
-            //string[] lines = System.IO.file.ReadAllLines("Статьи.txt");
-
             articles_list.Add(new Article("Интересно",
                 "Кто убил Япончика...\n" +
                 "Что если это...\n" +
@@ -60,9 +58,5 @@ namespace WindowsFormsApp2
             af.Show();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
