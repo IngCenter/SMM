@@ -19,9 +19,12 @@ namespace WindowsFormsApp2
             textLabel.Text = text;
         }
 
+        public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
         private void Article_Load(object sender, EventArgs e)
         {
-
+            WMP.URL = "nickelback-burn_it_to_the_ground.mp3";
+            WMP.settings.volume = 100; // меняя значение можно регулировать громкость
+            WMP.controls.play(); // Старт
         }
 
         private void LikePB_Click(object sender, EventArgs e)
