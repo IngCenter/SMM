@@ -82,13 +82,14 @@ namespace WindowsFormsApp2
             foreach (Article art in articles_list)
             {
                 Label lbl = new Label();
+                lbl.AutoSize = true;
                 lbl.Text = art.name;
                 lbl.Click += new EventHandler(openArticle);
                 lbl.AccessibleDescription = art.text;
                 lbl.Location = new Point(10, y);
                 lbl.Size = new Size(500, 30);
                 Controls.Add(lbl);
-                y += 30;
+                y += lbl.Size.Height;
             }
         }
 
