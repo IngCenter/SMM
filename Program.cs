@@ -18,5 +18,33 @@ namespace WindowsFormsApp2
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+
+        /// <summary>
+        /// Соединение
+        /// </summary>
+        public static MySqlConnection conn;
+
+        public static List<string> Select(string Text)
+        {
+           
+
+            //Результат
+            List<string> results = new List<string>();
+            //Создать команду
+            MySqlCommand command = new MySqlCommand(Text, conn);
+
+            //Выполнить команду
+            DbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                    results.Add(reader.GetValue(i).ToString());
+            }
+            reader.Close();
+
+            conn.Close();
+
+            return results;
+        }
     }
 }
