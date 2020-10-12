@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
+   
     public partial class ArticleForm : Form
     {
         public ArticleForm(string name, string text)
@@ -17,6 +18,15 @@ namespace WindowsFormsApp2
             InitializeComponent();
             nameLabel.Text = name;
             textLabel.Text = text;
+
+            List<string> likes = MainForm.Select(
+                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = 1");
+
+            label1.Text = likes[0];
+            List<string> Dislikes = MainForm.Select(
+               "SELECT SUM(Likes.Dislike) FROM Likes WHERE Article = 1");
+
+            label2.Text = Dislikes[0];
         }
 
         public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
@@ -26,6 +36,7 @@ namespace WindowsFormsApp2
             WMP.settings.volume = 100; // меняя значение можно регулировать громкость
             WMP.controls.play(); // Старт
         }
+
 
         private void LikePB_Click(object sender, EventArgs e)
         {
