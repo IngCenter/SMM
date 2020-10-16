@@ -43,7 +43,7 @@ namespace WindowsFormsApp2
             string connString =
                 "Server = VH287.spaceweb.ru; Database = beavisabra_gazet;" +
                 "port = 3306; User Id = beavisabra_gazet; password = Beavis1989";
-            MySqlConnection conn = new MySqlConnection(connString);
+            conn = new MySqlConnection(connString);
             conn.Open();
 
             List<string> results = new List<string>(); 
@@ -55,9 +55,9 @@ namespace WindowsFormsApp2
             while (reader.Read())
             {
                 //Сохранить результат
-                string title = reader.GetValue(0).ToString();
-                string author = reader.GetValue(1).ToString();
-                string text = reader.GetValue(4).ToString();
+                string title = reader.GetValue(1).ToString();
+                string author = reader.GetValue(2).ToString();
+                string text = reader.GetValue(5).ToString();
 
                 articles_list.Add(new Article(title, text));
 
@@ -92,7 +92,33 @@ namespace WindowsFormsApp2
                 y += lbl.Size.Height;
             }
         }
+        /// <summary>
+        /// Соединение
+        /// </summary>
+        public static MySqlConnection conn;
 
+        public static List<string> Select(string Text)
+        {
+            conn.Open();
+
+            //Результат
+            List<string> results = new List<string>();
+            //Создать команду
+            MySqlCommand command = new MySqlCommand(Text, conn);
+
+            //Выполнить команду
+            DbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                    results.Add(reader.GetValue(i).ToString());
+            }
+            reader.Close();
+
+            conn.Close();
+
+            return results;
+        }
         public static void openArticle(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
