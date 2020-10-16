@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.Common;
+using MySql.Data.MySqlClient;
+
+namespace WindowsFormsApp2
+{
+    public partial class Comments : Form
+    {
+        public Comments()
+        {
+            InitializeComponent();
+
+            List<string> results = Program.Select("SELECT * FROM Comments");
+
+            int y = 50;
+
+            for (int i = 0; i < results.Count; i = i + 4)
+            {
+                //Для каждой создаем лейбл
+                CommLable.Text += results[i + 3] + Environment.NewLine;
+                //Чтобы оно открылось в новом окне, сохраняем текст и описание
+                
+
+               
+            }
+
+
+        }
+    }
+}

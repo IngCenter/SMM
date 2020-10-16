@@ -48,5 +48,11 @@ namespace WindowsFormsApp2
                 LikePB.Tag = "not";
             }
         }
+
+        private void CommPB_Click(object sender, EventArgs e)
+        {
+            Comments Comm = new Comments();
+            Comm.Show();
+        }
     }
 }
