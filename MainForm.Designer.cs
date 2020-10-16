@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ArticlesPanel = new System.Windows.Forms.Panel();
             this.AuthPanel = new System.Windows.Forms.Panel();
-            this.AdvertismentPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AdvertismentPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ArticlesPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            this.ArticlesPanel.SuspendLayout();
             this.AuthPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ArticlesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,15 +62,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 497);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // ArticlesPanel
-            // 
-            this.ArticlesPanel.Controls.Add(this.label3);
-            this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArticlesPanel.Location = new System.Drawing.Point(138, 53);
-            this.ArticlesPanel.Name = "ArticlesPanel";
-            this.ArticlesPanel.Size = new System.Drawing.Size(760, 441);
-            this.ArticlesPanel.TabIndex = 1;
-            // 
             // AuthPanel
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.AuthPanel, 2);
@@ -80,6 +71,15 @@
             this.AuthPanel.Name = "AuthPanel";
             this.AuthPanel.Size = new System.Drawing.Size(895, 44);
             this.AuthPanel.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(381, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(224, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Введите логин, пароль";
             // 
             // AdvertismentPanel
             // 
@@ -92,23 +92,15 @@
             this.AdvertismentPanel.Size = new System.Drawing.Size(129, 441);
             this.AdvertismentPanel.TabIndex = 3;
             // 
-            // label1
+            // pictureBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(381, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Введите логин, пароль";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 152);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Реклама";
+            this.pictureBox2.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Star;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 178);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 84);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -120,15 +112,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // label2
             // 
-            this.pictureBox2.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Star;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(14, 178);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 84);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Реклама";
+            // 
+            // ArticlesPanel
+            // 
+            this.ArticlesPanel.Controls.Add(this.label3);
+            this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ArticlesPanel.Location = new System.Drawing.Point(138, 53);
+            this.ArticlesPanel.Name = "ArticlesPanel";
+            this.ArticlesPanel.Size = new System.Drawing.Size(760, 441);
+            this.ArticlesPanel.TabIndex = 1;
+     
             // 
             // label3
             // 
@@ -153,13 +154,13 @@
             this.Text = "Кликни чтобы открыть статью";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.ArticlesPanel.ResumeLayout(false);
             this.AuthPanel.ResumeLayout(false);
             this.AuthPanel.PerformLayout();
             this.AdvertismentPanel.ResumeLayout(false);
             this.AdvertismentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ArticlesPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
