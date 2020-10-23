@@ -29,10 +29,22 @@ namespace WindowsFormsApp2
             conn.Close();
         }
 
+        public static void Insert(string Text)
+        {
+            //Создать команду
+            MySqlCommand command = new MySqlCommand(Text, conn);
+
+            //Выполнить команду
+            command.ExecuteNonQuery();
+
+        }
+
         /// <summary>
         /// Соединение
         /// </summary>
         public static MySqlConnection conn;
+
+       
 
         public static List<string> Select(string Text)
         {
@@ -49,6 +61,7 @@ namespace WindowsFormsApp2
                     results.Add(reader.GetValue(i).ToString());
             }
             reader.Close();
+           
 
             return results;
         }

@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data.Common;
+
+
 
 namespace WindowsFormsApp2
 {   
@@ -15,6 +19,7 @@ namespace WindowsFormsApp2
         public ArticleForm(string name, string text)
         {
             InitializeComponent();
+            
             nameLabel.Text = name;
             textLabel.Text = text;
 
@@ -26,6 +31,7 @@ namespace WindowsFormsApp2
             List<string> Dislikes = Program.Select(
                "SELECT SUM(Likes.Dislike) FROM Likes WHERE Article = 1");
             label2.Text = Dislikes[0];
+            
         }
 
         private void Article_Load(object sender, EventArgs e)
@@ -37,18 +43,30 @@ namespace WindowsFormsApp2
         /// </summary>
         private void LikePB_Click(object sender, EventArgs e)
         {
+            Program.Insert(
+         " DELETE FROM Likes WHERE User = 'Misha' AND Article = 1" );
+
             if (LikePB.Tag.ToString() == "not")
             {
                 LikePB.Image = Properties.Resources.LikeOff;
                 LikePB.Tag = "like";
+                Program.Insert(
+
+         " INSERT INTO Likes(`Like`, Dislike, User, Article) VALUES('0', '0', 'Misha', '1');");
             }
             else
             {
                 LikePB.Image = Properties.Resources.LikeOn;
                 LikePB.Tag = "not";
-            }
-        }
+                Program.Insert(
+                    " INSERT INTO Likes(`Like`, Dislike, User, Article) VALUES('0', '1', 'Misha', '1');");
+               
 
+            }
+            
+        }
+        
+        
         private void CommPB_Click(object sender, EventArgs e)
         {
             Comments Comm = new Comments();
