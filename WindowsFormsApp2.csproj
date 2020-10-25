@@ -55,6 +55,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddArticle.Designer.cs">
+      <DependentUpon>AddArticle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Comments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddArticle.resx">
+      <DependentUpon>AddArticle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comments.resx">
       <DependentUpon>Comments.cs</DependentUpon>
     </EmbeddedResource>

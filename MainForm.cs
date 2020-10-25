@@ -78,6 +78,13 @@ namespace WindowsFormsApp2
 
         }
 
-       
+        /// <summary>
+        /// Добавить статью
+        /// </summary>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddArticle addArticle = new AddArticle();
+            addArticle.Show();
+        }
     }
 }

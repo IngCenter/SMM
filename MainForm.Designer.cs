@@ -37,6 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ArticlesPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.AuthPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
@@ -65,6 +69,10 @@
             // AuthPanel
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.AuthPanel, 2);
+            this.AuthPanel.Controls.Add(this.textBox2);
+            this.AuthPanel.Controls.Add(this.label4);
+            this.AuthPanel.Controls.Add(this.textBox1);
+            this.AuthPanel.Controls.Add(this.button1);
             this.AuthPanel.Controls.Add(this.label1);
             this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AuthPanel.Location = new System.Drawing.Point(3, 3);
@@ -75,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(381, 10);
+            this.label1.Location = new System.Drawing.Point(62, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(224, 25);
             this.label1.TabIndex = 0;
@@ -129,7 +137,6 @@
             this.ArticlesPanel.Name = "ArticlesPanel";
             this.ArticlesPanel.Size = new System.Drawing.Size(760, 441);
             this.ArticlesPanel.TabIndex = 1;
-     
             // 
             // label3
             // 
@@ -141,6 +148,39 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Популярные статьи";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(811, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 37);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(207, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 30);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(335, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(161, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Введите пароль";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(493, 7);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 30);
+            this.textBox2.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -176,6 +216,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
