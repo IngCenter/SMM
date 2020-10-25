@@ -21,15 +21,15 @@ namespace WindowsFormsApp2
             List<string> results = Program.Select("SELECT * FROM Comments");
 
             int y = 50;
+            
 
             for (int i = 0; i < results.Count; i = i + 4)
             {
                 //Для каждой создаем лейбл
-                CommLable.Text += results[i + 3] + Environment.NewLine;
-                //Чтобы оно открылось в новом окне, сохраняем текст и описание
                 
-
-               
+                CommLable.Text += results[i + 1] + Environment.NewLine + 
+                results[i + 3] + Environment.NewLine + y;
+                //Чтобы оно открылось в новом окне, сохраняем текст и описание
             }
 
 
