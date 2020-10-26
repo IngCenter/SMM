@@ -33,9 +33,11 @@
             this.textLabel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.DislikePB = new System.Windows.Forms.PictureBox();
             this.CommPB = new System.Windows.Forms.PictureBox();
             this.LikePB = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DislikePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CommPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LikePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,20 +65,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 764);
+            this.label1.Location = new System.Drawing.Point(60, 764);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.label1.Text = "Нравится";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(206, 764);
+            this.label2.Location = new System.Drawing.Point(195, 764);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.label2.Text = "Не нравится";
+            // 
+            // DislikePB
+            // 
+            this.DislikePB.Image = global::WindowsFormsApp2.Properties.Resources.DislikeOff;
+            this.DislikePB.Location = new System.Drawing.Point(147, 750);
+            this.DislikePB.Name = "DislikePB";
+            this.DislikePB.Size = new System.Drawing.Size(42, 43);
+            this.DislikePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DislikePB.TabIndex = 9;
+            this.DislikePB.TabStop = false;
+            this.DislikePB.Tag = "1";
+            this.DislikePB.Click += new System.EventHandler(this.DislikePB_Click);
             // 
             // CommPB
             // 
@@ -118,6 +133,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(978, 805);
+            this.Controls.Add(this.DislikePB);
             this.Controls.Add(this.CommPB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -128,6 +144,7 @@
             this.Name = "ArticleForm";
             this.Text = "Статья";
             this.Load += new System.EventHandler(this.Article_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DislikePB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CommPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LikePB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -144,5 +161,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox CommPB;
+        private System.Windows.Forms.PictureBox DislikePB;
     }
 }

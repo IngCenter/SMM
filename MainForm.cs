@@ -86,5 +86,16 @@ namespace WindowsFormsApp2
             AddArticle addArticle = new AddArticle();
             addArticle.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UserForm UserInfo = new UserForm();
+            UserInfo.Show();
+        }
+
+        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
