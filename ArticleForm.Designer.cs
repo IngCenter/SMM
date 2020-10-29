@@ -83,7 +83,7 @@
             // 
             // DislikePB
             // 
-            this.DislikePB.Image = global::WindowsFormsApp2.Properties.Resources.DislikeOff;
+            this.DislikePB.Image = global::WindowsFormsApp2.Properties.Resources.DisLikeOff;
             this.DislikePB.Location = new System.Drawing.Point(147, 750);
             this.DislikePB.Name = "DislikePB";
             this.DislikePB.Size = new System.Drawing.Size(42, 43);

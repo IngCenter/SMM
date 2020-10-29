@@ -19,6 +19,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //А если кроме названия здесь будут текст и теги? Человек Марсель?
             Program.Insert("INSERT INTO `Articles` (Title, DT) VALUES ('" + textBox1.Text + "', sysdate())");
             MessageBox.Show("Сохранено");
         }

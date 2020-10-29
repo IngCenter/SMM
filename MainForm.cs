@@ -89,6 +89,7 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //А давай человек Марсель сделает ввод логина и пароля. А, человек Марсель?
             UserForm UserInfo = new UserForm();
             UserInfo.Show();
         }

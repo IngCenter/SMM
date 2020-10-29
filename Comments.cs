@@ -18,6 +18,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
+            //А если тут будет учитываться номер статьи?
             List<string> results = Program.Select("SELECT * FROM Comments");
 
             int y = 50;
@@ -32,6 +33,11 @@ namespace WindowsFormsApp2
                 //Чтобы оно открылось в новом окне, сохраняем текст и описание
             }
 
+
+        }
+
+        private void Comments_Load(object sender, EventArgs e)
+        {
 
         }
     }

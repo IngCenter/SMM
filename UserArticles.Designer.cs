@@ -48,6 +48,7 @@
             this.Controls.Add(this.UserArticlesPanel);
             this.Name = "UserArticles";
             this.Text = "UserArticles";
+            this.Load += new System.EventHandler(this.UserArticles_Load);
             this.ResumeLayout(false);
 
         }

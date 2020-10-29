@@ -40,7 +40,6 @@
             this.CommLable.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.CommLable.Size = new System.Drawing.Size(785, 482);
             this.CommLable.TabIndex = 6;
-         //   this.CommLable.TextChanged += new System.EventHandler(this.CommLable_TextChanged);
             // 
             // Comments
             // 
@@ -50,6 +49,7 @@
             this.Controls.Add(this.CommLable);
             this.Name = "Comments";
             this.Text = "Comments";
+            this.Load += new System.EventHandler(this.Comments_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

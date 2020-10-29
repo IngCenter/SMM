@@ -15,6 +15,9 @@ namespace WindowsFormsApp2
         public UserArticles()
         {
             InitializeComponent();
+
+            //Program.CurrentUser
+
             //Список всех статей
             List<string> results = Program.Select("SELECT * FROM Articles WHERE Author = 'DarkCat09'");
 
@@ -48,6 +51,11 @@ namespace WindowsFormsApp2
         }
     
         private void UserArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UserArticles_Load(object sender, EventArgs e)
         {
 
         }

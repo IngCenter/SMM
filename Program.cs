@@ -44,6 +44,10 @@ namespace WindowsFormsApp2
         /// </summary>
         public static MySqlConnection conn;
 
+        /// <summary>
+        /// Текущий пользователь
+        /// </summary>
+        public static string CurrentUser = "Misha";
        
 
         public static List<string> Select(string Text)

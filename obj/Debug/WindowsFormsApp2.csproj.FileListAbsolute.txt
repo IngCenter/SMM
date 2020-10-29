@@ -24,3 +24,7 @@ C:\Users\beavi\Downloads\git\SMM\bin\Debug\WindowsFormsApp2.exe
 C:\Users\beavi\Downloads\git\SMM\bin\Debug\WindowsFormsApp2.pdb
 C:\Users\beavi\Downloads\git\SMM\bin\Debug\MySql.Data.dll
 C:\Users\beavi\Downloads\git\SMM\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+C:\Users\beavi\Downloads\git\SMM\obj\Debug\WindowsFormsApp2.AddArticle.resources
+C:\Users\beavi\Downloads\git\SMM\obj\Debug\WindowsFormsApp2.Comments.resources
+C:\Users\beavi\Downloads\git\SMM\obj\Debug\WindowsFormsApp2.UserArticles.resources
+C:\Users\beavi\Downloads\git\SMM\obj\Debug\WindowsFormsApp2.UserForm.resources
