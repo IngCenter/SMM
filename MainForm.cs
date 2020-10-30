@@ -90,11 +90,16 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             //А давай человек Марсель сделает ввод логина и пароля. А, человек Марсель?
-            UserForm UserInfo = new UserForm();
-            UserInfo.Show();
+            SignInForm SignIn = new SignInForm();
+            SignIn.Show();
         }
 
         private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
