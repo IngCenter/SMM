@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class AddArticle : Form
+    public partial class SignInForm : Form
     {
-        public AddArticle()
+        public SignInForm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //А если кроме названия здесь будут текст и теги? Человек Марсель?
-            Program.Insert("INSERT INTO `Articles` (Title, DT) VALUES ('" + NameTB.Text + "', sysdate())");
-            MessageBox.Show("Сохранено");
+            UserForm UserInfo = new UserForm();
+            UserInfo.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void SignInLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            RegistrationForm Registration = new RegistrationForm();
+            Registration.Show();
         }
     }
 }
