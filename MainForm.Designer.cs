@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ArticlesPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.AdvertismentPanel = new System.Windows.Forms.Panel();
@@ -38,6 +39,7 @@
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.SignInButton = new System.Windows.Forms.Button();
             this.SignInLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -155,6 +157,11 @@
             this.SignInLabel.TabIndex = 2;
             this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -190,6 +197,7 @@
         private System.Windows.Forms.Panel AuthPanel;
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Label SignInLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

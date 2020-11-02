@@ -103,5 +103,13 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Program.CurrentUser != "")
+                SignInLabel.Text = "Привет, " + Program.CurrentUser;
+            else
+                SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
+        }
     }
 }
