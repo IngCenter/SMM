@@ -181,5 +181,8 @@
   <ItemGroup>
     <None Include="Pictures\DislikeOn.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\renderforest_300x600.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
