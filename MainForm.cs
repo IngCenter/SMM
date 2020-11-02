@@ -110,6 +110,21 @@ namespace WindowsFormsApp2
                 SignInLabel.Text = "Привет, " + Program.CurrentUser;
             else
                 SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
+            
+        }
+
+        private void SignInLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (SignInLabel.Text != "Вы ещё не вошли в аккаунт?") { 
+            SignInButton.Visible = false;}
+            else { 
+                SignInButton.Visible = true;
+            }
         }
     }
 }

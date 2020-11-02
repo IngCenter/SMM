@@ -16,9 +16,12 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : Form
     {
+        string id = "";
         public ArticleForm(string name, string text)
         {
             InitializeComponent();
+
+            id = Program.Select ("SELECT ID FROM Article WHERE Title ='") + name + ("'");
             
             //Сохраняй папки Pictures и Properties. Или терпи мои картинки:)
 
@@ -111,6 +114,11 @@ namespace WindowsFormsApp2
                 Program.Insert(
                     " INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '1', 'Misha', '1');");
             }
+        }
+
+        private void textLabel_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

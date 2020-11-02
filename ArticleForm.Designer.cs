@@ -61,6 +61,7 @@
             this.textLabel.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textLabel.Size = new System.Drawing.Size(906, 676);
             this.textLabel.TabIndex = 5;
+            this.textLabel.TextChanged += new System.EventHandler(this.textLabel_TextChanged);
             // 
             // label1
             // 
