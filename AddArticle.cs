@@ -12,7 +12,7 @@ namespace WindowsFormsApp2
 {
     public partial class AddArticle : Form
     {
-        public AddArticle()
+        public AddArticle()     
         {
             InitializeComponent();
         }
@@ -20,8 +20,13 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             //А если кроме названия здесь будут текст и теги? Человек Марсель?
-            Program.Insert("INSERT INTO `Articles` (Title, DT) VALUES ('" + NameTB.Text + "', sysdate())");
+            Program.Insert("INSERT INTO `Articles` (Title, DT) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "')");
             MessageBox.Show("Сохранено");
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void label1_Click(object sender, EventArgs e)

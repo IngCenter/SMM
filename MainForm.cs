@@ -90,26 +90,13 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             //А давай человек Марсель сделает ввод логина и пароля. А, человек Марсель?
-            SignInForm SignIn = new SignInForm();
-            SignIn.Show();
+            UserForm UserInfo = new UserForm();
+            UserInfo.Show();
         }
 
         private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (Program.CurrentUser != "")
-                SignInLabel.Text = "Привет, " + Program.CurrentUser;
-            else
-                SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
         }
     }
 }

@@ -28,24 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.ArticlesPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.AdvertismentPanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.AuthPanel = new System.Windows.Forms.Panel();
-            this.SignInButton = new System.Windows.Forms.Button();
             this.SignInLabel = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.SignInButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.AuthPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ArticlesPanel
@@ -80,31 +79,10 @@
             this.AdvertismentPanel.Size = new System.Drawing.Size(153, 441);
             this.AdvertismentPanel.TabIndex = 3;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Star;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(30, 220);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(89, 87);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Star;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 102);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 87);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 192);
+            this.label2.Location = new System.Drawing.Point(18, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 0;
@@ -127,16 +105,36 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1061, 497);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1011, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 37);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AuthPanel
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.AuthPanel, 2);
             this.AuthPanel.Controls.Add(this.SignInButton);
             this.AuthPanel.Controls.Add(this.SignInLabel);
+            this.AuthPanel.Controls.Add(this.button1);
             this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AuthPanel.Location = new System.Drawing.Point(3, 3);
             this.AuthPanel.Name = "AuthPanel";
             this.AuthPanel.Size = new System.Drawing.Size(1055, 44);
             this.AuthPanel.TabIndex = 2;
+            // 
+            // SignInLabel
+            // 
+            this.SignInLabel.AutoSize = true;
+            this.SignInLabel.Location = new System.Drawing.Point(9, 10);
+            this.SignInLabel.Name = "SignInLabel";
+            this.SignInLabel.Size = new System.Drawing.Size(266, 25);
+            this.SignInLabel.TabIndex = 2;
+            this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
             // 
             // SignInButton
             // 
@@ -148,19 +146,25 @@
             this.SignInButton.UseVisualStyleBackColor = true;
             this.SignInButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // SignInLabel
+            // pictureBox2
             // 
-            this.SignInLabel.AutoSize = true;
-            this.SignInLabel.Location = new System.Drawing.Point(9, 10);
-            this.SignInLabel.Name = "SignInLabel";
-            this.SignInLabel.Size = new System.Drawing.Size(266, 25);
-            this.SignInLabel.TabIndex = 2;
-            this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
+            this.pictureBox2.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Star;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 178);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 84);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
-            // timer1
+            // pictureBox1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.pictureBox1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Star;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 84);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -176,11 +180,11 @@
             this.ArticlesPanel.ResumeLayout(false);
             this.AdvertismentPanel.ResumeLayout(false);
             this.AdvertismentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.AuthPanel.ResumeLayout(false);
             this.AuthPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,7 +201,7 @@
         private System.Windows.Forms.Panel AuthPanel;
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Label SignInLabel;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

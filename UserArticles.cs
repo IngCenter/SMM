@@ -59,11 +59,5 @@ namespace WindowsFormsApp2
         {
 
         }
-
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            AddArticle addArticle = new AddArticle();
-            addArticle.Show();
-        }
     }
 }
