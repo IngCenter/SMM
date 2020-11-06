@@ -37,5 +37,17 @@ namespace WindowsFormsApp2
             UserArticles ArticlesInfo = new UserArticles();
             ArticlesInfo.Show();
         }
+
+        private void UserNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+           
+        }
     }
 }

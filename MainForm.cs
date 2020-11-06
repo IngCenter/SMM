@@ -80,13 +80,19 @@ namespace WindowsFormsApp2
             if (Program.CurrentUser.Trim() != "")
             {
                 SignInButton.Visible = false;
-            }
+                UserInfoButton.Visible = true;
+            } else
+            {
+                SignInButton.Visible = true;
+                UserInfoButton.Visible = false;
+            };
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (Program.CurrentUser.Trim() != "")
                 SignInLabel.Text = "Привет, " + Program.CurrentUser.Trim();
+           
             else
                 SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
         }
@@ -109,6 +115,8 @@ namespace WindowsFormsApp2
         private void button1_Click_1(object sender, EventArgs e)
         {
             //И вот сюда личный кабинет вместо войти
+            UserForm UserInfo = new UserForm();
+            UserInfo.ShowDialog();
         }
     }
 }
