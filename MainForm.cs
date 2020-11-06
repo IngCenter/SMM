@@ -36,7 +36,7 @@ namespace WindowsFormsApp2
 
             int y = 50;
             //Там 7 столбцов
-            for (int i = 0; i < results.Count; i = i + 8)
+            for (int i = 0; i < results.Count; i = i + 9)
             {
                 //Для каждой создаем лейбл
                 Label lbl = new Label();
@@ -80,13 +80,19 @@ namespace WindowsFormsApp2
             if (Program.CurrentUser.Trim() != "")
             {
                 SignInButton.Visible = false;
-            }
+                UserInfoButton.Visible = true;
+            } else
+            {
+                SignInButton.Visible = true;
+                UserInfoButton.Visible = false;
+            };
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (Program.CurrentUser.Trim() != "")
                 SignInLabel.Text = "Привет, " + Program.CurrentUser.Trim();
+           
             else
                 SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
         }
@@ -109,6 +115,8 @@ namespace WindowsFormsApp2
         private void button1_Click_1(object sender, EventArgs e)
         {
             //И вот сюда личный кабинет вместо войти
+            UserForm UserInfo = new UserForm();
+            UserInfo.ShowDialog();
         }
     }
 }

@@ -35,6 +35,7 @@
             this.SubscribersLabel = new System.Windows.Forms.Label();
             this.UserIDLabel = new System.Windows.Forms.Label();
             this.AvatarPB = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.UserNameLabel.Size = new System.Drawing.Size(194, 25);
             this.UserNameLabel.TabIndex = 0;
             this.UserNameLabel.Text = "Имя Пользователя";
+            this.UserNameLabel.Click += new System.EventHandler(this.UserNameLabel_Click);
             // 
             // UserArticleLabel
             // 
@@ -103,18 +105,30 @@
             // 
             // AvatarPB
             // 
-            this.AvatarPB.Location = new System.Drawing.Point(369, 25);
+            this.AvatarPB.Location = new System.Drawing.Point(330, 25);
             this.AvatarPB.Name = "AvatarPB";
-            this.AvatarPB.Size = new System.Drawing.Size(189, 185);
+            this.AvatarPB.Size = new System.Drawing.Size(228, 218);
             this.AvatarPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AvatarPB.TabIndex = 6;
             this.AvatarPB.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(35, 232);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 26);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Выйти из аккаунта";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 244);
+            this.ClientSize = new System.Drawing.Size(590, 270);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.AvatarPB);
             this.Controls.Add(this.UserIDLabel);
             this.Controls.Add(this.SubscribersLabel);
@@ -139,5 +153,6 @@
         private System.Windows.Forms.Label SubscribersLabel;
         private System.Windows.Forms.Label UserIDLabel;
         private System.Windows.Forms.PictureBox AvatarPB;
+        private System.Windows.Forms.Button button1;
     }
 }
