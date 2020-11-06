@@ -40,6 +40,7 @@
             this.SignInButton = new System.Windows.Forms.Button();
             this.SignInLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -50,6 +51,7 @@
             // 
             // ArticlesPanel
             // 
+            this.ArticlesPanel.AutoScroll = true;
             this.ArticlesPanel.Controls.Add(this.label3);
             this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArticlesPanel.Location = new System.Drawing.Point(162, 53);
@@ -156,11 +158,17 @@
             this.SignInLabel.Size = new System.Drawing.Size(266, 25);
             this.SignInLabel.TabIndex = 2;
             this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
+            this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // MainForm
             // 
@@ -198,6 +206,7 @@
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
