@@ -28,5 +28,10 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void NameTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
