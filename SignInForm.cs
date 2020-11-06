@@ -21,13 +21,19 @@ namespace WindowsFormsApp2
         {
             Program.CurrentUser = LoginTB.Text;
             UserForm UserInfo = new UserForm();
-            UserInfo.Show();
+            UserInfo.ShowDialog();
+            Close();
         }
 
         private void SignInLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegistrationForm Registration = new RegistrationForm();
             Registration.Show();
+        }
+
+        private void SignInLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -133,6 +133,9 @@
   <data name="LikeOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\LikeOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="renderforest_300x600" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\renderforest_300x600.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

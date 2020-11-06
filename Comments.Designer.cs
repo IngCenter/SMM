@@ -34,21 +34,23 @@
             // CommLable
             // 
             this.CommLable.Location = new System.Drawing.Point(1, 2);
+            this.CommLable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CommLable.Multiline = true;
             this.CommLable.Name = "CommLable";
             this.CommLable.ReadOnly = true;
             this.CommLable.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.CommLable.Size = new System.Drawing.Size(785, 482);
+            this.CommLable.Size = new System.Drawing.Size(590, 392);
             this.CommLable.TabIndex = 6;
             // 
             // Comments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 486);
+            this.ClientSize = new System.Drawing.Size(592, 328);
             this.Controls.Add(this.CommLable);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Comments";
-            this.Text = "Comments";
+            this.Text = "Комментарии";
             this.Load += new System.EventHandler(this.Comments_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

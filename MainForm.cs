@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Common;
-using MySql.Data.MySqlClient;
-
-
 
 namespace WindowsFormsApp2
 {
@@ -73,11 +63,6 @@ namespace WindowsFormsApp2
             af.Show();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Добавить статью
         /// </summary>
@@ -91,26 +76,24 @@ namespace WindowsFormsApp2
         {
             //А давай человек Марсель сделает ввод логина и пароля. А, человек Марсель?
             SignInForm SignIn = new SignInForm();
-            SignIn.Show();
-        }
-
-        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            SignIn.ShowDialog();
+            if (Program.CurrentUser.Trim() != "")
+            {
+                SignInButton.Visible = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Program.CurrentUser != "")
-                SignInLabel.Text = "Привет, " + Program.CurrentUser;
+            if (Program.CurrentUser.Trim() != "")
+                SignInLabel.Text = "Привет, " + Program.CurrentUser.Trim();
             else
                 SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
-            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://is.gd/QRJ0bT");
         }
 
         private void SignInLabel_Click(object sender, EventArgs e)
@@ -118,13 +101,14 @@ namespace WindowsFormsApp2
 
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            if (SignInLabel.Text != "Вы ещё не вошли в аккаунт?") { 
-            SignInButton.Visible = false;}
-            else { 
-                SignInButton.Visible = true;
-            }
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //И вот сюда личный кабинет вместо войти
         }
     }
 }
