@@ -116,7 +116,7 @@
             // 
             // SignInButton
             // 
-            this.SignInButton.Location = new System.Drawing.Point(255, 3);
+            this.SignInButton.Location = new System.Drawing.Point(273, 3);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(95, 38);
             this.SignInButton.TabIndex = 3;

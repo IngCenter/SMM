@@ -36,7 +36,7 @@ namespace WindowsFormsApp2
 
             int y = 50;
             //Там 7 столбцов
-            for (int i = 0; i < results.Count; i = i + 8)
+            for (int i = 0; i < results.Count; i = i + 9)
             {
                 //Для каждой создаем лейбл
                 Label lbl = new Label();
