@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp2
+namespace WindowsFormsApp2
 {
     partial class MainForm
     {
@@ -183,4 +183,3 @@
         private System.Windows.Forms.Button UserInfoButton;
     }
 }
-

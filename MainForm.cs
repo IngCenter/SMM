@@ -35,7 +35,8 @@ namespace WindowsFormsApp2
             List<string> results = Program.Select("SELECT * FROM Articles");            
 
             int y = 50;
-            //Там 7 столбцов
+            
+            //Там 9 столбцов
             for (int i = 0; i < results.Count; i = i + 9)
             {
                 //Для каждой создаем лейбл
