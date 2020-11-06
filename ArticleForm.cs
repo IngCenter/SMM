@@ -6,22 +6,35 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : Form
     {
-        string id = "";
         public ArticleForm(string name, string text)
         {
             InitializeComponent();
-
-            //Что ж ты такое творишь со скобками?
-            id = Program.Select ("SELECT ID FROM Articles WHERE Title ='" + name + "'")[0];
             
             // Сохраняй каталоги Pictures и Properties. Или терпи мои картинки :)
 
             nameLabel.Text = name;
             textLabel.Text = text;
 
+            if (Convert.ToBoolean(
+                Program.Select("SELECT * FROM Articles WHERE Title = '" + name + "' ORDER BY id DESC LIMIT 1")[8]
+                )
+            )
+            {
+                // используем MarkDown
+                ConvertMdArticleToHtml(text);
+                WebBrowser mdWb = new WebBrowser();
+                mdWb.Location = new System.Drawing.Point(9, 60);
+                mdWb.Size = new System.Drawing.Size(714, 309);
+                mdWb.DocumentText = System.IO.File.ReadAllText("cache.html");
+                // TODO: Доделать, т.к. сейчас скрипт MarkDown'а не работает!
+
+                textLabel.Visible = false;
+                Controls.Add(mdWb);
+            }
+
             // Количество лайков/дизлайков
             List<string> likes = Program.Select(
-                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = " + id);
+                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = 1");
             // TODO: А как насчет вместо 1 чтобы была цифра соответственно названию статьи?
             label1.Text = likes[0];
 
@@ -103,14 +116,31 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void textLabel_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void ArticleForm_Load(object sender, EventArgs e)
+        private void ConvertMdArticleToHtml(string article_text)
         {
-
+            System.IO.StreamWriter sw = new System.IO.StreamWriter("cache.html", false, System.Text.Encoding.UTF8);
+            sw.WriteLine("<!DOCTYPE html>");
+            sw.WriteLine("<html>");
+            sw.WriteLine("<head>");
+            sw.WriteLine("<meta charset='UTF-8' />");
+            sw.WriteLine("</head>");
+            sw.WriteLine("<body>");
+            sw.WriteLine("<div class='main-content'>");
+            sw.WriteLine(article_text);
+            sw.WriteLine("</div>");
+            sw.WriteLine("<script src='showdown/dist/showdown.min.js'></script>");
+            sw.WriteLine("<script>");
+            sw.WriteLine("var mdtext = document.getElementByClassName('main-content')[0];");
+            sw.WriteLine("mdtext.innerHTML = new showdown.Converter().makeHtml(mdtext.innerHTML);");
+            sw.WriteLine("</script>");
+            sw.WriteLine("</body>");
+            sw.WriteLine("</html>");
+            sw.Close();
         }
     }
 }

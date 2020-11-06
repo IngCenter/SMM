@@ -35,8 +35,8 @@ namespace WindowsFormsApp2
             List<string> results = Program.Select("SELECT * FROM Articles");            
 
             int y = 50;
-            //Там 7 столбцов
-            for (int i = 0; i < results.Count; i = i + 8)
+            //Там 8 столбцов
+            for (int i = 0; i < results.Count; i = i + 9)
             {
                 //Для каждой создаем лейбл
                 Label lbl = new Label();
@@ -94,21 +94,6 @@ namespace WindowsFormsApp2
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://is.gd/QRJ0bT");
-        }
-
-        private void SignInLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            //И вот сюда личный кабинет вместо войти
         }
     }
 }
