@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
             label1.Text = likes[0];
 
             List<string> Dislikes = Program.Select(
-               "SELECT SUM(Likes.Dislike) FROM Likes WHERE Article = 1");
+               "SELECT SUM(Likes.Dislike) FROM Likes WHERE Article = " + id);
             label2.Text = Dislikes[0];
 
             // Ставил ли лайк лично я?
@@ -54,7 +54,7 @@ namespace WindowsFormsApp2
         private void LikePB_Click(object sender, EventArgs e)
         {
             Program.Insert(
-                "DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = 1" );
+                "DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = " + id);
 
             // Я убрал лайк
             if (LikePB.Tag.ToString() == "not")
@@ -83,7 +83,7 @@ namespace WindowsFormsApp2
 
         private void DislikePB_Click(object sender, EventArgs e)
         {
-            Program.Insert("DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = 1");
+            Program.Insert("DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = " + id);
 
             //Убрал дизлайк
             if (DislikePB.Tag.ToString() == "not")

@@ -52,6 +52,7 @@
             this.NameTB.Name = "NameTB";
             this.NameTB.Size = new System.Drawing.Size(712, 34);
             this.NameTB.TabIndex = 1;
+            this.NameTB.TextChanged += new System.EventHandler(this.NameTB_TextChanged);
             // 
             // ArticleNameLabel
             // 
@@ -66,7 +67,7 @@
             // 
             // ArticleTextTB
             // 
-            this.ArticleTextTB.Location = new System.Drawing.Point(29, 78);
+            this.ArticleTextTB.Location = new System.Drawing.Point(29, 80);
             this.ArticleTextTB.Multiline = true;
             this.ArticleTextTB.Name = "ArticleTextTB";
             this.ArticleTextTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
