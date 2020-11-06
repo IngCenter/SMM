@@ -6,9 +6,13 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : Form
     {
+        string id = "";
         public ArticleForm(string name, string text)
         {
             InitializeComponent();
+
+            //Что ж ты такое творишь со скобками?
+            id = Program.Select ("SELECT ID FROM Articles WHERE Title ='" + name + "'")[0];
             
             // Сохраняй каталоги Pictures и Properties. Или терпи мои картинки :)
 
@@ -17,7 +21,7 @@ namespace WindowsFormsApp2
 
             // Количество лайков/дизлайков
             List<string> likes = Program.Select(
-                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = 1");
+                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = " + id);
             // TODO: А как насчет вместо 1 чтобы была цифра соответственно названию статьи?
             label1.Text = likes[0];
 
@@ -97,6 +101,16 @@ namespace WindowsFormsApp2
                 Program.Insert(
                     "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '1', '" + Program.CurrentUser + "', '1');");
             }
+        }
+
+        private void textLabel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ArticleForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

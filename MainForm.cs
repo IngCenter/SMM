@@ -95,5 +95,20 @@ namespace WindowsFormsApp2
         {
             System.Diagnostics.Process.Start("https://is.gd/QRJ0bT");
         }
+
+        private void SignInLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //И вот сюда личный кабинет вместо войти
+        }
     }
 }
