@@ -36,32 +36,33 @@
             // 
             // CommLable
             // 
-            this.CommLable.Location = new System.Drawing.Point(9, 49);
+            this.CommLable.Location = new System.Drawing.Point(14, 47);
             this.CommLable.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CommLable.Multiline = true;
             this.CommLable.Name = "CommLable";
             this.CommLable.ReadOnly = true;
             this.CommLable.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.CommLable.Size = new System.Drawing.Size(929, 488);
+            this.CommLable.Size = new System.Drawing.Size(923, 330);
             this.CommLable.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(807, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Location = new System.Drawing.Point(844, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 42);
+            this.button1.Size = new System.Drawing.Size(93, 31);
             this.button1.TabIndex = 7;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 16);
+            this.label1.Location = new System.Drawing.Point(14, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 29);
+            this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Автор";
             // 
@@ -74,17 +75,17 @@
             "Admin",
             "DarkCat09",
             "Их программно надо заполнять"});
-            this.comboBox1.Location = new System.Drawing.Point(116, 0);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBox1.Location = new System.Drawing.Point(90, 6);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 37);
+            this.comboBox1.Size = new System.Drawing.Size(209, 32);
             this.comboBox1.TabIndex = 9;
             // 
             // Comments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 550);
+            this.ClientSize = new System.Drawing.Size(951, 390);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -93,7 +94,6 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Comments";
             this.Text = "Комментарии";
-            this.Load += new System.EventHandler(this.Comments_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
@@ -16,10 +11,8 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
-            //Program.CurrentUser
-
             //Список всех статей (и не надо тут долбаные 9 столбцов)
-            List<string> results = Program.Select("SELECT ID, Title FROM Articles WHERE Author = 'DarkCat09'");
+            List<string> results = Program.Select("SELECT ID, Title FROM Articles WHERE Author = '" + Program.CurrentUser + "'");
 
             int y = 50;
             //Там 7 столбцов
@@ -48,16 +41,6 @@ namespace WindowsFormsApp2
             Label lbl = (Label)sender;
             ArticleForm af = new ArticleForm(lbl.AccessibleDescription);
             af.Show();
-        }
-    
-        private void UserArticlesPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void UserArticles_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void AddButton_Click(object sender, EventArgs e)

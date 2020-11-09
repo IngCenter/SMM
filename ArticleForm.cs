@@ -96,7 +96,7 @@ namespace WindowsFormsApp2
         
         private void CommPB_Click(object sender, EventArgs e)
         {
-            Comments Comm = new Comments();
+            Comments Comm = new Comments(Convert.ToInt32(id));
             Comm.Show();
         }
 
