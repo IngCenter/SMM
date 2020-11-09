@@ -38,8 +38,8 @@ namespace WindowsFormsApp2
             this.SignInLabel = new System.Windows.Forms.Label();
             this.SignInButton = new System.Windows.Forms.Button();
             this.AuthPanel = new System.Windows.Forms.Panel();
+            this.AdminButton = new System.Windows.Forms.Button();
             this.UserInfoButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,7 +127,7 @@ namespace WindowsFormsApp2
             // 
             // AuthPanel
             // 
-            this.AuthPanel.Controls.Add(this.button1);
+            this.AuthPanel.Controls.Add(this.AdminButton);
             this.AuthPanel.Controls.Add(this.UserInfoButton);
             this.AuthPanel.Controls.Add(this.SignInButton);
             this.AuthPanel.Controls.Add(this.SignInLabel);
@@ -136,6 +136,17 @@ namespace WindowsFormsApp2
             this.AuthPanel.Name = "AuthPanel";
             this.AuthPanel.Size = new System.Drawing.Size(1074, 44);
             this.AuthPanel.TabIndex = 2;
+            // 
+            // AdminButton
+            // 
+            this.AdminButton.Location = new System.Drawing.Point(473, 3);
+            this.AdminButton.Name = "AdminButton";
+            this.AdminButton.Size = new System.Drawing.Size(221, 38);
+            this.AdminButton.TabIndex = 5;
+            this.AdminButton.Text = "Администрирование";
+            this.AdminButton.UseVisualStyleBackColor = true;
+            this.AdminButton.Visible = false;
+            this.AdminButton.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // UserInfoButton
             // 
@@ -147,16 +158,6 @@ namespace WindowsFormsApp2
             this.UserInfoButton.UseVisualStyleBackColor = true;
             this.UserInfoButton.Visible = false;
             this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(473, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Администрирование";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // MainForm
             // 
@@ -193,6 +194,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Button UserInfoButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AdminButton;
     }
 }
