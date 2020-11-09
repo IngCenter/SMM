@@ -119,5 +119,10 @@ namespace WindowsFormsApp2
             UserForm UserInfo = new UserForm();
             UserInfo.ShowDialog();
         }
+
+        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -97,7 +97,7 @@
             // UserIDLabel
             // 
             this.UserIDLabel.AutoSize = true;
-            this.UserIDLabel.Location = new System.Drawing.Point(33, 50);
+            this.UserIDLabel.Location = new System.Drawing.Point(33, 53);
             this.UserIDLabel.Name = "UserIDLabel";
             this.UserIDLabel.Size = new System.Drawing.Size(21, 17);
             this.UserIDLabel.TabIndex = 5;

@@ -93,6 +93,7 @@
             this.UserNameRTB.Name = "UserNameRTB";
             this.UserNameRTB.Size = new System.Drawing.Size(178, 22);
             this.UserNameRTB.TabIndex = 17;
+            this.UserNameRTB.TextChanged += new System.EventHandler(this.UserNameRTB_TextChanged);
             // 
             // LoginRTB
             // 
