@@ -6,22 +6,26 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : Form
     {
-        public ArticleForm(string name, string text)
+        string id = "0";
+        public ArticleForm(string Id)
         {
             InitializeComponent();
-            
-            // Сохраняй каталоги Pictures и Properties. Или терпи мои картинки :)
 
-            nameLabel.Text = name;
-            textLabel.Text = text;
+            id = Id;
+            List<string> info = Program.Select("SELECT Title, Text, Topic, Tags, Author FROM Articles WHERE ID = " + id);
+            nameLabel.Text = info[0];
+            textLabel.Text = info[1];
 
-            if (Convert.ToBoolean(
+            /*Вариант ниже читаемее. Нет?
+             * if (Convert.ToBoolean(
                 Program.Select("SELECT * FROM Articles WHERE Title = '" + name + "' ORDER BY id DESC LIMIT 1")[8]
                 )
-            )
+            )*/
+            //MarkDown. Даша, Марсель, тут страшно
+            if (Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0] == "1")
             {
                 // используем MarkDown
-                ConvertMdArticleToHtml(text);
+                ConvertMdArticleToHtml(info[1]);
                 WebBrowser mdWb = new WebBrowser();
                 mdWb.Location = new System.Drawing.Point(9, 60);
                 mdWb.Size = new System.Drawing.Size(714, 309);
@@ -34,17 +38,18 @@ namespace WindowsFormsApp2
 
             // Количество лайков/дизлайков
             List<string> likes = Program.Select(
-                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = 1");
+                "SELECT IFNULL(SUM(Likes.Like), 0) FROM Likes WHERE Article = " + id);
             // TODO: А как насчет вместо 1 чтобы была цифра соответственно названию статьи?
             label1.Text = likes[0];
 
             List<string> Dislikes = Program.Select(
-               "SELECT SUM(Likes.Dislike) FROM Likes WHERE Article = " + id);
+               "SELECT IFNULL(SUM(Likes.Dislike), 0) FROM Likes WHERE Article = " + id);
             label2.Text = Dislikes[0];
 
             // Ставил ли лайк лично я?
             string MyLike = Program.Select(
-                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = 1 AND User = '" + Program.CurrentUser + "'")[0];
+                "SELECT IFNULL(SUM(Likes.Like), 0) FROM Likes WHERE Article = " + id + 
+                " AND User = '" + Program.CurrentUser + "'")[0];
             if (MyLike != "0")
             {
                 LikePB.Image = Properties.Resources.LikeOn;
@@ -53,7 +58,8 @@ namespace WindowsFormsApp2
 
             // Ставил ли дизлайк лично я?
             string MyDislike = Program.Select(
-                "SELECT SUM(Likes.Like) FROM Likes WHERE Article = 1 AND User = '" + Program.CurrentUser + "'")[0];
+                "SELECT IFNULL(SUM(Likes.Dislike), 0) FROM Likes WHERE Article = " + id + 
+                " AND User = '" + Program.CurrentUser + "'")[0];
             if (MyDislike != "0")
             {
                 DislikePB.Image = Properties.Resources.DisLikeOn;
@@ -75,7 +81,7 @@ namespace WindowsFormsApp2
                 LikePB.Image = Properties.Resources.LikeOff;
                 LikePB.Tag = "like";
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '1');");
+                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
                 // TODO: Картинку дизлайка тоже надо поменять
             }
             // Я поставил лайк
@@ -84,7 +90,7 @@ namespace WindowsFormsApp2
                 LikePB.Image = Properties.Resources.LikeOn;
                 LikePB.Tag = "not";
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('1', '0', '" + Program.CurrentUser + "', '1');");   
+                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('1', '0', '" + Program.CurrentUser + "', '" + id + "');");
             }
         }
         
@@ -104,7 +110,7 @@ namespace WindowsFormsApp2
                 DislikePB.Image = Properties.Resources.DisLikeOff;
                 DislikePB.Tag = "Dislike";
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '1');");
+                    "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
             }
             //Поставил дизлайк
             else
@@ -112,7 +118,7 @@ namespace WindowsFormsApp2
                 DislikePB.Image = Properties.Resources.DisLikeOn;
                 DislikePB.Tag = "not";
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '1', '" + Program.CurrentUser + "', '1');");
+                    "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '1', '" + Program.CurrentUser + "', '" + id + "');");
             }
         }
 

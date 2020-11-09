@@ -18,19 +18,19 @@ namespace WindowsFormsApp2
 
             //Program.CurrentUser
 
-            //Список всех статей
-            List<string> results = Program.Select("SELECT * FROM Articles WHERE Author = 'DarkCat09'");
+            //Список всех статей (и не надо тут долбаные 9 столбцов)
+            List<string> results = Program.Select("SELECT ID, Title FROM Articles WHERE Author = 'DarkCat09'");
 
             int y = 50;
             //Там 7 столбцов
-            for (int i = 0; i < results.Count; i = i + 8)
+            for (int i = 0; i < results.Count; i = i + 2)
             {
                 //Для каждой создаем лейбл
                 Label lbl = new Label();
                 lbl.AutoSize = true;
-                //Чтобы оно открылось в новом окне, сохраняем текст и описание
+                //Чтобы оно открылось в новом окне, сохраняем Id
                 lbl.Text = results[i + 1];
-                lbl.AccessibleDescription = results[i + 5];
+                lbl.AccessibleDescription = results[i];
                 lbl.Click += new EventHandler(openArticle);
                 lbl.Location = new Point(30, y);
                 lbl.Size = new Size(500, 30);
@@ -46,7 +46,7 @@ namespace WindowsFormsApp2
       public static void openArticle(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
-            ArticleForm af = new ArticleForm(lbl.Text, lbl.AccessibleDescription);
+            ArticleForm af = new ArticleForm(lbl.AccessibleDescription);
             af.Show();
         }
     
