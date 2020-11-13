@@ -38,6 +38,7 @@
             this.CommPB = new System.Windows.Forms.PictureBox();
             this.LikePB = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DislikePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CommPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LikePB)).BeginInit();
@@ -50,7 +51,7 @@
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.nameLabel.Location = new System.Drawing.Point(15, 11);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(904, 60);
+            this.nameLabel.Size = new System.Drawing.Size(707, 60);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "label1";
             // 
@@ -65,6 +66,7 @@
             this.textLabel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textLabel.Size = new System.Drawing.Size(951, 379);
             this.textLabel.TabIndex = 10;
+            this.textLabel.TextChanged += new System.EventHandler(this.textLabel_TextChanged);
             // 
             // label1
             // 
@@ -88,7 +90,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(865, 463);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 41);
             this.button1.TabIndex = 5;
@@ -146,12 +148,25 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(738, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(168, 64);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "сохранить";
+            this.button2.UseCompatibleTextRendering = true;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ArticleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(979, 516);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DislikePB);
             this.Controls.Add(this.CommPB);
@@ -183,5 +198,6 @@
         private System.Windows.Forms.PictureBox DislikePB;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
