@@ -1,29 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Common;
-using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
     public partial class Comments : Form
     {
-        public Comments()
+        int articleId = -1;
+        public Comments(int _articleId = -1)
         {
             InitializeComponent();
 
-            //А если тут будет учитываться номер статьи?
-            List<string> results = Program.Select("SELECT * FROM Comments");
+            articleId = _articleId;
+            List<string> results;
+            if (articleId != -1)
+            {
+                results = Program.Select("SELECT * FROM Comments");
+            }
+            else
+            {
+                results = Program.Select(
+                    "SELECT * FROM Comments WHERE ArticleId = " + articleId.ToString());
+            }
 
             int y = 50;
             
-
             for (int i = 0; i < results.Count; i = i + 4)
             {
                 //Для каждой создаем лейбл
@@ -32,13 +33,24 @@ namespace WindowsFormsApp2
                 results[i + 3] + Environment.NewLine + y;
                 //Чтобы оно открылось в новом окне, сохраняем текст и описание
             }
-
-
         }
 
-        private void Comments_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            if (articleId == -1)
+            {
+                if (MessageBox.Show(
+                    "При создании объекта Comments не был получен идентификатор статьи,\n" +
+                    "поэтому комментарий будет добавлен к первой статье (id=0)\n" + "Продолжить?",
+                    "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning
+                    ).ToString() == "No"
+                )
+                {
+                    return;
+                }
+            }
+            AddComment acForm = new AddComment();
+            acForm.ShowDialog();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,11 +69,6 @@ namespace WindowsFormsApp2
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
 
         }

@@ -38,7 +38,7 @@
             // 
             // CommLable
             // 
-            this.CommLable.Location = new System.Drawing.Point(9, 49);
+            this.CommLable.Location = new System.Drawing.Point(14, 47);
             this.CommLable.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CommLable.Multiline = true;
             this.CommLable.Name = "CommLable";
@@ -61,10 +61,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 12);
+            this.label1.Location = new System.Drawing.Point(14, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 29);
+            this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Автор";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -78,10 +78,10 @@
             "Admin",
             "DarkCat09",
             "Их программно надо заполнять"});
-            this.comboBox1.Location = new System.Drawing.Point(86, 6);
+            this.comboBox1.Location = new System.Drawing.Point(90, 6);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 37);
+            this.comboBox1.Size = new System.Drawing.Size(209, 32);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -121,7 +121,7 @@
             // 
             // Comments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 550);
             this.Controls.Add(this.label2);
@@ -134,7 +134,6 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Comments";
             this.Text = "Комментарии";
-            this.Load += new System.EventHandler(this.Comments_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

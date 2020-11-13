@@ -36,10 +36,11 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(322, 464);
+            this.AddButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddButton.Location = new System.Drawing.Point(0, 418);
             this.AddButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(310, 43);
+            this.AddButton.Size = new System.Drawing.Size(849, 43);
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Сохранить";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -47,38 +48,36 @@
             // 
             // NameTB
             // 
-            this.NameTB.Location = new System.Drawing.Point(179, 26);
+            this.NameTB.Location = new System.Drawing.Point(121, 6);
             this.NameTB.Margin = new System.Windows.Forms.Padding(5);
             this.NameTB.Name = "NameTB";
-            this.NameTB.Size = new System.Drawing.Size(712, 34);
+            this.NameTB.Size = new System.Drawing.Size(716, 29);
             this.NameTB.TabIndex = 1;
-            this.NameTB.TextChanged += new System.EventHandler(this.NameTB_TextChanged);
             // 
             // ArticleNameLabel
             // 
             this.ArticleNameLabel.AutoSize = true;
-            this.ArticleNameLabel.Location = new System.Drawing.Point(24, 29);
+            this.ArticleNameLabel.Location = new System.Drawing.Point(14, 9);
             this.ArticleNameLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ArticleNameLabel.Name = "ArticleNameLabel";
-            this.ArticleNameLabel.Size = new System.Drawing.Size(126, 29);
+            this.ArticleNameLabel.Size = new System.Drawing.Size(97, 24);
             this.ArticleNameLabel.TabIndex = 2;
             this.ArticleNameLabel.Text = "Название";
-            this.ArticleNameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // ArticleTextTB
             // 
-            this.ArticleTextTB.Location = new System.Drawing.Point(29, 80);
+            this.ArticleTextTB.Location = new System.Drawing.Point(18, 43);
             this.ArticleTextTB.Multiline = true;
             this.ArticleTextTB.Name = "ArticleTextTB";
             this.ArticleTextTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ArticleTextTB.Size = new System.Drawing.Size(862, 367);
+            this.ArticleTextTB.Size = new System.Drawing.Size(819, 367);
             this.ArticleTextTB.TabIndex = 3;
             // 
             // AddArticle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 521);
+            this.ClientSize = new System.Drawing.Size(849, 461);
             this.Controls.Add(this.ArticleTextTB);
             this.Controls.Add(this.ArticleNameLabel);
             this.Controls.Add(this.NameTB);

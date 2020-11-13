@@ -61,6 +61,12 @@
     <Compile Include="AddArticle.Designer.cs">
       <DependentUpon>AddArticle.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddComment.Designer.cs">
+      <DependentUpon>AddComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="AddArticle.resx">
       <DependentUpon>AddArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddComment.resx">
+      <DependentUpon>AddComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comments.resx">
       <DependentUpon>Comments.cs</DependentUpon>

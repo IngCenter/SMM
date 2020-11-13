@@ -17,21 +17,6 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void SubscribersLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MonetizationLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserFeedBackLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UserArticleLabel_Click(object sender, EventArgs e)
         {
             UserArticles ArticlesInfo = new UserArticles();
@@ -45,9 +30,8 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-           
+            Program.CurrentUser = "";
+            Close();
         }
     }
 }
