@@ -31,24 +31,24 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
-            //Список всех статей (и не надо тут долбаные 9 столбцов)
+            // Список всех статей (и не надо тут долбаные 9 столбцов)
             List<string> results = Program.Select("SELECT ID, Title FROM Articles");            
 
             int y = 50;
             
-            //Там 9 столбцов
+            // Получаем 3 столбца
             for (int i = 0; i < results.Count; i = i + 2)
             {
-                //Для каждой создаем лейбл
+                // Для каждого комментария создаем лейбл:
                 Label lbl = new Label();
                 lbl.AutoSize = true;
-                //Чтобы оно открылось в новом окне, сохраняем текст и описание
+                // Чтобы оно открылось в новом окне, сохраняем текст и описание:
                 lbl.Text = results[i + 1];
                 lbl.AccessibleDescription = results[i];
                 lbl.Click += new EventHandler(openArticle);
                 lbl.Location = new Point(30, y);
                 lbl.Size = new Size(500, 30);
-                //И добавляем на панель со статьями
+                // И добавляем на панель со статьями:
                 ArticlesPanel.Controls.Add(lbl);
                 y += 50;
             }
@@ -72,20 +72,18 @@ namespace WindowsFormsApp2
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //Вход отображаем если логин не задан
-            SignInButton.Visible = (Program.CurrentUser.Trim() == "");
-            UserInfoButton.Visible = (Program.CurrentUser.Trim() != "");
-
-
             if (Program.CurrentUser.Trim() != "")
                 SignInLabel.Text = "Привет, " + Program.CurrentUser.Trim();
             else
-                SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
+                SignInLabel.Text = "Вы ещё не вошли в аккаунт";
 
-            if (SignInLabel.Text != "Привет, ADMIN007")
-                AdminButton.Visible =false ;
-            else
-                AdminButton.Visible = true;
+            // Вход отображаем, если логин не задан
+            SignInButton.Visible = (Program.CurrentUser.Trim() == "");
+            UserInfoButton.Visible = (Program.CurrentUser.Trim() != "");
+
+            // Отображение кнопки администрирования,
+            // если пользователь администратор - ADMIN007
+            AdminButton.Visible = (Program.CurrentUser == "ADMIN007");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -110,11 +108,6 @@ namespace WindowsFormsApp2
         {
             AdminForm AdminInfo = new AdminForm();
             AdminInfo.ShowDialog();
-        }
-        
-        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

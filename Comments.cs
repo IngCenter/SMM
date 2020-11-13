@@ -23,16 +23,22 @@ namespace WindowsFormsApp2
                     "SELECT * FROM Comments WHERE ArticleId = " + articleId.ToString());
             }
 
-            int y = 50;
+            //int y = 50;
             
             for (int i = 0; i < results.Count; i = i + 4)
             {
-                //Для каждой создаем лейбл
-                
-                CommLable.Text += results[i + 1] + Environment.NewLine + 
-                results[i + 3] + Environment.NewLine + y;
-                //Чтобы оно открылось в новом окне, сохраняем текст и описание
+                CommLable.Text += results[i + 1] + Environment.NewLine + results[i + 3];
+                // TODO: Чтобы оно открылось в новом окне, сохраняем текст и описание
             }
+
+            Program.Select("SELECT Login FROM Users").ForEach((string userlogin) => {
+                comboBox1.Items.Add(userlogin);
+            });
+            Program.Select("SELECT Title FROM Articles").ForEach((string arttitle) => {
+                comboBox2.Items.Add(arttitle);
+            });
+
+            // TODO: Комментарии по статье! Марсель, я ж на тебя надеялся! (c) 2020 DarkCat09
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,7 +47,7 @@ namespace WindowsFormsApp2
             {
                 if (MessageBox.Show(
                     "При создании объекта Comments не был получен идентификатор статьи,\n" +
-                    "поэтому комментарий будет добавлен к первой статье (id=0)\n" + "Продолжить?",
+                    "поэтому комментарий будет добавлен к первой статье (id=0).\n" + "Продолжить?",
                     "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning
                     ).ToString() == "No"
                 )
@@ -51,26 +57,6 @@ namespace WindowsFormsApp2
             }
             AddComment acForm = new AddComment();
             acForm.ShowDialog();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
