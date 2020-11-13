@@ -96,6 +96,13 @@ namespace WindowsFormsApp2
            
             else
                 SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
+
+            if (SignInLabel.Text != "Привет, ADMIN007")
+                AdminButton.Visible =false ;
+
+            else
+                AdminButton.Visible = true;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -120,6 +127,12 @@ namespace WindowsFormsApp2
             UserInfo.ShowDialog();
         }
 
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            AdminForm AdminInfo = new AdminForm();
+            AdminInfo.ShowDialog();
+        }
+        
         private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
         {
 
