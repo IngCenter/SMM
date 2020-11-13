@@ -39,6 +39,7 @@ namespace WindowsFormsApp2
             this.SignInButton = new System.Windows.Forms.Button();
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.AdminButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.UserInfoButton = new System.Windows.Forms.Button();
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
@@ -55,6 +56,7 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.Name = "ArticlesPanel";
             this.ArticlesPanel.Size = new System.Drawing.Size(835, 454);
             this.ArticlesPanel.TabIndex = 1;
+            this.ArticlesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ArticlesPanel_Paint);
             // 
             // label3
             // 
@@ -128,6 +130,7 @@ namespace WindowsFormsApp2
             // AuthPanel
             // 
             this.AuthPanel.Controls.Add(this.AdminButton);
+            this.AuthPanel.Controls.Add(this.button1);
             this.AuthPanel.Controls.Add(this.UserInfoButton);
             this.AuthPanel.Controls.Add(this.SignInButton);
             this.AuthPanel.Controls.Add(this.SignInLabel);
@@ -148,9 +151,19 @@ namespace WindowsFormsApp2
             this.AdminButton.Visible = false;
             this.AdminButton.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(473, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(221, 38);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Администрирование";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
             // UserInfoButton
             // 
-            this.UserInfoButton.Location = new System.Drawing.Point(281, 3);
+            this.UserInfoButton.Location = new System.Drawing.Point(281, 6);
             this.UserInfoButton.Name = "UserInfoButton";
             this.UserInfoButton.Size = new System.Drawing.Size(186, 38);
             this.UserInfoButton.TabIndex = 4;
@@ -195,5 +208,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Button UserInfoButton;
         private System.Windows.Forms.Button AdminButton;
+        private System.Windows.Forms.Button button1;
     }
 }

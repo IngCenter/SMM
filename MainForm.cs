@@ -132,5 +132,10 @@ namespace WindowsFormsApp2
             AdminForm AdminInfo = new AdminForm();
             AdminInfo.ShowDialog();
         }
+        
+        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
