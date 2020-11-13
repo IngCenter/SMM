@@ -67,6 +67,12 @@
     <Compile Include="AddComment.Designer.cs">
       <DependentUpon>AddComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Comments.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -23,9 +23,15 @@ namespace WindowsFormsApp2
             ArticlesInfo.Show();
         }
 
+        private void UserNameLabel_Click(object sender, EventArgs e)
+        {
+          
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Program.CurrentUser = "";
+            Close();
         }
     }
 }

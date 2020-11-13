@@ -80,6 +80,7 @@ namespace WindowsFormsApp2
             {
                 LikePB.Image = Properties.Resources.LikeOff;
                 LikePB.Tag = "like";
+                label1.Text = (Convert.ToInt32(label1.Text) - 1).ToString();
                 Program.Insert(
                     "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
                 // TODO: Картинку дизлайка тоже надо поменять
@@ -89,6 +90,7 @@ namespace WindowsFormsApp2
             {
                 LikePB.Image = Properties.Resources.LikeOn;
                 LikePB.Tag = "not";
+                label1.Text = (Convert.ToInt32(label1.Text) + 1).ToString();
                 Program.Insert(
                     "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('1', '0', '" + Program.CurrentUser + "', '" + id + "');");
             }
@@ -109,6 +111,7 @@ namespace WindowsFormsApp2
             {
                 DislikePB.Image = Properties.Resources.DisLikeOff;
                 DislikePB.Tag = "Dislike";
+                label2.Text = (Convert.ToInt32(label1.Text) + 1).ToString();
                 Program.Insert(
                     "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
             }
@@ -117,6 +120,7 @@ namespace WindowsFormsApp2
             {
                 DislikePB.Image = Properties.Resources.DisLikeOn;
                 DislikePB.Tag = "not";
+                label2.Text = (Convert.ToInt32(label1.Text) + 1).ToString();
                 Program.Insert(
                     "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '1', '" + Program.CurrentUser + "', '" + id + "');");
             }
@@ -147,6 +151,11 @@ namespace WindowsFormsApp2
             sw.WriteLine("</body>");
             sw.WriteLine("</html>");
             sw.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

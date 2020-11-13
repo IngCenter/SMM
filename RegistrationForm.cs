@@ -26,5 +26,10 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void UserNameRTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

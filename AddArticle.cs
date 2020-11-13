@@ -12,7 +12,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //А если кроме названия здесь будут текст и теги? Человек Марсель?
+            //А если кроме названия здесь будут текст и теги? Автор нормальный и т.д.
             Program.Insert("INSERT INTO `Articles` (Title, DT) VALUES ('" + NameTB.Text + "', sysdate())");
             MessageBox.Show("Сохранено");
         }

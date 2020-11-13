@@ -66,27 +66,26 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // А давай человек Марсель сделает ввод логина и пароля. А, человек Марсель?
             SignInForm SignIn = new SignInForm();
-            SignIn.ShowDialog();
-            if (Program.CurrentUser.Trim() != "")
-            {
-                SignInButton.Visible = false;
-                UserInfoButton.Visible = true;
-            }
-            else
-            {
-                SignInButton.Visible = true;
-                UserInfoButton.Visible = false;
-            };
+            SignIn.ShowDialog();            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //Вход отображаем если логин не задан
+            SignInButton.Visible = (Program.CurrentUser.Trim() == "");
+            UserInfoButton.Visible = (Program.CurrentUser.Trim() != "");
+
+
             if (Program.CurrentUser.Trim() != "")
                 SignInLabel.Text = "Привет, " + Program.CurrentUser.Trim();
             else
                 SignInLabel.Text = "Вы ещё не вошли в аккаунт?";
+
+            if (SignInLabel.Text != "Привет, ADMIN007")
+                AdminButton.Visible =false ;
+            else
+                AdminButton.Visible = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -105,6 +104,17 @@ namespace WindowsFormsApp2
             //И вот сюда личный кабинет вместо войти
             UserForm UserInfo = new UserForm();
             UserInfo.ShowDialog();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            AdminForm AdminInfo = new AdminForm();
+            AdminInfo.ShowDialog();
+        }
+        
+        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
