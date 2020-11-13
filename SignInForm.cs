@@ -35,5 +35,10 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void SignInForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

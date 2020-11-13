@@ -38,8 +38,8 @@ namespace WindowsFormsApp2
             this.SignInLabel = new System.Windows.Forms.Label();
             this.SignInButton = new System.Windows.Forms.Button();
             this.AuthPanel = new System.Windows.Forms.Panel();
-            this.UserInfoButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.UserInfoButton = new System.Windows.Forms.Button();
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +55,7 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.Name = "ArticlesPanel";
             this.ArticlesPanel.Size = new System.Drawing.Size(835, 454);
             this.ArticlesPanel.TabIndex = 1;
+            this.ArticlesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ArticlesPanel_Paint);
             // 
             // label3
             // 
@@ -137,17 +138,6 @@ namespace WindowsFormsApp2
             this.AuthPanel.Size = new System.Drawing.Size(1074, 44);
             this.AuthPanel.TabIndex = 2;
             // 
-            // UserInfoButton
-            // 
-            this.UserInfoButton.Location = new System.Drawing.Point(281, 3);
-            this.UserInfoButton.Name = "UserInfoButton";
-            this.UserInfoButton.Size = new System.Drawing.Size(186, 38);
-            this.UserInfoButton.TabIndex = 4;
-            this.UserInfoButton.Text = "Личный кабинет";
-            this.UserInfoButton.UseVisualStyleBackColor = true;
-            this.UserInfoButton.Visible = false;
-            this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(473, 3);
@@ -157,6 +147,17 @@ namespace WindowsFormsApp2
             this.button1.Text = "Администрирование";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
+            // 
+            // UserInfoButton
+            // 
+            this.UserInfoButton.Location = new System.Drawing.Point(281, 6);
+            this.UserInfoButton.Name = "UserInfoButton";
+            this.UserInfoButton.Size = new System.Drawing.Size(186, 38);
+            this.UserInfoButton.TabIndex = 4;
+            this.UserInfoButton.Text = "Личный кабинет";
+            this.UserInfoButton.UseVisualStyleBackColor = true;
+            this.UserInfoButton.Visible = false;
+            this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MainForm
             // 
