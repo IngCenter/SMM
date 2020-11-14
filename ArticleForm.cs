@@ -6,10 +6,18 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : Form
     {
+
+
+        
+
+
         string id = "0";
         public ArticleForm(string Id)
         {
             InitializeComponent();
+
+            if (Program.CurrentUser == "ADMIN007")
+                textLabel.ReadOnly = false;
 
             id = Id;
             List<string> info = Program.Select("SELECT Title, Text, Topic, Tags, Author FROM Articles WHERE ID = " + id);
@@ -154,6 +162,20 @@ namespace WindowsFormsApp2
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Program.Insert("UPDATE Articles" +  
+                " SET name = '" + textLabel.Text + "'" + 
+                " WHERE Id = '" + id + "'");
+            MessageBox.Show("Обновлено");
+
+        }
+
+        private void textLabel_TextChanged(object sender, EventArgs e)
         {
 
         }
