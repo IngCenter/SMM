@@ -123,6 +123,9 @@
     <EmbeddedResource Include="AddComment.resx">
       <DependentUpon>AddComment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comments.resx">
       <DependentUpon>Comments.cs</DependentUpon>
     </EmbeddedResource>
