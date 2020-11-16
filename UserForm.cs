@@ -25,13 +25,29 @@ namespace WindowsFormsApp2
 
         private void UserNameLabel_Click(object sender, EventArgs e)
         {
-          
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Program.CurrentUser = "";
             Close();
+        }
+
+        private void UserFeedBackLabel_Click(object sender, EventArgs e)
+        {
+            Comments commentsInfo = new Comments();
+            commentsInfo.Show();
+        }
+
+        private void UserNameLabel_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+            UserNameLabel.Text = Program.CurrentUser.Trim();
         }
     }
 }

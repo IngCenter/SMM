@@ -109,5 +109,10 @@ namespace WindowsFormsApp2
             AdminForm AdminInfo = new AdminForm();
             AdminInfo.ShowDialog();
         }
+
+        private void SignInLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
