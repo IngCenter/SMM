@@ -49,7 +49,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1056, 3);
+            this.button1.Location = new System.Drawing.Point(1063, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 42);
@@ -67,57 +67,40 @@
             this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Автор";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Все",
-            "Admin",
-            "DarkCat09",
-            "Их программно надо заполнять"});
+            "Все"});
             this.comboBox1.Location = new System.Drawing.Point(90, 6);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 32);
             this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "5 Необычных видов рукоделия",
-            "Первый релиз перспективного проекта. ",
-            "Интервью с DarkCat09.",
-            "Салат с сухариками \"Королевский\"",
-            "Это меня взбесило. Все было сделано неуклюже и поспешно",
-            "Я убираю грязь со льда»Интервью главного бойца КХЛ - белорусского великана Евенко" +
-                "",
-            "Xiaomi анонсировала 80-ваттную беспроводную зарядку.",
-            "Она способна зарядить смартфон за 19 мину",
-            "Марсель, пиши уже код!",
-            "Марсель, сделай регистрацию"});
+            "Все"});
             this.comboBox2.Location = new System.Drawing.Point(393, 6);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(653, 37);
+            this.comboBox2.Size = new System.Drawing.Size(653, 32);
             this.comboBox2.TabIndex = 10;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(297, 12);
+            this.label2.Location = new System.Drawing.Point(309, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 29);
+            this.label2.Size = new System.Drawing.Size(74, 24);
             this.label2.TabIndex = 11;
             this.label2.Text = "Статья";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Comments
             // 

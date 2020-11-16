@@ -40,9 +40,12 @@
             // 
             // RegistrationButton
             // 
-            this.RegistrationButton.Location = new System.Drawing.Point(133, 171);
+            this.RegistrationButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RegistrationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.RegistrationButton.Location = new System.Drawing.Point(0, 103);
+            this.RegistrationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RegistrationButton.Name = "RegistrationButton";
-            this.RegistrationButton.Size = new System.Drawing.Size(163, 36);
+            this.RegistrationButton.Size = new System.Drawing.Size(297, 26);
             this.RegistrationButton.TabIndex = 14;
             this.RegistrationButton.Text = "Зарегистрироваться";
             this.RegistrationButton.UseVisualStyleBackColor = true;
@@ -51,69 +54,77 @@
             // PasswordRLabel
             // 
             this.PasswordRLabel.AutoSize = true;
-            this.PasswordRLabel.Location = new System.Drawing.Point(29, 133);
+            this.PasswordRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordRLabel.Location = new System.Drawing.Point(11, 79);
+            this.PasswordRLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PasswordRLabel.Name = "PasswordRLabel";
-            this.PasswordRLabel.Size = new System.Drawing.Size(57, 17);
+            this.PasswordRLabel.Size = new System.Drawing.Size(51, 13);
             this.PasswordRLabel.TabIndex = 13;
             this.PasswordRLabel.Text = "Пароль";
             // 
             // UserNameRLabel
             // 
             this.UserNameRLabel.AutoSize = true;
-            this.UserNameRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserNameRLabel.Location = new System.Drawing.Point(29, 64);
+            this.UserNameRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UserNameRLabel.Location = new System.Drawing.Point(11, 31);
+            this.UserNameRLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UserNameRLabel.Name = "UserNameRLabel";
-            this.UserNameRLabel.Size = new System.Drawing.Size(141, 18);
+            this.UserNameRLabel.Size = new System.Drawing.Size(119, 13);
             this.UserNameRLabel.TabIndex = 12;
             this.UserNameRLabel.Text = "Имя пользователя";
             // 
             // RegistrationLabel
             // 
             this.RegistrationLabel.AutoSize = true;
-            this.RegistrationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RegistrationLabel.Location = new System.Drawing.Point(29, 24);
+            this.RegistrationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegistrationLabel.Location = new System.Drawing.Point(11, 9);
+            this.RegistrationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RegistrationLabel.Name = "RegistrationLabel";
-            this.RegistrationLabel.Size = new System.Drawing.Size(211, 18);
+            this.RegistrationLabel.Size = new System.Drawing.Size(178, 13);
             this.RegistrationLabel.TabIndex = 8;
-            this.RegistrationLabel.Text = "Введите имя, логин и пароль";
+            this.RegistrationLabel.Text = "Введите данные для регистрации";
             // 
             // LoginRLabel
             // 
             this.LoginRLabel.AutoSize = true;
-            this.LoginRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginRLabel.Location = new System.Drawing.Point(29, 97);
+            this.LoginRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginRLabel.Location = new System.Drawing.Point(11, 55);
+            this.LoginRLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LoginRLabel.Name = "LoginRLabel";
-            this.LoginRLabel.Size = new System.Drawing.Size(50, 18);
+            this.LoginRLabel.Size = new System.Drawing.Size(43, 13);
             this.LoginRLabel.TabIndex = 16;
             this.LoginRLabel.Text = "Логин";
             // 
             // UserNameRTB
             // 
-            this.UserNameRTB.Location = new System.Drawing.Point(191, 64);
+            this.UserNameRTB.Location = new System.Drawing.Point(134, 28);
+            this.UserNameRTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UserNameRTB.Name = "UserNameRTB";
-            this.UserNameRTB.Size = new System.Drawing.Size(178, 22);
+            this.UserNameRTB.Size = new System.Drawing.Size(143, 20);
             this.UserNameRTB.TabIndex = 17;
             this.UserNameRTB.TextChanged += new System.EventHandler(this.UserNameRTB_TextChanged);
             // 
             // LoginRTB
             // 
-            this.LoginRTB.Location = new System.Drawing.Point(191, 96);
+            this.LoginRTB.Location = new System.Drawing.Point(134, 52);
+            this.LoginRTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoginRTB.Name = "LoginRTB";
-            this.LoginRTB.Size = new System.Drawing.Size(178, 22);
+            this.LoginRTB.Size = new System.Drawing.Size(143, 20);
             this.LoginRTB.TabIndex = 18;
             // 
             // PasswordRTB
             // 
-            this.PasswordRTB.Location = new System.Drawing.Point(191, 130);
+            this.PasswordRTB.Location = new System.Drawing.Point(134, 76);
+            this.PasswordRTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PasswordRTB.Name = "PasswordRTB";
-            this.PasswordRTB.Size = new System.Drawing.Size(178, 22);
+            this.PasswordRTB.Size = new System.Drawing.Size(143, 20);
             this.PasswordRTB.TabIndex = 19;
             // 
             // RegistrationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 234);
+            this.ClientSize = new System.Drawing.Size(297, 129);
             this.Controls.Add(this.PasswordRTB);
             this.Controls.Add(this.LoginRTB);
             this.Controls.Add(this.UserNameRTB);
@@ -122,8 +133,9 @@
             this.Controls.Add(this.PasswordRLabel);
             this.Controls.Add(this.UserNameRLabel);
             this.Controls.Add(this.RegistrationLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RegistrationForm";
-            this.Text = "RegistrationForm";
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
