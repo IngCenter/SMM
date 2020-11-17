@@ -6,31 +6,35 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : Form
     {
-
-
-        
-
-
         string id = "0";
         public ArticleForm(string Id)
         {
             InitializeComponent();
 
             if (Program.CurrentUser == "ADMIN007")
+            {
                 textLabel.ReadOnly = false;
+                button2.Visible = true;
+            }
 
             id = Id;
             List<string> info = Program.Select("SELECT Title, Text, Topic, Tags, Author FROM Articles WHERE ID = " + id);
             nameLabel.Text = info[0];
             textLabel.Text = info[1];
 
-            /*Вариант ниже читаемее. Нет?
-             * if (Convert.ToBoolean(
+            /*
+             * Вариант ниже читаемее. Нет?
+            
+            if (Convert.ToBoolean(
                 Program.Select("SELECT * FROM Articles WHERE Title = '" + name + "' ORDER BY id DESC LIMIT 1")[8]
                 )
-            )*/
+            )
+
+            */
+
             //MarkDown. Даша, Марсель, тут страшно
-            if (Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0] == "1")
+            bool usemd = Convert.ToBoolean(Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0]);
+            if (usemd)
             {
                 // используем MarkDown
                 ConvertMdArticleToHtml(info[1]);
@@ -83,7 +87,7 @@ namespace WindowsFormsApp2
             Program.Insert(
                 "DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = " + id);
 
-            // Я убрал лайк
+            // Убрал лайк
             if (LikePB.Tag.ToString() == "not")
             {
                 LikePB.Image = Properties.Resources.LikeOff;
@@ -93,7 +97,7 @@ namespace WindowsFormsApp2
                     "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
                 // TODO: Картинку дизлайка тоже надо поменять
             }
-            // Я поставил лайк
+            // Поставил лайк
             else
             {
                 LikePB.Image = Properties.Resources.LikeOn;
@@ -114,7 +118,7 @@ namespace WindowsFormsApp2
         {
             Program.Insert("DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = " + id);
 
-            //Убрал дизлайк
+            // Убрал дизлайк
             if (DislikePB.Tag.ToString() == "not")
             {
                 DislikePB.Image = Properties.Resources.DisLikeOff;
@@ -123,7 +127,7 @@ namespace WindowsFormsApp2
                 Program.Insert(
                     "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
             }
-            //Поставил дизлайк
+            // Поставил дизлайк
             else
             {
                 DislikePB.Image = Properties.Resources.DisLikeOn;

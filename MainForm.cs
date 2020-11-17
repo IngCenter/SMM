@@ -37,7 +37,7 @@ namespace WindowsFormsApp2
             int y = 50;
             
             // Получаем 3 столбца
-            for (int i = 0; i < results.Count; i = i + 2)
+            for (int i = 0; i < results.Count; i += 2)
             {
                 // Для каждого комментария создаем лейбл:
                 Label lbl = new Label();
