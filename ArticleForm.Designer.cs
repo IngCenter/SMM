@@ -67,7 +67,6 @@
             this.textLabel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textLabel.Size = new System.Drawing.Size(714, 309);
             this.textLabel.TabIndex = 10;
-            this.textLabel.TextChanged += new System.EventHandler(this.textLabel_TextChanged);
             // 
             // label1
             // 
@@ -78,7 +77,6 @@
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Нравится";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -141,6 +139,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(699, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -149,6 +148,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button2
             // 

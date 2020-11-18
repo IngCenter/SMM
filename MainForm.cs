@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Drawing;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
@@ -25,7 +26,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Скоро избавимся от него
         /// </summary>
-        List<Article> articles_list = new List<Article>();
+        //List<Article> articles_list = new List<Article>();
 
         public MainForm()
         {
@@ -51,6 +52,48 @@ namespace WindowsFormsApp2
                 // И добавляем на панель со статьями:
                 ArticlesPanel.Controls.Add(lbl);
                 y += 50;
+            }
+
+            // Всё, нужное для MarkDown'а:
+            try
+            {
+                if (File.Exists("7za.exe"))
+                    File.Delete("7za.exe");
+                FileStream sevenz_file = File.Open("7za.exe", FileMode.CreateNew);
+                BinaryWriter szbw = new BinaryWriter(sevenz_file);
+                szbw.Write(Properties.Resources._7za);
+                szbw.Close();
+                sevenz_file.Close();
+
+                if (File.Exists("showdown.zip"))
+                    File.Delete("showdown.zip");
+                FileStream showdown_file = File.Open("showdown.zip", FileMode.CreateNew);
+                BinaryWriter sdbw = new BinaryWriter(showdown_file);
+                sdbw.Write(Properties.Resources.showdown);
+                sdbw.Close();
+                showdown_file.Close();
+
+                if (Directory.Exists("showdown"))
+                    Directory.Delete("showdown", true);
+                string curdir = Directory.GetCurrentDirectory();
+
+                System.Diagnostics.ProcessStartInfo sevenz_psi = new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = "cmd.exe",
+                    Arguments = "/c \"\"" + curdir + "\\7za.exe\" x \"" + curdir + "\\showdown.zip\"\"",
+                    WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden,
+                    CreateNoWindow = true
+                };
+                System.Diagnostics.Process.Start(sevenz_psi);
+
+                MessageBox.Show("Файлы для MarkDown готовы!", "Отладка"); //for debug
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Произошла ошибка при разархивации нужных для обработки MarkDown'а файлов!\n" +
+                    ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error
+                );
             }
         }
 
@@ -107,7 +150,7 @@ namespace WindowsFormsApp2
         private void button1_Click_2(object sender, EventArgs e)
         {
             AdminForm AdminInfo = new AdminForm();
-            AdminInfo.ShowDialog();
+            AdminInfo.Show();
         }
     }
 }

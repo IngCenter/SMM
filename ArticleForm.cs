@@ -7,7 +7,7 @@ namespace WindowsFormsApp2
     public partial class ArticleForm : Form
     {
         string id = "0";
-        public ArticleForm(string Id)
+        public ArticleForm(string Id, bool administrating = false)
         {
             InitializeComponent();
 
@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
 
             //MarkDown. Даша, Марсель, тут страшно
             bool usemd = Convert.ToBoolean(Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0]);
-            if (usemd)
+            if (usemd && !administrating)
             {
                 // используем MarkDown
                 ConvertMdArticleToHtml(info[1]);
@@ -42,16 +42,29 @@ namespace WindowsFormsApp2
                 mdWb.Location = new System.Drawing.Point(9, 60);
                 mdWb.Size = new System.Drawing.Size(714, 309);
                 mdWb.DocumentText = System.IO.File.ReadAllText("cache.html");
-                // TODO: Доделать, т.к. сейчас скрипт MarkDown'а не работает!
 
-                textLabel.Visible = false;
-                Controls.Add(mdWb);
+                if (
+                    MessageBox.Show(
+                        "Скорее всего, MarkDown-статья не сможет правильно обработаться встроенным в C# браузером.\n" +
+                        "Открыть статью в Вашем браузере?", "Вопрос",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Information
+                    ).ToString() == "No"
+                )
+                {
+                    textLabel.Visible = false;
+                    Controls.Add(mdWb);
+                }
+                else
+                {
+                    System.Diagnostics.Process.Start(
+                        "\"file:///" + System.IO.Directory.GetCurrentDirectory() +
+                        "\\cache.html\"");
+                }
             }
 
             // Количество лайков/дизлайков
             List<string> likes = Program.Select(
                 "SELECT IFNULL(SUM(Likes.Like), 0) FROM Likes WHERE Article = " + id);
-            // TODO: А как насчет вместо 1 чтобы была цифра соответственно названию статьи?
             label1.Text = likes[0];
 
             List<string> Dislikes = Program.Select(
@@ -94,8 +107,9 @@ namespace WindowsFormsApp2
                 LikePB.Tag = "like";
                 label1.Text = (Convert.ToInt32(label1.Text) - 1).ToString();
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
-                // TODO: Картинку дизлайка тоже надо поменять
+                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" +
+                    Program.CurrentUser + "', '" + id + "');"
+                );
             }
             // Поставил лайк
             else
@@ -104,7 +118,9 @@ namespace WindowsFormsApp2
                 LikePB.Tag = "not";
                 label1.Text = (Convert.ToInt32(label1.Text) + 1).ToString();
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('1', '0', '" + Program.CurrentUser + "', '" + id + "');");
+                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('1', '0', '" +
+                    Program.CurrentUser + "', '" + id + "');"
+                );
             }
         }
         
@@ -152,22 +168,21 @@ namespace WindowsFormsApp2
             sw.WriteLine("<meta charset='UTF-8' />");
             sw.WriteLine("</head>");
             sw.WriteLine("<body>");
-            sw.WriteLine("<div class='main-content'>");
-            sw.WriteLine(article_text);
-            sw.WriteLine("</div>");
-            sw.WriteLine("<script src='showdown/dist/showdown.min.js'></script>");
+            sw.WriteLine("<div id='main-content'></div>");
+            sw.WriteLine(
+                "<script src='file:///" + System.IO.Directory.GetCurrentDirectory() +
+                "/showdown/dist/showdown.min.js'></script>"
+            );
             sw.WriteLine("<script>");
-            sw.WriteLine("var mdtext = document.getElementByClassName('main-content')[0];");
-            sw.WriteLine("mdtext.innerHTML = new showdown.Converter().makeHtml(mdtext.innerHTML);");
+            sw.WriteLine("var article_text = `");
+            sw.WriteLine(article_text.Replace("`", "\\`"));
+            sw.WriteLine("`");
+            sw.WriteLine("var mdtext = document.getElementById('main-content');");
+            sw.WriteLine("mdtext.innerHTML = new showdown.Converter().makeHtml(article_text);");
             sw.WriteLine("</script>");
             sw.WriteLine("</body>");
             sw.WriteLine("</html>");
             sw.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -176,12 +191,11 @@ namespace WindowsFormsApp2
                 " SET name = '" + textLabel.Text + "'" + 
                 " WHERE Id = '" + id + "'");
             MessageBox.Show("Обновлено");
-
         }
 
-        private void textLabel_TextChanged(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            new PictureForm(id).ShowDialog();
         }
     }
 }

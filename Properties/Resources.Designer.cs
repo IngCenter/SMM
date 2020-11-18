@@ -61,6 +61,16 @@ namespace WindowsFormsApp2.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] _7za {
+            get {
+                object obj = ResourceManager.GetObject("_7za", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Comm {
@@ -117,6 +127,16 @@ namespace WindowsFormsApp2.Properties {
             get {
                 object obj = ResourceManager.GetObject("renderforest_300x600", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] showdown {
+            get {
+                object obj = ResourceManager.GetObject("showdown", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

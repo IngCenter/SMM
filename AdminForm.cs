@@ -45,7 +45,7 @@ namespace WindowsFormsApp2
             dataGridView2.Rows.Clear();
 
             List<string> commentsData =
-                Program.Select("SELECT Id, Author, ArticleId, Text, IFNULL(DT, 17-11-2020) As DT FROM Comments");
+                Program.Select("SELECT Id, Author, ArticleId, Text, IFNULL(DT, '17-11-2020') As DT FROM Comments");
 
             for (int i = 0; i < commentsData.Count; i += 5)
             {
@@ -88,7 +88,7 @@ namespace WindowsFormsApp2
                 int selectedArticleId = Convert.ToInt32(((DataGridView)sender).Rows[e.RowIndex].Cells[2].Value);
 
                 if (e.ColumnIndex == 0)
-                    new ArticleForm(selectedArticleId.ToString()).Show();
+                    new ArticleForm(selectedArticleId.ToString(), true).Show();
 
                 if (e.ColumnIndex == 1)
                 {
