@@ -31,27 +31,9 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
-            // Список всех статей (и не надо тут долбаные 9 столбцов)
-            List<string> results = Program.Select("SELECT ID, Title FROM Articles");            
 
-            int y = 50;
             
-            // Получаем 3 столбца
-            for (int i = 0; i < results.Count; i = i + 2)
-            {
-                // Для каждого комментария создаем лейбл:
-                Label lbl = new Label();
-                lbl.AutoSize = true;
-                // Чтобы оно открылось в новом окне, сохраняем текст и описание:
-                lbl.Text = results[i + 1];
-                lbl.AccessibleDescription = results[i];
-                lbl.Click += new EventHandler(openArticle);
-                lbl.Location = new Point(30, y);
-                lbl.Size = new Size(500, 30);
-                // И добавляем на панель со статьями:
-                ArticlesPanel.Controls.Add(lbl);
-                y += 50;
-            }
+            
         }
 
         /// <summary>
@@ -108,6 +90,38 @@ namespace WindowsFormsApp2
         {
             AdminForm AdminInfo = new AdminForm();
             AdminInfo.ShowDialog();
+        }
+
+        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string command = "SELECT ID, Title  FROM Articles WHERE 1";
+            if (FilterTB.Text != "")
+                command += " AND Tags LIKE '%" + FilterTB.Text + "%'";
+            int y = 50;
+            List<string> results = Program.Select(command);
+            // Получаем 3 столбца
+            // Список всех статей (и не надо тут долбаные 9 столбцов)
+
+            for (int i = 0; i < results.Count; i = i + 2)
+            {
+                // Для каждого комментария создаем лейбл:
+                Label lbl = new Label();
+                lbl.AutoSize = true;
+                // Чтобы оно открылось в новом окне, сохраняем текст и описание:
+                lbl.Text = results[i + 1];
+                lbl.AccessibleDescription = results[i];
+                lbl.Click += new EventHandler(openArticle);
+                lbl.Location = new Point(30, y);
+                lbl.Size = new Size(500, 30);
+                // И добавляем на панель со статьями:
+                ArticlesPanel.Controls.Add(lbl);
+                y += 50;
+            }
         }
 
         private void SignInLabel_Click(object sender, EventArgs e)

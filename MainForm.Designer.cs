@@ -41,6 +41,8 @@ namespace WindowsFormsApp2
             this.AdminButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.UserInfoButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.FilterTB = new System.Windows.Forms.TextBox();
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,12 +52,15 @@ namespace WindowsFormsApp2
             // ArticlesPanel
             // 
             this.ArticlesPanel.AutoScroll = true;
+            this.ArticlesPanel.Controls.Add(this.FilterTB);
+            this.ArticlesPanel.Controls.Add(this.button2);
             this.ArticlesPanel.Controls.Add(this.label3);
             this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArticlesPanel.Location = new System.Drawing.Point(220, 44);
             this.ArticlesPanel.Name = "ArticlesPanel";
             this.ArticlesPanel.Size = new System.Drawing.Size(864, 440);
             this.ArticlesPanel.TabIndex = 1;
+            this.ArticlesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ArticlesPanel_Paint);
             // 
             // label3
             // 
@@ -110,20 +115,17 @@ namespace WindowsFormsApp2
             // 
             this.SignInLabel.Location = new System.Drawing.Point(12, 12);
             this.SignInLabel.Name = "SignInLabel";
+            this.SignInLabel.Size = new System.Drawing.Size(313, 20);
+            this.SignInLabel.TabIndex = 2;
+            this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
+            // 
+            // SignInButton
+            // 
+            this.SignInButton.Location = new System.Drawing.Point(331, 3);
             this.SignInLabel.Size = new System.Drawing.Size(263, 20);
             this.SignInLabel.TabIndex = 2;
             this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
             this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
-            // 
-            // SignInButton
-            // 
-            this.SignInButton.Location = new System.Drawing.Point(281, 3);
-            this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(95, 38);
-            this.SignInButton.TabIndex = 3;
-            this.SignInButton.Text = "Войти?";
-            this.SignInButton.UseVisualStyleBackColor = true;
-            this.SignInButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // AuthPanel
             // 
@@ -140,7 +142,7 @@ namespace WindowsFormsApp2
             // 
             // AdminButton
             // 
-            this.AdminButton.Location = new System.Drawing.Point(473, 3);
+            this.AdminButton.Location = new System.Drawing.Point(523, 3);
             this.AdminButton.Name = "AdminButton";
             this.AdminButton.Size = new System.Drawing.Size(221, 38);
             this.AdminButton.TabIndex = 5;
@@ -151,7 +153,7 @@ namespace WindowsFormsApp2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(473, 3);
+            this.button1.Location = new System.Drawing.Point(523, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(221, 38);
             this.button1.TabIndex = 5;
@@ -161,7 +163,7 @@ namespace WindowsFormsApp2
             // 
             // UserInfoButton
             // 
-            this.UserInfoButton.Location = new System.Drawing.Point(281, 3);
+            this.UserInfoButton.Location = new System.Drawing.Point(331, 3);
             this.UserInfoButton.Name = "UserInfoButton";
             this.UserInfoButton.Size = new System.Drawing.Size(186, 38);
             this.UserInfoButton.TabIndex = 4;
@@ -169,6 +171,23 @@ namespace WindowsFormsApp2
             this.UserInfoButton.UseVisualStyleBackColor = true;
             this.UserInfoButton.Visible = false;
             this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(597, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(82, 31);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Поиск";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // FilterTB
+            // 
+            this.FilterTB.Location = new System.Drawing.Point(229, 3);
+            this.FilterTB.Name = "FilterTB";
+            this.FilterTB.Size = new System.Drawing.Size(362, 30);
+            this.FilterTB.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -183,6 +202,7 @@ namespace WindowsFormsApp2
             this.Name = "MainForm";
             this.Text = "Кликни, чтобы открыть статью";
             this.ArticlesPanel.ResumeLayout(false);
+            this.ArticlesPanel.PerformLayout();
             this.AdvertismentPanel.ResumeLayout(false);
             this.AdvertismentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -194,7 +214,6 @@ namespace WindowsFormsApp2
         #endregion
 
         private System.Windows.Forms.Panel ArticlesPanel;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel AdvertismentPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
@@ -205,5 +224,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button UserInfoButton;
         private System.Windows.Forms.Button AdminButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox FilterTB;
     }
 }
