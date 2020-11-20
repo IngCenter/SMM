@@ -31,29 +31,7 @@ namespace WindowsFormsApp2
         public MainForm()
         {
             InitializeComponent();
-
-            // Список всех статей (и не надо тут долбаные 9 столбцов)
-            List<string> results = Program.Select("SELECT ID, Title FROM Articles");            
-
-            int y = 50;
-            
-            // Получаем 3 столбца
-            for (int i = 0; i < results.Count; i += 2)
-            {
-                // Для каждого комментария создаем лейбл:
-                Label lbl = new Label();
-                lbl.AutoSize = true;
-                // Чтобы оно открылось в новом окне, сохраняем текст и описание:
-                lbl.Text = results[i + 1];
-                lbl.AccessibleDescription = results[i];
-                lbl.Click += new EventHandler(openArticle);
-                lbl.Location = new Point(30, y);
-                lbl.Size = new Size(500, 30);
-                // И добавляем на панель со статьями:
-                ArticlesPanel.Controls.Add(lbl);
-                y += 50;
-            }
-
+           
             // Всё, нужное для MarkDown'а:
             try
             {
@@ -151,6 +129,47 @@ namespace WindowsFormsApp2
         {
             AdminForm AdminInfo = new AdminForm();
             AdminInfo.Show();
+        }
+
+        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void getArticlesByFilter(object sender, EventArgs e)
+        {
+            string command = "SELECT ID, Title  FROM Articles WHERE 1";
+            if (FilterTB.Text != "")
+                command += " AND Tags LIKE '%" + FilterTB.Text + "%'";
+
+            //Очищаем старые статьи
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(filterPanel);
+
+            int y = 100;
+            List<string> results = Program.Select(command);
+            
+            //Добавляем новые статьи
+            for (int i = 0; i < results.Count; i = i + 2)
+            {
+                // Для каждого комментария создаем лейбл:
+                Label lbl = new Label();
+                lbl.AutoSize = true;
+                // Чтобы оно открылось в новом окне, сохраняем текст и описание:
+                lbl.Text = results[i + 1];
+                lbl.AccessibleDescription = results[i];
+                lbl.Click += new EventHandler(openArticle);
+                lbl.Location = new Point(30, y);
+                lbl.Size = new Size(500, 30);
+                // И добавляем на панель со статьями:
+                ArticlesPanel.Controls.Add(lbl);
+                y += 50;
+            }
+        }
+
+        private void SignInLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -40,5 +40,15 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void LoginLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

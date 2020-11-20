@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -7,30 +7,26 @@ namespace WindowsFormsApp2
     public partial class ArticleForm : Form
     {
         string id = "0";
+        
         public ArticleForm(string Id, bool administrating = false)
         {
+            id = Id;
             InitializeComponent();
 
             if (Program.CurrentUser == "ADMIN007")
             {
+                SaveButton.Visible = true;
+                textLabel.Enabled = true;
                 textLabel.ReadOnly = false;
-                button2.Visible = true;
             }
-
-            id = Id;
+            else 
+            { 
+                textLabel.ReadOnly = true;
+                SaveButton.Visible = false;
+            }
             List<string> info = Program.Select("SELECT Title, Text, Topic, Tags, Author FROM Articles WHERE ID = " + id);
             nameLabel.Text = info[0];
             textLabel.Text = info[1];
-
-            /*
-             * Вариант ниже читаемее. Нет?
-            
-            if (Convert.ToBoolean(
-                Program.Select("SELECT * FROM Articles WHERE Title = '" + name + "' ORDER BY id DESC LIMIT 1")[8]
-                )
-            )
-
-            */
 
             //MarkDown. Даша, Марсель, тут страшно
             bool usemd = Convert.ToBoolean(Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0]);
@@ -62,9 +58,11 @@ namespace WindowsFormsApp2
                 }
             }
 
+
             // Количество лайков/дизлайков
             List<string> likes = Program.Select(
                 "SELECT IFNULL(SUM(Likes.Like), 0) FROM Likes WHERE Article = " + id);
+            // TODO: А как насчет вместо 1 чтобы была цифра соответственно названию статьи?
             label1.Text = likes[0];
 
             List<string> Dislikes = Program.Select(
@@ -100,27 +98,24 @@ namespace WindowsFormsApp2
             Program.Insert(
                 "DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = " + id);
 
-            // Убрал лайк
+            // Я убрал лайк
             if (LikePB.Tag.ToString() == "not")
             {
                 LikePB.Image = Properties.Resources.LikeOff;
                 LikePB.Tag = "like";
                 label1.Text = (Convert.ToInt32(label1.Text) - 1).ToString();
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" +
-                    Program.CurrentUser + "', '" + id + "');"
-                );
+                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
+                // TODO: Картинку дизлайка тоже надо поменять
             }
-            // Поставил лайк
+            // Я поставил лайк
             else
             {
                 LikePB.Image = Properties.Resources.LikeOn;
                 LikePB.Tag = "not";
                 label1.Text = (Convert.ToInt32(label1.Text) + 1).ToString();
                 Program.Insert(
-                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('1', '0', '" +
-                    Program.CurrentUser + "', '" + id + "');"
-                );
+                    "INSERT INTO Likes(`Like`, `DisLike`, User, Article) VALUES('1', '0', '" + Program.CurrentUser + "', '" + id + "');");
             }
         }
         
@@ -134,7 +129,7 @@ namespace WindowsFormsApp2
         {
             Program.Insert("DELETE FROM Likes WHERE User = '" + Program.CurrentUser + "' AND Article = " + id);
 
-            // Убрал дизлайк
+            //Убрал дизлайк
             if (DislikePB.Tag.ToString() == "not")
             {
                 DislikePB.Image = Properties.Resources.DisLikeOff;
@@ -143,7 +138,7 @@ namespace WindowsFormsApp2
                 Program.Insert(
                     "INSERT INTO Likes(`Like`, `Dislike`, User, Article) VALUES('0', '0', '" + Program.CurrentUser + "', '" + id + "');");
             }
-            // Поставил дизлайк
+            //Поставил дизлайк
             else
             {
                 DislikePB.Image = Properties.Resources.DisLikeOn;
@@ -187,8 +182,8 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.Insert("UPDATE Articles" +  
-                " SET name = '" + textLabel.Text + "'" + 
+            Program.Insert("UPDATE Articles" +
+                " SET name = '" + textLabel.Text + "'" +
                 " WHERE Id = '" + id + "'");
             MessageBox.Show("Обновлено");
         }
