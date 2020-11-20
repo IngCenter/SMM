@@ -69,6 +69,7 @@
             this.LoginLabel.Size = new System.Drawing.Size(55, 18);
             this.LoginLabel.TabIndex = 5;
             this.LoginLabel.Text = "Логин";
+            this.LoginLabel.Click += new System.EventHandler(this.LoginLabel_Click);
             // 
             // PasswordLabel
             // 
@@ -100,6 +101,7 @@
             this.LoginTB.Name = "LoginTB";
             this.LoginTB.Size = new System.Drawing.Size(198, 22);
             this.LoginTB.TabIndex = 8;
+            this.LoginTB.TextChanged += new System.EventHandler(this.LoginTB_TextChanged);
             // 
             // PasswordMTB
             // 

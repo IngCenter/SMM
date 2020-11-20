@@ -17,8 +17,11 @@ namespace WindowsFormsApp2
             InitializeComponent();
 
             if (Program.CurrentUser == "ADMIN007")
+            {
+                button2.Visible = true;
+                textLabel.Enabled = true;
                 textLabel.ReadOnly = false;
-
+            }
             id = Id;
             List<string> info = Program.Select("SELECT Title, Text, Topic, Tags, Author FROM Articles WHERE ID = " + id);
             nameLabel.Text = info[0];
@@ -169,7 +172,7 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             Program.Insert("UPDATE Articles" +  
-                " SET name = '" + textLabel.Text + "'" + 
+                " SET text = '" + textLabel.Text + "'" + 
                 " WHERE Id = '" + id + "'");
             MessageBox.Show("Обновлено");
 

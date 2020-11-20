@@ -58,5 +58,15 @@ namespace WindowsFormsApp2
             AddComment acForm = new AddComment();
             acForm.ShowDialog();
         }
+
+        private void CommLable_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Comments_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

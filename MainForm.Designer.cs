@@ -33,6 +33,7 @@ namespace WindowsFormsApp2
             this.label3 = new System.Windows.Forms.Label();
             this.AdvertismentPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SignInLabel = new System.Windows.Forms.Label();
             this.SignInButton = new System.Windows.Forms.Button();
@@ -40,11 +41,10 @@ namespace WindowsFormsApp2
             this.AdminButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.UserInfoButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ArticlesPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
-            this.AuthPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.AuthPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ArticlesPanel
@@ -84,9 +84,22 @@ namespace WindowsFormsApp2
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(1, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Реклама";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.renderforest_300x600;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 440);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // timer1
             // 
@@ -100,6 +113,7 @@ namespace WindowsFormsApp2
             this.SignInLabel.Size = new System.Drawing.Size(263, 20);
             this.SignInLabel.TabIndex = 2;
             this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
+            this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
             // 
             // SignInButton
             // 
@@ -156,22 +170,9 @@ namespace WindowsFormsApp2
             this.UserInfoButton.Visible = false;
             this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.renderforest_300x600;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 440);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 484);
             this.Controls.Add(this.ArticlesPanel);
@@ -184,8 +185,8 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.ResumeLayout(false);
             this.AdvertismentPanel.ResumeLayout(false);
             this.AdvertismentPanel.PerformLayout();
-            this.AuthPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.AuthPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
