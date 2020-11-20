@@ -6,32 +6,28 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : Form
     {
-
-
-        
-
-
         string id = "0";
+        
         public ArticleForm(string Id)
         {
+            id = Id;
             InitializeComponent();
 
-            if (Program.CurrentUser == "ADMIN007") { 
+            if (Program.CurrentUser == "ADMIN007")
+            {
+                SaveButton.Visible = true;
+                textLabel.Enabled = true;
                 textLabel.ReadOnly = false;
-                 SaveButton.Visible =true ;}
-            else { textLabel.ReadOnly = true;
+            }
+            else 
+            { 
+                textLabel.ReadOnly = true;
                 SaveButton.Visible = false;
             }
-            id = Id;
             List<string> info = Program.Select("SELECT Title, Text, Topic, Tags, Author FROM Articles WHERE ID = " + id);
             nameLabel.Text = info[0];
             textLabel.Text = info[1];
 
-            /*Вариант ниже читаемее. Нет?
-             * if (Convert.ToBoolean(
-                Program.Select("SELECT * FROM Articles WHERE Title = '" + name + "' ORDER BY id DESC LIMIT 1")[8]
-                )
-            )*/
             //MarkDown. Даша, Марсель, тут страшно
             if (Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0] == "1")
             {

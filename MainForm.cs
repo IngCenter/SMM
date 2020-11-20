@@ -123,5 +123,10 @@ namespace WindowsFormsApp2
                 y += 50;
             }
         }
+
+        private void SignInLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

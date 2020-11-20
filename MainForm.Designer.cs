@@ -30,6 +30,7 @@ namespace WindowsFormsApp2
         {
             this.components = new System.ComponentModel.Container();
             this.ArticlesPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.AdvertismentPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,12 +54,24 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.AutoScroll = true;
             this.ArticlesPanel.Controls.Add(this.FilterTB);
             this.ArticlesPanel.Controls.Add(this.button2);
+            this.ArticlesPanel.Controls.Add(this.label3);
             this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArticlesPanel.Location = new System.Drawing.Point(220, 44);
             this.ArticlesPanel.Name = "ArticlesPanel";
             this.ArticlesPanel.Size = new System.Drawing.Size(864, 440);
             this.ArticlesPanel.TabIndex = 1;
             this.ArticlesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ArticlesPanel_Paint);
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(864, 32);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Все статьи";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // AdvertismentPanel
             // 
@@ -109,12 +122,10 @@ namespace WindowsFormsApp2
             // SignInButton
             // 
             this.SignInButton.Location = new System.Drawing.Point(331, 3);
-            this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(95, 38);
-            this.SignInButton.TabIndex = 3;
-            this.SignInButton.Text = "Войти?";
-            this.SignInButton.UseVisualStyleBackColor = true;
-            this.SignInButton.Click += new System.EventHandler(this.button2_Click);
+            this.SignInLabel.Size = new System.Drawing.Size(263, 20);
+            this.SignInLabel.TabIndex = 2;
+            this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
+            this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
             // 
             // AuthPanel
             // 
