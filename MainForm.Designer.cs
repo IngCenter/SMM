@@ -30,7 +30,11 @@ namespace WindowsFormsApp2
         {
             this.components = new System.ComponentModel.Container();
             this.ArticlesPanel = new System.Windows.Forms.Panel();
+            this.filterPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FilterTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.findButton = new System.Windows.Forms.Button();
             this.AdvertismentPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,9 +45,8 @@ namespace WindowsFormsApp2
             this.AdminButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.UserInfoButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.FilterTB = new System.Windows.Forms.TextBox();
             this.ArticlesPanel.SuspendLayout();
+            this.filterPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AuthPanel.SuspendLayout();
@@ -52,9 +55,7 @@ namespace WindowsFormsApp2
             // ArticlesPanel
             // 
             this.ArticlesPanel.AutoScroll = true;
-            this.ArticlesPanel.Controls.Add(this.FilterTB);
-            this.ArticlesPanel.Controls.Add(this.button2);
-            this.ArticlesPanel.Controls.Add(this.label3);
+            this.ArticlesPanel.Controls.Add(this.filterPanel);
             this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArticlesPanel.Location = new System.Drawing.Point(220, 44);
             this.ArticlesPanel.Name = "ArticlesPanel";
@@ -62,16 +63,55 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.TabIndex = 1;
             this.ArticlesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ArticlesPanel_Paint);
             // 
+            // filterPanel
+            // 
+            this.filterPanel.Controls.Add(this.label1);
+            this.filterPanel.Controls.Add(this.FilterTB);
+            this.filterPanel.Controls.Add(this.label3);
+            this.filterPanel.Controls.Add(this.findButton);
+            this.filterPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.filterPanel.Location = new System.Drawing.Point(0, 0);
+            this.filterPanel.Name = "filterPanel";
+            this.filterPanel.Size = new System.Drawing.Size(864, 73);
+            this.filterPanel.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Теги";
+            // 
+            // FilterTB
+            // 
+            this.FilterTB.Location = new System.Drawing.Point(66, 35);
+            this.FilterTB.Name = "FilterTB";
+            this.FilterTB.Size = new System.Drawing.Size(362, 30);
+            this.FilterTB.TabIndex = 2;
+            // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(864, 32);
+            this.label3.Size = new System.Drawing.Size(782, 32);
             this.label3.TabIndex = 0;
             this.label3.Text = "Все статьи";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // findButton
+            // 
+            this.findButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.findButton.Location = new System.Drawing.Point(782, 0);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(82, 73);
+            this.findButton.TabIndex = 1;
+            this.findButton.Text = "Поиск";
+            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.Click += new System.EventHandler(this.getArticlesByFilter);
             // 
             // AdvertismentPanel
             // 
@@ -115,17 +155,19 @@ namespace WindowsFormsApp2
             // 
             this.SignInLabel.Location = new System.Drawing.Point(12, 12);
             this.SignInLabel.Name = "SignInLabel";
-            this.SignInLabel.Size = new System.Drawing.Size(313, 20);
-            this.SignInLabel.TabIndex = 2;
-            this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
-            // 
-            // SignInButton
-            // 
-            this.SignInButton.Location = new System.Drawing.Point(331, 3);
             this.SignInLabel.Size = new System.Drawing.Size(263, 20);
             this.SignInLabel.TabIndex = 2;
             this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
             this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
+            // 
+            // SignInButton
+            // 
+            this.SignInButton.Location = new System.Drawing.Point(331, 3);
+            this.SignInButton.Name = "SignInButton";
+            this.SignInButton.Size = new System.Drawing.Size(81, 35);
+            this.SignInButton.TabIndex = 6;
+            this.SignInButton.Text = "Войти";
+            this.SignInButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // AuthPanel
             // 
@@ -172,23 +214,6 @@ namespace WindowsFormsApp2
             this.UserInfoButton.Visible = false;
             this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(597, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 31);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Поиск";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // FilterTB
-            // 
-            this.FilterTB.Location = new System.Drawing.Point(229, 3);
-            this.FilterTB.Name = "FilterTB";
-            this.FilterTB.Size = new System.Drawing.Size(362, 30);
-            this.FilterTB.TabIndex = 2;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -202,7 +227,8 @@ namespace WindowsFormsApp2
             this.Name = "MainForm";
             this.Text = "Кликни, чтобы открыть статью";
             this.ArticlesPanel.ResumeLayout(false);
-            this.ArticlesPanel.PerformLayout();
+            this.filterPanel.ResumeLayout(false);
+            this.filterPanel.PerformLayout();
             this.AdvertismentPanel.ResumeLayout(false);
             this.AdvertismentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -216,6 +242,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Panel ArticlesPanel;
         private System.Windows.Forms.Panel AdvertismentPanel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel AuthPanel;
@@ -224,7 +251,9 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button UserInfoButton;
         private System.Windows.Forms.Button AdminButton;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.TextBox FilterTB;
+        private System.Windows.Forms.Panel filterPanel;
+        private System.Windows.Forms.Label label1;
     }
 }

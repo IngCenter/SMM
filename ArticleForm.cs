@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -8,7 +8,7 @@ namespace WindowsFormsApp2
     {
         string id = "0";
         
-        public ArticleForm(string Id)
+        public ArticleForm(string Id, bool administrating = false)
         {
             id = Id;
             InitializeComponent();
@@ -29,7 +29,8 @@ namespace WindowsFormsApp2
             textLabel.Text = info[1];
 
             //MarkDown. Даша, Марсель, тут страшно
-            if (Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0] == "1")
+            bool usemd = Convert.ToBoolean(Program.Select("SELECT UseMarkDown FROM Articles WHERE ID = " + id)[0]);
+            if (usemd && !administrating)
             {
                 // используем MarkDown
                 ConvertMdArticleToHtml(info[1]);
@@ -37,11 +38,26 @@ namespace WindowsFormsApp2
                 mdWb.Location = new System.Drawing.Point(9, 60);
                 mdWb.Size = new System.Drawing.Size(714, 309);
                 mdWb.DocumentText = System.IO.File.ReadAllText("cache.html");
-                // TODO: Доделать, т.к. сейчас скрипт MarkDown'а не работает!
 
-                textLabel.Visible = false;
-                Controls.Add(mdWb);
+                if (
+                    MessageBox.Show(
+                        "Скорее всего, MarkDown-статья не сможет правильно обработаться встроенным в C# браузером.\n" +
+                        "Открыть статью в Вашем браузере?", "Вопрос",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Information
+                    ).ToString() == "No"
+                )
+                {
+                    textLabel.Visible = false;
+                    Controls.Add(mdWb);
+                }
+                else
+                {
+                    System.Diagnostics.Process.Start(
+                        "\"file:///" + System.IO.Directory.GetCurrentDirectory() +
+                        "\\cache.html\"");
+                }
             }
+
 
             // Количество лайков/дизлайков
             List<string> likes = Program.Select(
@@ -147,36 +163,34 @@ namespace WindowsFormsApp2
             sw.WriteLine("<meta charset='UTF-8' />");
             sw.WriteLine("</head>");
             sw.WriteLine("<body>");
-            sw.WriteLine("<div class='main-content'>");
-            sw.WriteLine(article_text);
-            sw.WriteLine("</div>");
-            sw.WriteLine("<script src='showdown/dist/showdown.min.js'></script>");
+            sw.WriteLine("<div id='main-content'></div>");
+            sw.WriteLine(
+                "<script src='file:///" + System.IO.Directory.GetCurrentDirectory() +
+                "/showdown/dist/showdown.min.js'></script>"
+            );
             sw.WriteLine("<script>");
-            sw.WriteLine("var mdtext = document.getElementByClassName('main-content')[0];");
-            sw.WriteLine("mdtext.innerHTML = new showdown.Converter().makeHtml(mdtext.innerHTML);");
+            sw.WriteLine("var article_text = `");
+            sw.WriteLine(article_text.Replace("`", "\\`"));
+            sw.WriteLine("`");
+            sw.WriteLine("var mdtext = document.getElementById('main-content');");
+            sw.WriteLine("mdtext.innerHTML = new showdown.Converter().makeHtml(article_text);");
             sw.WriteLine("</script>");
             sw.WriteLine("</body>");
             sw.WriteLine("</html>");
             sw.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.Insert("UPDATE Articles" +  
-                " SET text = '" + textLabel.Text + "'" + 
+            Program.Insert("UPDATE Articles" +
+                " SET name = '" + textLabel.Text + "'" +
                 " WHERE Id = '" + id + "'");
             MessageBox.Show("Обновлено");
-
         }
 
-        private void textLabel_TextChanged(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            new PictureForm(id).ShowDialog();
         }
     }
 }

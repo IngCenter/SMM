@@ -19,7 +19,6 @@ namespace WindowsFormsApp2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
             string connString =
                 "Server = VH287.spaceweb.ru; Database = beavisabra_gazet;" +
                 "port = 3306; User Id = beavisabra_gazet; password = Beavis1989";
@@ -38,7 +37,6 @@ namespace WindowsFormsApp2
 
             //Выполнить команду
             command.ExecuteNonQuery();
-
         }
 
         /// <summary>
@@ -60,13 +58,13 @@ namespace WindowsFormsApp2
 
             while (reader.Read())
             {
-                //Предполагается, что в запросе 1 столбец, и в нем картинка
+                // Предполагается, что в запросе 1 столбец, и в нем картинка
                 byte[] data = (byte[])reader.GetValue(0);
                 try
                 {
                     MemoryStream ms = new MemoryStream(data, 0, data.Length);
                     ms.Write(data, 0, data.Length);
-                    img = Image.FromStream(ms, true);//Конвертируем в картинку
+                    img = Image.FromStream(ms, true); // Конвертируем в картинку
                 }
                 catch { }
             }
