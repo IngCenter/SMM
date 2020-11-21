@@ -43,8 +43,9 @@ namespace WindowsFormsApp2
             this.SignInButton = new System.Windows.Forms.Button();
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.AdminButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.UserInfoButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ArticlesPanel.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.AdvertismentPanel.SuspendLayout();
@@ -65,6 +66,8 @@ namespace WindowsFormsApp2
             // 
             // filterPanel
             // 
+            this.filterPanel.Controls.Add(this.comboBox1);
+            this.filterPanel.Controls.Add(this.label4);
             this.filterPanel.Controls.Add(this.label1);
             this.filterPanel.Controls.Add(this.FilterTB);
             this.filterPanel.Controls.Add(this.label3);
@@ -72,7 +75,7 @@ namespace WindowsFormsApp2
             this.filterPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.filterPanel.Location = new System.Drawing.Point(0, 0);
             this.filterPanel.Name = "filterPanel";
-            this.filterPanel.Size = new System.Drawing.Size(864, 73);
+            this.filterPanel.Size = new System.Drawing.Size(864, 61);
             this.filterPanel.TabIndex = 3;
             // 
             // label1
@@ -86,18 +89,18 @@ namespace WindowsFormsApp2
             // 
             // FilterTB
             // 
-            this.FilterTB.Location = new System.Drawing.Point(66, 35);
+            this.FilterTB.Location = new System.Drawing.Point(66, 27);
             this.FilterTB.Name = "FilterTB";
-            this.FilterTB.Size = new System.Drawing.Size(362, 30);
+            this.FilterTB.Size = new System.Drawing.Size(339, 30);
             this.FilterTB.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(782, 32);
+            this.label3.Size = new System.Drawing.Size(777, 37);
             this.label3.TabIndex = 0;
             this.label3.Text = "Все статьи";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -105,9 +108,9 @@ namespace WindowsFormsApp2
             // findButton
             // 
             this.findButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.findButton.Location = new System.Drawing.Point(782, 0);
+            this.findButton.Location = new System.Drawing.Point(777, 0);
             this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(82, 73);
+            this.findButton.Size = new System.Drawing.Size(87, 61);
             this.findButton.TabIndex = 1;
             this.findButton.Text = "Поиск";
             this.findButton.UseVisualStyleBackColor = true;
@@ -155,7 +158,7 @@ namespace WindowsFormsApp2
             // 
             this.SignInLabel.Location = new System.Drawing.Point(12, 12);
             this.SignInLabel.Name = "SignInLabel";
-            this.SignInLabel.Size = new System.Drawing.Size(263, 20);
+            this.SignInLabel.Size = new System.Drawing.Size(292, 29);
             this.SignInLabel.TabIndex = 2;
             this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
             this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
@@ -172,7 +175,6 @@ namespace WindowsFormsApp2
             // AuthPanel
             // 
             this.AuthPanel.Controls.Add(this.AdminButton);
-            this.AuthPanel.Controls.Add(this.button1);
             this.AuthPanel.Controls.Add(this.UserInfoButton);
             this.AuthPanel.Controls.Add(this.SignInButton);
             this.AuthPanel.Controls.Add(this.SignInLabel);
@@ -186,22 +188,12 @@ namespace WindowsFormsApp2
             // 
             this.AdminButton.Location = new System.Drawing.Point(523, 3);
             this.AdminButton.Name = "AdminButton";
-            this.AdminButton.Size = new System.Drawing.Size(221, 38);
+            this.AdminButton.Size = new System.Drawing.Size(558, 38);
             this.AdminButton.TabIndex = 5;
             this.AdminButton.Text = "Администрирование";
             this.AdminButton.UseVisualStyleBackColor = true;
             this.AdminButton.Visible = false;
             this.AdminButton.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(523, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Администрирование";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // UserInfoButton
             // 
@@ -213,6 +205,27 @@ namespace WindowsFormsApp2
             this.UserInfoButton.UseVisualStyleBackColor = true;
             this.UserInfoButton.Visible = false;
             this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(411, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 25);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Темы";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Alpha;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Кухня"});
+            this.comboBox1.Location = new System.Drawing.Point(483, 24);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(270, 33);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -250,10 +263,11 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Button UserInfoButton;
         private System.Windows.Forms.Button AdminButton;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.TextBox FilterTB;
         private System.Windows.Forms.Panel filterPanel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }

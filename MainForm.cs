@@ -138,10 +138,12 @@ namespace WindowsFormsApp2
 
         private void getArticlesByFilter(object sender, EventArgs e)
         {
-            string command = "SELECT ID, Title  FROM Articles WHERE 1";
+            string command = "SELECT ID, Title FROM Articles WHERE 1";
+            
             if (FilterTB.Text != "")
                 command += " AND Tags LIKE '%" + FilterTB.Text + "%'";
-
+            if (comboBox1.Text != "")
+                command += " AND Topic ='" + comboBox1.Text + "'";
             //Очищаем старые статьи
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(filterPanel);
@@ -171,5 +173,15 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          //comboBox1.Items.Add = "SELECT Tag FROM Articles WHERE 1";
+        }
     }
-}
+} 
