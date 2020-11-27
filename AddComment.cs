@@ -26,5 +26,10 @@ namespace WindowsFormsApp2
              * параметаризованный запрос!!!!!!
              */
         }
+
+        private void AddComment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
