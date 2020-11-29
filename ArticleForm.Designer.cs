@@ -52,7 +52,7 @@
             this.nameLabel.Location = new System.Drawing.Point(11, 9);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(530, 49);
+            this.nameLabel.Size = new System.Drawing.Size(595, 49);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "label1";
             // 
@@ -151,9 +151,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(738, 5);
+            this.SaveButton.Location = new System.Drawing.Point(611, 11);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(168, 64);
+            this.SaveButton.Size = new System.Drawing.Size(83, 27);
             this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -165,8 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(734, 419);
-            this.ClientSize = new System.Drawing.Size(979, 516);
+            this.ClientSize = new System.Drawing.Size(732, 419);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DislikePB);

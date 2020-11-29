@@ -65,13 +65,14 @@ namespace WindowsFormsApp2
             dataGridView3.Rows.Clear();
 
             List<string> usersData =
-                Program.Select("SELECT Id, Login, Password, FIO, Year FROM Users");
+                Program.Select("SELECT Id, Login, Password, FIO, Year, Subscribers FROM Users");
 
-            for (int i = 0; i < usersData.Count; i += 5)
+            for (int i = 0; i < usersData.Count; i += 6)
             {
-                string[] userDataArr = new string[6]
+                string[] userDataArr = new string[7]
                 {
-                    "Удалить", usersData[i+0], usersData[i+1], usersData[i+2], usersData[i+3], usersData[i+4]
+                    "Удалить", usersData[i+0], usersData[i+1], usersData[i+2],
+                    usersData[i+3], usersData[i+4], usersData[i+5]
                 };
 
                 dataGridView3.Rows.Add(userDataArr);
