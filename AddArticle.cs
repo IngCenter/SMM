@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
@@ -25,9 +27,15 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             Program.Insert(
-                "INSERT INTO `Articles` (Title, Author, Tags, Topic, DT, UseMarkdown) VALUES ('" +
-                NameTB.Text + "', '" + Program.CurrentUser + "', '" + TagsTB.Text + "', '" + TopicTB.Text +
-                "', sysdate(), " + checkBox1.Checked + ")"
+                "INSERT INTO `Articles` (Title, Author, Tags, Topic, DT, UseMarkdown) " +
+                "VALUES (?heading, ?username, ?tags, ?topic, sysdate(), " + checkBox1.Checked + ")",
+                new List<MySqlParameter>()
+                {
+                    new MySqlParameter("heading", NameTB.Text),
+                    new MySqlParameter("username", Program.CurrentUser),
+                    new MySqlParameter("tags", TagsTB.Text),
+                    new MySqlParameter("topic", TopicTB.Text)
+                }
             );
             MessageBox.Show("Сохранено!");
         }

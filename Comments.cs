@@ -1,29 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
     public partial class Comments : Form
     {
         int articleId = -1;
-        public Comments(int _articleId = -1)
+        public Comments(int _articleId = -1, string _author = "")
         {
             InitializeComponent();
 
             articleId = _articleId;
-            List<string> results;
-            if (articleId != -1)
+            string sqlCommand = "";
+            List<string> results = null;
+
+            sqlCommand =
+            (
+                (articleId == -1) ?
+                "SELECT * FROM Comments WHERE 1" :
+                "SELECT * FROM Comments WHERE ArticleId = " + articleId.ToString()
+            );
+            
+            if (_author.Trim() != "")
             {
-                results = Program.Select("SELECT * FROM Comments");
+                comboBox1.Text = _author;
+                sqlCommand += " AND Author = ?author";
+                results = Program.Select(sqlCommand, new List<MySqlParameter>() {
+                    new MySqlParameter("author", _author)
+                });
             }
             else
             {
-                results = Program.Select(
-                    "SELECT * FROM Comments WHERE ArticleId = " + articleId.ToString());
+                results = Program.Select(sqlCommand);
             }
-
-            //int y = 50;
             
             for (int i = 0; i < results.Count; i = i + 5)
             {
@@ -47,26 +58,17 @@ namespace WindowsFormsApp2
             {
                 if (MessageBox.Show(
                     "При создании объекта Comments не был получен идентификатор статьи,\n" +
-                    "поэтому комментарий будет добавлен к первой статье (id=0).\n" + "Продолжить?",
+                    "поэтому комментарий будет добавлен к первой статье (id=1).\n" + "Продолжить?",
                     "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning
                     ).ToString() == "No"
                 )
                 {
                     return;
                 }
+                articleId = 1;
             }
-            AddComment acForm = new AddComment();
+            AddComment acForm = new AddComment(articleId);
             acForm.ShowDialog();
-        }
-
-        private void CommLable_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Comments_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

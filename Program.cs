@@ -30,12 +30,18 @@ namespace WindowsFormsApp2
             conn.Close();
         }
 
-        public static void Insert(string Text)
+        public static void Insert(string Text, List<MySqlParameter> sqlParams = null)
         {
-            //Создать команду
+            // Создать команду
             MySqlCommand command = new MySqlCommand(Text, conn);
 
-            //Выполнить команду
+            // Добавить параметры, если есть
+            if (sqlParams != null)
+                sqlParams.ForEach((MySqlParameter _sqlparam) => {
+                    command.Parameters.Add(_sqlparam);
+                });
+
+            // Выполнить команду
             command.ExecuteNonQuery();
         }
 
@@ -73,12 +79,18 @@ namespace WindowsFormsApp2
             return img;
         }
 
-        public static List<string> Select(string Text)
+        public static List<string> Select(string Text, List<MySqlParameter> sqlParams = null)
         {
             //Результат
             List<string> results = new List<string>();
             //Создать команду
             MySqlCommand command = new MySqlCommand(Text, conn);
+
+            // Добавить параметры, если есть
+            if (sqlParams != null)
+                sqlParams.ForEach((MySqlParameter _sqlparam) => {
+                    command.Parameters.Add(_sqlparam);
+                });
 
             //Выполнить команду
             DbDataReader reader = command.ExecuteReader();
@@ -88,7 +100,6 @@ namespace WindowsFormsApp2
                     results.Add(reader.GetValue(i).ToString());
             }
             reader.Close();
-           
 
             return results;
         }

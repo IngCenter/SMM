@@ -46,7 +46,6 @@
             this.SignInLabel.Size = new System.Drawing.Size(147, 17);
             this.SignInLabel.TabIndex = 0;
             this.SignInLabel.Text = "Выполните вход или ";
-            this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
             // 
             // SignInLLabel
             // 
@@ -69,7 +68,6 @@
             this.LoginLabel.Size = new System.Drawing.Size(55, 18);
             this.LoginLabel.TabIndex = 5;
             this.LoginLabel.Text = "Логин";
-            this.LoginLabel.Click += new System.EventHandler(this.LoginLabel_Click);
             // 
             // PasswordLabel
             // 
@@ -101,7 +99,6 @@
             this.LoginTB.Name = "LoginTB";
             this.LoginTB.Size = new System.Drawing.Size(198, 22);
             this.LoginTB.TabIndex = 8;
-            this.LoginTB.TextChanged += new System.EventHandler(this.LoginTB_TextChanged);
             // 
             // PasswordMTB
             // 
@@ -127,7 +124,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SignInForm";
             this.Text = "Вход";
-            this.Load += new System.EventHandler(this.SignInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

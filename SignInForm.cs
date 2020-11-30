@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
@@ -20,8 +13,11 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             Program.CurrentUser = LoginTB.Text;
+            /*
+            // Зачем личный кабинет открывать при входе?! (мешает)
             UserForm UserInfo = new UserForm();
             UserInfo.ShowDialog();
+            */
             Close();
         }
 
@@ -29,26 +25,6 @@ namespace WindowsFormsApp2
         {
             RegistrationForm Registration = new RegistrationForm();
             Registration.Show();
-        }
-
-        private void SignInLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SignInForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginTB_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

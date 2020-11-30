@@ -3,6 +3,7 @@ using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
@@ -23,14 +24,43 @@ namespace WindowsFormsApp2
 
     public partial class MainForm : Form
     {
-        /// <summary>
-        /// Скоро избавимся от него
-        /// </summary>
-        //List<Article> articles_list = new List<Article>();
-
+        public static bool disableAd = false;
         public MainForm()
         {
             InitializeComponent();
+            GetArticlesByFilter();
+
+            // Заполнение ComboBox'ов "теги", "тема" и "автор"
+            List<string> tags = Program.Select("SELECT Tags FROM Articles");
+            foreach (string tag in tags.ToArray())
+            {
+                string[] parts = tag.Split(new string[] { ", " }, StringSplitOptions.None);
+                foreach (string part in parts)
+                {
+                    if (!tags.Contains(part) && part.Trim() != "")
+                        tags.Add(part);
+                }
+            }
+            tags.Sort();
+            TagFilterBox.Items.Clear();
+            TagFilterBox.Items.Add("");
+            TagFilterBox.Items.AddRange(tags.ToArray());
+
+            TopicFilterBox.Items.Clear();
+            TopicFilterBox.Items.Add("");
+            Program.Select("SELECT DISTINCT Topic FROM Articles ORDER BY Topic").ForEach((string topic) =>
+            {
+                if (topic.Trim() != "")
+                    TopicFilterBox.Items.Add(topic);
+            });
+
+            AuthorFilterBox.Items.Clear();
+            AuthorFilterBox.Items.Add("");
+            Program.Select("SELECT DISTINCT Login FROM Users ORDER BY Login").ForEach((string author_name) =>
+            {
+                if (author_name.Trim() != "")
+                    AuthorFilterBox.Items.Add(author_name);
+            }); // DISTINCT - на всякий пожарный случай
            
             // Всё, нужное для MarkDown'а:
             try
@@ -78,7 +108,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Открываем статью в новом окне
         /// </summary>
-        public static void openArticle(object sender, EventArgs e)
+        public static void OpenArticle(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
             ArticleForm af = new ArticleForm(lbl.AccessibleDescription);
@@ -105,6 +135,10 @@ namespace WindowsFormsApp2
             // Отображение кнопки администрирования,
             // если пользователь администратор - ADMIN007
             AdminButton.Visible = (Program.CurrentUser == "ADMIN007");
+
+            // Отключаем рекламу в текущей "сессии", если того хочет Админ или DarkCat09 (Disabling Advert)
+            if (disableAd)
+                Controls.Remove(AdvertistingPanel);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -120,7 +154,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //И вот сюда личный кабинет вместо войти
+            // И вот сюда личный кабинет вместо войти
             UserForm UserInfo = new UserForm();
             UserInfo.ShowDialog();
         }
@@ -131,28 +165,33 @@ namespace WindowsFormsApp2
             AdminInfo.Show();
         }
 
-        private void ArticlesPanel_Paint(object sender, PaintEventArgs e)
+        private void GetArticlesByFilter(string _tag = "", string _topic = "", string _author = "")
         {
+            string command = "SELECT ID, Title FROM Articles WHERE 1 ";
+            if (_tag.Trim() != "") {
+                _tag = "%" + Tag + "%";
+                command += "AND Tags LIKE ?tags ";
+            }
+            if (_topic.Trim() != "")
+                command += "AND Topic = ?topic ";
+            if (_author.Trim() != "")
+                command += "AND Author = ?author ";
+            command += "ORDER BY ID DESC "; // пробел в конце - на всякий случай
+                                            // (хотя, обычно после DESC не ставят JOIN'ы...)
 
-        }
-
-        private void getArticlesByFilter(object sender, EventArgs e)
-        {
-            string command = "SELECT ID, Title FROM Articles WHERE 1";
-            
-            if (FilterTB.Text != "")
-                command += " AND Tags LIKE '%" + FilterTB.Text + "%'";
-            if (comboBox1.Text != "")
-                command += " AND Topic ='" + comboBox1.Text + "'";
-            //Очищаем старые статьи
+            // Очищаем старые статьи
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(filterPanel);
 
             int y = 100;
-            List<string> results = Program.Select(command);
+            List<string> results = Program.Select(command, new List<MySqlParameter>() {
+                new MySqlParameter("tags", _tag),
+                new MySqlParameter("topic", _topic),
+                new MySqlParameter("author", _author)
+            });
             
-            //Добавляем новые статьи
-            for (int i = 0; i < results.Count; i = i + 2)
+            // Добавляем новые статьи
+            for (int i = 0; i < results.Count; i += 2)
             {
                 // Для каждого комментария создаем лейбл:
                 Label lbl = new Label();
@@ -160,7 +199,7 @@ namespace WindowsFormsApp2
                 // Чтобы оно открылось в новом окне, сохраняем текст и описание:
                 lbl.Text = results[i + 1];
                 lbl.AccessibleDescription = results[i];
-                lbl.Click += new EventHandler(openArticle);
+                lbl.Click += new EventHandler(OpenArticle);
                 lbl.Location = new Point(30, y);
                 lbl.Size = new Size(500, 30);
                 // И добавляем на панель со статьями:
@@ -169,9 +208,9 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void SignInLabel_Click(object sender, EventArgs e)
+        private void findButton_Click(object sender, EventArgs e)
         {
-
+            GetArticlesByFilter(TagFilterBox.Text, TopicFilterBox.Text, AuthorFilterBox.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
