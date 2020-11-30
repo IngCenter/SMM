@@ -35,7 +35,7 @@ namespace WindowsFormsApp2
             this.FilterTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.findButton = new System.Windows.Forms.Button();
-            this.AdvertismentPanel = new System.Windows.Forms.Panel();
+            this.AdvertistingPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -48,7 +48,7 @@ namespace WindowsFormsApp2
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ArticlesPanel.SuspendLayout();
             this.filterPanel.SuspendLayout();
-            this.AdvertismentPanel.SuspendLayout();
+            this.AdvertistingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AuthPanel.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +71,17 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.Name = "ArticlesPanel";
             this.ArticlesPanel.Size = new System.Drawing.Size(864, 440);
             this.ArticlesPanel.TabIndex = 1;
-            this.ArticlesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ArticlesPanel_Paint);
+            // 
+            // AdvertismentPanel
+            // 
+            this.AdvertistingPanel.Controls.Add(this.label2);
+            this.AdvertistingPanel.Controls.Add(this.pictureBox1);
+            this.AdvertistingPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.AdvertistingPanel.Location = new System.Drawing.Point(0, 44);
+            this.AdvertistingPanel.Name = "AdvertisingPanel";
+            this.AdvertistingPanel.Size = new System.Drawing.Size(220, 440);
+            this.AdvertistingPanel.TabIndex = 3;
+
             // 
             // filterPanel
             // 
@@ -143,15 +153,7 @@ namespace WindowsFormsApp2
             this.TopicFilterBox.Name = "TopicFilterBox";
             this.TopicFilterBox.Size = new System.Drawing.Size(198, 28);
             this.TopicFilterBox.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(261, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Тема";
+           
             // 
             // label3
             // 
@@ -190,16 +192,7 @@ namespace WindowsFormsApp2
             this.findButton.Text = "Поиск";
             this.findButton.UseVisualStyleBackColor = true;
             this.findButton.Click += new System.EventHandler(this.findButton_Click);
-            // 
-            // AdvertistingPanel
-            // 
-            this.AdvertistingPanel.Controls.Add(this.label2);
-            this.AdvertistingPanel.Controls.Add(this.pictureBox1);
-            this.AdvertistingPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.AdvertistingPanel.Location = new System.Drawing.Point(0, 44);
-            this.AdvertistingPanel.Name = "AdvertistingPanel";
-            this.AdvertistingPanel.Size = new System.Drawing.Size(220, 440);
-            this.AdvertistingPanel.TabIndex = 3;
+
             // 
             // label2
             // 
@@ -210,6 +203,16 @@ namespace WindowsFormsApp2
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Реклама";
+            // 
+            // AdvertistingPanel
+            // 
+            this.AdvertistingPanel.Controls.Add(this.label2);
+            this.AdvertistingPanel.Controls.Add(this.pictureBox1);
+            this.AdvertistingPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.AdvertistingPanel.Location = new System.Drawing.Point(0, 44);
+            this.AdvertistingPanel.Name = "AdvertistingPanel";
+            this.AdvertistingPanel.Size = new System.Drawing.Size(220, 440);
+            this.AdvertistingPanel.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -345,17 +348,7 @@ namespace WindowsFormsApp2
             this.findButton.TabIndex = 1;
             this.findButton.Text = "Поиск";
             this.findButton.UseVisualStyleBackColor = true;
-            this.findButton.Click += new System.EventHandler(this.getArticlesByFilter);
-            // 
-            // AdvertismentPanel
-            // 
-            this.AdvertismentPanel.Controls.Add(this.label2);
-            this.AdvertismentPanel.Controls.Add(this.pictureBox1);
-            this.AdvertismentPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.AdvertismentPanel.Location = new System.Drawing.Point(0, 44);
-            this.AdvertismentPanel.Name = "AdvertismentPanel";
-            this.AdvertismentPanel.Size = new System.Drawing.Size(220, 440);
-            this.AdvertismentPanel.TabIndex = 3;
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
             // label2
             // 
@@ -392,7 +385,6 @@ namespace WindowsFormsApp2
             this.SignInLabel.Size = new System.Drawing.Size(292, 29);
             this.SignInLabel.TabIndex = 2;
             this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
-            this.SignInLabel.Click += new System.EventHandler(this.SignInLabel_Click);
             // 
             // SignInButton
             // 
@@ -464,7 +456,7 @@ namespace WindowsFormsApp2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 484);
             this.Controls.Add(this.ArticlesPanel);
-            this.Controls.Add(this.AdvertismentPanel);
+            this.Controls.Add(this.AdvertistingPanel);
             this.Controls.Add(this.AuthPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -473,8 +465,8 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.ResumeLayout(false);
             this.filterPanel.ResumeLayout(false);
             this.filterPanel.PerformLayout();
-            this.AdvertismentPanel.ResumeLayout(false);
-            this.AdvertismentPanel.PerformLayout();
+            this.AdvertistingPanel.ResumeLayout(false);
+            this.AdvertistingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.AuthPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -483,12 +475,12 @@ namespace WindowsFormsApp2
         #endregion
 
         private System.Windows.Forms.Panel ArticlesPanel;
-        private System.Windows.Forms.Panel AdvertistingPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel AuthPanel;
+        private System.Windows.Forms.Panel AdvertistingPanel;
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Button UserInfoButton;
@@ -498,9 +490,12 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Panel filterPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox FilterTB;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox TopicFilterBox;
         private System.Windows.Forms.ComboBox AuthorFilterBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
