@@ -45,6 +45,17 @@ namespace WindowsFormsApp2
             command.ExecuteNonQuery();
         }
 
+        public static void InsertImage(string Text, string filename)
+        {
+            MySqlCommand command = new MySqlCommand(Text, conn);
+            FileStream fs = new FileStream(filename, FileMode.Open);
+            byte[] img = new byte[fs.Length];
+            fs.Read(img, 0, img.Length);
+            fs.Close();
+            command.Parameters.Add(new MySqlParameter("binfile", img));
+            command.ExecuteNonQuery();
+        }
+
         /// <summary>
         /// Соединение
         /// </summary>
@@ -56,7 +67,7 @@ namespace WindowsFormsApp2
         public static string CurrentUser = "";
 
 
-        public static Image SelectImage(String Text)
+        public static Image SelectImage(string Text)
         {
             Image img = null;
             MySqlCommand command = new MySqlCommand(Text, conn);

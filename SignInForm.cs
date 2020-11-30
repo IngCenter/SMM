@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
@@ -12,13 +14,29 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.CurrentUser = LoginTB.Text;
-            /*
-            // Зачем личный кабинет открывать при входе?! (мешает)
-            UserForm UserInfo = new UserForm();
-            UserInfo.ShowDialog();
-            */
-            Close();
+            if (
+                Convert.ToInt32(
+                    Program.Select(
+                        "SELECT COUNT(*) FROM Users WHERE Login = ?username AND Password = ?userpass",
+                        new List<MySqlParameter>()
+                        {
+                            new MySqlParameter("username", LoginTB.Text),
+                            new MySqlParameter("userpass", PasswordMTB.Text)
+                        }
+                    )[0]
+                ) > 0
+            )
+            {
+                Program.CurrentUser = LoginTB.Text;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Неверное имя пользователя или пароль!", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error
+                );
+            }
         }
 
         private void SignInLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
