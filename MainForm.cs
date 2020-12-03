@@ -180,10 +180,9 @@ namespace WindowsFormsApp2
                                             // (хотя, обычно после DESC не ставят JOIN'ы...)
 
             // Очищаем старые статьи
-            ArticlesPanel.Controls.Clear();
-            ArticlesPanel.Controls.Add(filterPanel);
+            panel1.Controls.Clear();
 
-            int y = 100;
+            int y = 20;
             List<string> results = Program.Select(command, new List<MySqlParameter>() {
                 new MySqlParameter("tags", _tag),
                 new MySqlParameter("topic", _topic),
@@ -200,10 +199,10 @@ namespace WindowsFormsApp2
                 lbl.Text = results[i + 1];
                 lbl.AccessibleDescription = results[i];
                 lbl.Click += new EventHandler(OpenArticle);
-                lbl.Location = new Point(30, y);
+                lbl.Location = new Point(4, y);
                 lbl.Size = new Size(500, 30);
                 // И добавляем на панель со статьями:
-                ArticlesPanel.Controls.Add(lbl);
+                panel1.Controls.Add(lbl);
                 y += 50;
             }
         }

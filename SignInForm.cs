@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
@@ -12,6 +14,19 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
+/*            if (
+                Convert.ToInt32(
+                    Program.Select(
+                        "SELECT COUNT(*) FROM Users WHERE Login = ?username AND Password = ?userpass",
+                        new List<MySqlParameter>()
+                        {
+                            new MySqlParameter("username", LoginTB.Text),
+                            new MySqlParameter("userpass", PasswordMTB.Text)
+                        }
+                    )[0]
+                ) > 0
+            )
+*/
             string Logged = Program.Select("SELECT COUNT(*) FROM Users" +
                 " WHERE Login = '" + LoginTB.Text +
                 "' AND Password = '" + PasswordMTB.Text + "'")[0];

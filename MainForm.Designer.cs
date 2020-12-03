@@ -27,13 +27,14 @@ namespace WindowsFormsApp2
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
-        {
+        {         
             this.components = new System.ComponentModel.Container();
             this.ArticlesPanel = new System.Windows.Forms.Panel();
             this.filterPanel = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.FilterTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.findButton = new System.Windows.Forms.Button();
@@ -60,13 +61,24 @@ namespace WindowsFormsApp2
             // 
             // ArticlesPanel
             // 
-            this.ArticlesPanel.AutoScroll = true;
+            this.ArticlesPanel.Controls.Add(this.panel1);
             this.ArticlesPanel.Controls.Add(this.filterPanel);
             this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArticlesPanel.Location = new System.Drawing.Point(220, 44);
+            this.ArticlesPanel.Location = new System.Drawing.Point(180, 40);
+            this.ArticlesPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ArticlesPanel.Name = "ArticlesPanel";
-            this.ArticlesPanel.Size = new System.Drawing.Size(864, 440);
+            this.ArticlesPanel.Size = new System.Drawing.Size(662, 347);
             this.ArticlesPanel.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 60);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(662, 287);
+            this.panel1.TabIndex = 4;
+         
             // 
             // filterPanel
             // 
@@ -301,7 +313,6 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.AuthPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -322,11 +333,10 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Panel filterPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox FilterTB;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox TopicFilterBox;
         private System.Windows.Forms.ComboBox AuthorFilterBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

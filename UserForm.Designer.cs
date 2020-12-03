@@ -37,6 +37,7 @@
             this.AvatarPB = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,6 +118,7 @@
             this.AvatarPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AvatarPB.TabIndex = 6;
             this.AvatarPB.TabStop = false;
+            this.AvatarPB.Click += new System.EventHandler(this.AvatarPB_Click);
             // 
             // button1
             // 
@@ -142,6 +144,13 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "avatarka.png";
+            this.openFileDialog1.Filter = "Изображения (*.jpg;*.jpeg;*.png;*.bmp;*.webp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.we" +
+    "bp;*.gif|Все файлы (*.*)|*.*";
+            this.openFileDialog1.Title = "Выберите иображение для аватарки своего профиля";
             // 
             // UserForm
             // 
@@ -179,5 +188,6 @@
         private System.Windows.Forms.PictureBox AvatarPB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

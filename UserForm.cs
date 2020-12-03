@@ -7,6 +7,7 @@ namespace WindowsFormsApp2
 {
     public partial class UserForm : Form
     {
+        int userId = 0;
         public UserForm()
         {
             InitializeComponent();
@@ -17,6 +18,7 @@ namespace WindowsFormsApp2
                 checkBox1.Enabled = true;
                 checkBox1.Visible = true;
             }
+            checkBox1.Checked = MainForm.disableAd;
 
             // Заполнение формы данными о пользователе
             UserNameLabel.Text = Program.CurrentUser;
@@ -29,7 +31,8 @@ namespace WindowsFormsApp2
             );
             if (result.Count > 0)
             {
-                UserIDLabel.Text = "#" + result[0];
+                userId = Convert.ToInt32(result[0]);
+                UserIDLabel.Text = "#" + userId;
 
                 short userSubsLastDigit = Convert.ToInt16(Convert.ToInt32(result[1]) % 10);
                 UserSubsLabel.Text =
@@ -40,7 +43,7 @@ namespace WindowsFormsApp2
                 );
 
                 AvatarPB.Image = Program.SelectImage(
-                    "SELECT IFNULL(Avatar, '') AS Avatar FROM Users WHERE Id = " + Convert.ToInt32(result[0]) +
+                    "SELECT IFNULL(Avatar, '') AS Avatar FROM Users WHERE Id = " + userId +
                     " ORDER BY Id DESC LIMIT 1"
                 );
             }
@@ -72,6 +75,23 @@ namespace WindowsFormsApp2
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             MainForm.disableAd = checkBox1.Checked;
+        }
+
+        private void AvatarPB_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
+                if (
+                    MessageBox.Show(
+                        "Вы точно хотите изменить аватарку профиля?", "Подтверждение",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Information
+                    ) == DialogResult.Yes
+                )
+                {
+                    Program.InsertImage(
+                        "UPDATE Users SET Avatar = ?binfile WHERE Id = " + userId,
+                        openFileDialog1.FileName
+                    );
+                }
         }
     }
 }
