@@ -333,6 +333,8 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Panel filterPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox FilterTB;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox TopicFilterBox;
         private System.Windows.Forms.ComboBox AuthorFilterBox;
         private System.Windows.Forms.Label label5;
