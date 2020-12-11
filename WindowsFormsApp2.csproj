@@ -215,5 +215,8 @@
   <ItemGroup>
     <None Include="7za.exe" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="habr_parsing.py" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
