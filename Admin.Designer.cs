@@ -51,6 +51,14 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column16 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.Column20 = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -64,14 +72,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Column16 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,6 +83,7 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -94,7 +96,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(595, 257);
+            this.tabControl1.Size = new System.Drawing.Size(595, 286);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -103,7 +105,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(587, 231);
+            this.tabPage1.Size = new System.Drawing.Size(587, 260);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Управление статьями";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -125,7 +127,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(581, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(581, 254);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -285,6 +287,60 @@
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Удалить";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.ToolTipText = "Ссылка на удаление пользователя";
+            this.Column16.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 40;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Имя пользователя";
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 140;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Пароль";
+            this.Column18.Name = "Column18";
+            this.Column18.Width = 130;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "ФИО";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 170;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "Г.Р.";
+            this.Column25.Name = "Column25";
+            this.Column25.ToolTipText = "Год рождения";
+            this.Column25.Width = 50;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "Кол-во подп.";
+            this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            this.Column26.ToolTipText = "Количество подписчиков";
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "Тема";
+            this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            this.Column27.ToolTipText = "Любимая тема пользователя";
+            this.Column27.Width = 70;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dataGridView4);
@@ -401,66 +457,21 @@
             this.openFileDialog1.FileName = "pythonw.exe";
             this.openFileDialog1.Title = "Выберите файл интерпретатора Python (python.exe/py.exe)";
             // 
-            // Column16
+            // panel2
             // 
-            this.Column16.HeaderText = "Удалить";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.ToolTipText = "Ссылка на удаление пользователя";
-            this.Column16.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 40;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Имя пользователя";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 140;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "Пароль";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 130;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "ФИО";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 170;
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "Г.Р.";
-            this.Column25.Name = "Column25";
-            this.Column25.ToolTipText = "Год рождения";
-            this.Column25.Width = 50;
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "Кол-во подп.";
-            this.Column26.Name = "Column26";
-            this.Column26.ReadOnly = true;
-            this.Column26.ToolTipText = "Количество подписчиков";
-            // 
-            // Column27
-            // 
-            this.Column27.HeaderText = "Тема";
-            this.Column27.Name = "Column27";
-            this.Column27.ReadOnly = true;
-            this.Column27.ToolTipText = "Любимая тема пользователя";
-            this.Column27.Width = 70;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(595, 286);
+            this.panel2.TabIndex = 1;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 257);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(595, 286);
+            this.Controls.Add(this.panel2);
             this.Name = "AdminForm";
             this.Text = "Администрирование";
             this.tabControl1.ResumeLayout(false);
@@ -474,6 +485,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -524,5 +536,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
+        private System.Windows.Forms.Panel panel2;
     }
 }
