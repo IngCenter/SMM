@@ -1,9 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Diagnostics;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
@@ -72,37 +69,11 @@ namespace WindowsFormsApp2
 
             for (int i = 0; i < usersData.Count; i += 6)
             {
-                List<string> userAdData =
-                    Program.Select(
-                        "SELECT Articles.Topic, SUM(Likes.Like-Likes.Dislike) FROM `Articles` " +
-                        "JOIN Likes ON Articles.Id = Likes.Article " +
-                        "WHERE Likes.User LIKE ?username " +
-                        "GROUP BY Articles.Topic " +
-                        "HAVING SUM(Likes.Like - Likes.Dislike) > 0 " +
-                        "LIMIT 1",
-                        new List<MySqlParameter>()
-                        {
-                            new MySqlParameter("username", usersData[i+1])
-                        }
-                    );
-
-                string[] userDataArr = null;
-                if (userAdData.Count > 0)
+                string[] userDataArr = new string[7]
                 {
-                    userDataArr = new string[8]
-                    {
                     "Удалить", usersData[i+0], usersData[i+1], usersData[i+2],
-                    usersData[i+3], usersData[i+4], usersData[i+5], userAdData[0]
-                    };
-                }
-                else
-                {
-                    userDataArr = new string[7]
-                    {
-                        "Удалить", usersData[i+0], usersData[i+1], usersData[i+2],
-                        usersData[i+3], usersData[i+4], usersData[i+5]
-                    };
-                }
+                    usersData[i+3], usersData[i+4], usersData[i+5]
+                };
 
                 dataGridView3.Rows.Add(userDataArr);
             }
@@ -213,60 +184,17 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new System.Threading.Thread(GetHabrNews).Start();
-        }
-
-        private void GetHabrNews()
-        {
-            try
-            {
-                // Извлекаем скрипт
-                if (File.Exists("habr_parsing.py"))
-                    File.Delete("habr_parsing.py");
-                FileStream script_file = File.Open("habr_parsing.py", FileMode.CreateNew);
-                BinaryWriter sbw = new BinaryWriter(script_file);
-                sbw.Write(Properties.Resources.habr_parsing);
-                sbw.Close();
-                script_file.Close();
-
-                // Запускаем интерпретатор с нашим скриптом
-                ProcessStartInfo pyprocinfo = new ProcessStartInfo()
-                {
-                    FileName = "\"" + pythonPath + "\"",
-                    Arguments = "\"" + Directory.GetCurrentDirectory() + "\\habr_parsing.py\"",
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true
-                };
-                Process pyproc = Process.Start(pyprocinfo);
-
-                // Парсим вывод парсера :)
-                StreamReader pyprocsr = pyproc.StandardOutput;
-                string line;
-                short parsing_mode = 0; // 0 = старт, 1 = запись статьи и заголовка, 2 = запись текста
-                while ((line = pyprocsr.ReadLine()) != null)
-                {
-                    if (line.StartsWith("----- "))
-                    {
-                        /* Первая проверка для того, чтобы зря не расходовать
-                         * ресурсы на сравнение огромных строк
-                         */
-                        if (line.Equals("----- beginning of article") && parsing_mode == 0)
-                            parsing_mode = 1;
-                        if (line.Equals("----- beginning of text") && parsing_mode == 1)
-                            parsing_mode = 2;
-                        if (line.Equals("----- end of text") && parsing_mode == 2)
-                            parsing_mode = 1;
-                        if (line.Equals("----- end of article") && parsing_mode == 1)
-                            parsing_mode = 0;
-                        // Потом в тернарный оператор переделаю (c) 2020 DarkCat09
-                    }
-                    // TODO: Доделать!!!
-                }
-            } catch (Exception)
-            {
-                // пока что ничего не делаем
-            }
+            /*
+             * TODO:
+             * Запуск скрипта парсинга в отдельном потоке.
+             * 
+             * System.Threading.Thread.Start(функция);                      - запуск
+             * dataGridView4.Invoke(() => { добавляем данные в dgv4; });    - заполнение таблицы из другого потока
+             * 
+             * Кстати, во втором куске кода есть лямбда-выражение, моё любимое :)
+             * (c) 2020 DarkCat09
+             * 
+             */
         }
     }
 }

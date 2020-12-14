@@ -111,6 +111,12 @@
     <Compile Include="SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subscribes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscribes.Designer.cs">
+      <DependentUpon>Subscribes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserArticles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscribes.resx">
+      <DependentUpon>Subscribes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserArticles.resx">
       <DependentUpon>UserArticles.cs</DependentUpon>
@@ -214,9 +223,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="7za.exe" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="habr_parsing.py" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
