@@ -79,12 +79,13 @@ namespace WindowsFormsApp2
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            articleId = Convert.ToInt32(
-                Program.Select("SELECT Id FROM Articles WHERE Title LIKE ?title LIMIT 1", new List<MySqlParameter>()
-                {
-                    new MySqlParameter("title", comboBox2.Text)
-                })[0]
-            ); // А если будут две статьи с одинаковым заголовком? Всё плохо... (c) 2020 DarkCat09
+            articleId =
+                (comboBox2.Text.Equals("Все")) ? -1 : Convert.ToInt32(
+                    Program.Select("SELECT Id FROM Articles WHERE Title LIKE ?title LIMIT 1", new List<MySqlParameter>()
+                    {
+                        new MySqlParameter("title", comboBox2.Text)
+                    })[0]
+                ); // А если будут две статьи с одинаковым заголовком? Всё плохо... (c) 2020 DarkCat09
             ShowFilteredComments(articleId, comboBox1.Text);
         }
     }
