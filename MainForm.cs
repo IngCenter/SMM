@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
@@ -64,6 +64,7 @@ namespace WindowsFormsApp2
             }); // DISTINCT - на всякий пожарный случай
            
             // Всё, нужное для MarkDown'а:
+            /*
             try
             {
                 if (File.Exists("7za.exe"))
@@ -104,6 +105,7 @@ namespace WindowsFormsApp2
                     ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error
                 );
             }
+            */
         }
 
         /// <summary>
@@ -116,7 +118,7 @@ namespace WindowsFormsApp2
             af.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void SignInButton_Click(object sender, EventArgs e)
         {
             SignInForm SignIn = new SignInForm();
             SignIn.ShowDialog();            
@@ -153,14 +155,13 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void UserInfoButton_Click(object sender, EventArgs e)
         {
-            // И вот сюда личный кабинет вместо войти
             UserForm UserInfo = new UserForm();
             UserInfo.ShowDialog();
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void AdminButton_Click(object sender, EventArgs e)
         {
             AdminForm AdminInfo = new AdminForm();
             AdminInfo.Show();
@@ -168,17 +169,16 @@ namespace WindowsFormsApp2
 
         private void GetArticlesByFilter(string _tag = "", string _topic = "", string _author = "")
         {
-            string command = "SELECT ID, Title FROM Articles WHERE 1 ";
+            string command = "SELECT Id, Title FROM Articles WHERE 1 ";
             if (_tag.Trim() != "") {
-                _tag = "%" + Tag + "%";
+                _tag = "%" + _tag + "%";
                 command += "AND Tags LIKE ?tags ";
             }
             if (_topic.Trim() != "")
                 command += "AND Topic = ?topic ";
             if (_author.Trim() != "")
                 command += "AND Author = ?author ";
-            command += "ORDER BY ID DESC "; // пробел в конце - на всякий случай
-                                            // (хотя, обычно после DESC не ставят JOIN'ы...)
+            command += "ORDER BY Id DESC "; // пробел в конце - на всякий случай
 
             // Очищаем старые статьи
             panel1.Controls.Clear();
@@ -212,25 +212,5 @@ namespace WindowsFormsApp2
         {
             GetArticlesByFilter(TagFilterBox.Text, TopicFilterBox.Text, AuthorFilterBox.Text);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          //comboBox1.Items.Add = "SELECT Tag FROM Articles WHERE 1";
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-
-        }
     }
-} 
+}
