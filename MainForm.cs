@@ -32,19 +32,20 @@ namespace WindowsFormsApp2
 
             // Заполнение ComboBox'ов "теги", "тема" и "автор"
             List<string> tags = Program.Select("SELECT Tags FROM Articles");
+            List<string> tags1 = new List<string>();
             foreach (string tag in tags.ToArray())
             {
                 string[] parts = tag.Split(new string[] { ", " }, StringSplitOptions.None);
                 foreach (string part in parts)
                 {
-                    if (!tags.Contains(part) && part.Trim() != "")
-                        tags.Add(part);
+                    if (!tags1.Contains(part) && part.Trim() != "")
+                        tags1.Add(part);
                 }
             }
-            tags.Sort();
+            tags1.Sort();
             TagFilterBox.Items.Clear();
             TagFilterBox.Items.Add("");
-            TagFilterBox.Items.AddRange(tags.ToArray());
+            TagFilterBox.Items.AddRange(tags1.ToArray());
 
             TopicFilterBox.Items.Clear();
             TopicFilterBox.Items.Add("");
