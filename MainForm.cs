@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
@@ -21,7 +21,6 @@ namespace WindowsFormsApp2
             text = _text;
         }
     }
-
     public partial class MainForm : Form
     {
         public static bool disableAd = false;
@@ -32,19 +31,20 @@ namespace WindowsFormsApp2
 
             // Заполнение ComboBox'ов "теги", "тема" и "автор"
             List<string> tags = Program.Select("SELECT Tags FROM Articles");
+            List<string> tags1 = new List<string>();
             foreach (string tag in tags.ToArray())
             {
                 string[] parts = tag.Split(new string[] { ", " }, StringSplitOptions.None);
                 foreach (string part in parts)
                 {
-                    if (!tags.Contains(part) && part.Trim() != "")
-                        tags.Add(part);
+                    if (!tags1.Contains(part) && part.Trim() != "")
+                        tags1.Add(part);
                 }
             }
-            tags.Sort();
+            tags1.Sort();
             TagFilterBox.Items.Clear();
             TagFilterBox.Items.Add("");
-            TagFilterBox.Items.AddRange(tags.ToArray());
+            TagFilterBox.Items.AddRange(tags1.ToArray());
 
             TopicFilterBox.Items.Clear();
             TopicFilterBox.Items.Add("");
@@ -61,8 +61,9 @@ namespace WindowsFormsApp2
                 if (author_name.Trim() != "")
                     AuthorFilterBox.Items.Add(author_name);
             }); // DISTINCT - на всякий пожарный случай
-           
+
             // Всё, нужное для MarkDown'а:
+            /*
             try
             {
                 if (File.Exists("7za.exe"))
@@ -103,22 +104,7 @@ namespace WindowsFormsApp2
                     ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error
                 );
             }
-        }
-
-        /// <summary>
-        /// Открываем статью в новом окне
-        /// </summary>
-        public static void OpenArticle(object sender, EventArgs e)
-        {
-            Label lbl = (Label)sender;
-            ArticleForm af = new ArticleForm(lbl.AccessibleDescription);
-            af.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            SignInForm SignIn = new SignInForm();
-            SignIn.ShowDialog();            
+            */
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -141,6 +127,24 @@ namespace WindowsFormsApp2
                 Controls.Remove(AdvertistingPanel);
         }
 
+        /// <summary>
+        /// Открываем статью в новом окне
+        /// </summary>
+        public static void OpenArticle(object sender, EventArgs e)
+        {
+            Label lbl = (Label)sender;
+            ArticleForm af = new ArticleForm(lbl.AccessibleDescription);
+            af.Show();
+        }
+
+        private void SignInButton_Click(object sender, EventArgs e)
+        {
+            SignInForm SignIn = new SignInForm();
+            SignIn.ShowDialog();
+        }
+
+
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(
@@ -152,14 +156,14 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void UserInfoButton_Click(object sender, EventArgs e)
         {
             // И вот сюда личный кабинет вместо войти
             UserForm UserInfo = new UserForm();
             UserInfo.ShowDialog();
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void AdminButton_Click(object sender, EventArgs e)
         {
             AdminForm AdminInfo = new AdminForm();
             AdminInfo.Show();
@@ -211,25 +215,5 @@ namespace WindowsFormsApp2
         {
             GetArticlesByFilter(TagFilterBox.Text, TopicFilterBox.Text, AuthorFilterBox.Text);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          //comboBox1.Items.Add = "SELECT Tag FROM Articles WHERE 1";
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-
-        }
     }
-} 
+}
