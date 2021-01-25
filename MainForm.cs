@@ -118,9 +118,9 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             SignInForm SignIn = new SignInForm();
-           
-            panel1.Controls.Clear();
-            panel1.Controls.Add(SignIn);
+
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(SignIn);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -159,16 +159,16 @@ namespace WindowsFormsApp2
             // И вот сюда личный кабинет вместо войти
             UserForm UserInfo = new UserForm();
            
-            panel1.Controls.Clear();
-            panel1.Controls.Add(UserInfo);
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(UserInfo);
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
             AdminForm AdminInfo = new AdminForm();
 
-            panel1.Controls.Clear();
-            panel1.Controls.Add(AdminInfo);
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(AdminInfo);
         }
 
         private void GetArticlesByFilter(string _tag = "", string _topic = "", string _author = "")
