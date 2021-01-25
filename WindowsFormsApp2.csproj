@@ -68,7 +68,7 @@
       <DependentUpon>AddComment.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -105,8 +105,14 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignInForm.cs">
+    <Compile Include="Search.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignInForm.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -124,7 +130,7 @@
       <DependentUpon>UserArticles.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -162,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>

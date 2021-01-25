@@ -175,7 +175,7 @@
             this.Controls.Add(this.UserArticleLabel);
             this.Controls.Add(this.UserNameLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
+            //this.MaximizeBox = false;
             this.Name = "UserForm";
             this.Text = "Личный кабинет";
             this.Load += new System.EventHandler(this.UserForm_Load);

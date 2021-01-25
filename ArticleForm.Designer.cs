@@ -1,4 +1,4 @@
-namespace WindowsFormsApp2
+﻿namespace WindowsFormsApp2
 {
     partial class ArticleForm
     {
@@ -183,6 +183,7 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

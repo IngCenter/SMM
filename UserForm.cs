@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
-    public partial class UserForm : Form
+    public partial class UserForm : UserControl
     {
         int userId = 0;
         public UserForm()
@@ -58,7 +58,7 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             Program.CurrentUser = "";
-            Close();
+           // Close();
         }
 
         private void UserFeedBackLabel_Click(object sender, EventArgs e)
