@@ -29,6 +29,7 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {         
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ArticlesPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.filterPanel = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@ namespace WindowsFormsApp2
             this.TagFilterBox = new System.Windows.Forms.ComboBox();
             this.findButton = new System.Windows.Forms.Button();
             this.AdvertistingPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SignInLabel = new System.Windows.Forms.Label();
             this.SignInButton = new System.Windows.Forms.Button();
@@ -198,23 +198,12 @@ namespace WindowsFormsApp2
             // 
             // AdvertistingPanel
             // 
-            this.AdvertistingPanel.Controls.Add(this.label2);
             this.AdvertistingPanel.Controls.Add(this.pictureBox1);
             this.AdvertistingPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.AdvertistingPanel.Location = new System.Drawing.Point(0, 44);
             this.AdvertistingPanel.Name = "AdvertistingPanel";
             this.AdvertistingPanel.Size = new System.Drawing.Size(220, 440);
             this.AdvertistingPanel.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(1, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Реклама";
             // 
             // timer1
             // 
@@ -286,16 +275,14 @@ namespace WindowsFormsApp2
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.renderforest_300x600;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 440);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // MainForm
             // 
@@ -313,7 +300,6 @@ namespace WindowsFormsApp2
             this.filterPanel.ResumeLayout(false);
             this.filterPanel.PerformLayout();
             this.AdvertistingPanel.ResumeLayout(false);
-            this.AdvertistingPanel.PerformLayout();
             this.AuthPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -323,10 +309,8 @@ namespace WindowsFormsApp2
         #endregion
 
         private System.Windows.Forms.Panel ArticlesPanel;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel AuthPanel;
         private System.Windows.Forms.Panel AdvertistingPanel;
         private System.Windows.Forms.Button SignInButton;
@@ -345,5 +329,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
