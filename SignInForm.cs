@@ -35,7 +35,7 @@ namespace WindowsFormsApp2
             if (Logged != "0")
             {
                 Program.CurrentUser = LoginTB.Text;
-                //Close();
+                
             }
             else if (WrongPass != "0")
                 MessageBox.Show("Неверный пароль");
@@ -51,7 +51,7 @@ namespace WindowsFormsApp2
 
         private void SignInForm_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

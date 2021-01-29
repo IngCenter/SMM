@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
-    public partial class Search : Form
+    public partial class Search : UserControl
     {
         public Search()
         {
@@ -107,6 +107,11 @@ namespace WindowsFormsApp2
         private void findButton_Click(object sender, EventArgs e)
         {
             GetArticlesByFilter(TagFilterBox.Text, TopicFilterBox.Text, AuthorFilterBox.Text);
+        }
+
+        private void Search_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

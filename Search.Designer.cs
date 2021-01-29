@@ -172,6 +172,7 @@
             this.Controls.Add(this.filterPanel);
             this.Name = "Search";
             this.Text = "Search";
+            this.Load += new System.EventHandler(this.Search_Load);
             this.filterPanel.ResumeLayout(false);
             this.filterPanel.PerformLayout();
             this.ResumeLayout(false);

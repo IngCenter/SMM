@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
-    public partial class AddArticle : Form
+    public partial class AddArticle : UserControl
     {
         public AddArticle()
         {
@@ -38,6 +38,11 @@ namespace WindowsFormsApp2
                 }
             );
             MessageBox.Show("Сохранено!");
+        }
+
+        private void AddArticle_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

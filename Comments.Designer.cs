@@ -117,6 +117,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Comments";
             this.Text = "Комментарии";
+            this.Load += new System.EventHandler(this.Comments_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

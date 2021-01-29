@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class UserArticles : Form
+    public partial class UserArticles : UserControl
     {
         public UserArticles()
         {
@@ -47,6 +47,11 @@ namespace WindowsFormsApp2
         {
             AddArticle addArticle = new AddArticle();
             addArticle.Show();
+        }
+
+        private void UserArticles_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

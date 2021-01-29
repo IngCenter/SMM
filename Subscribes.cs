@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
-    public partial class Subscribes : Form
+    public partial class Subscribes : UserControl
     {
         public Subscribes()
         {
@@ -53,6 +53,11 @@ namespace WindowsFormsApp2
             {
                 label1.Text += results[i] + Environment.NewLine ;
             }
+        }
+
+        private void Subscribes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {   
-    public partial class ArticleForm : Form
+    public partial class ArticleForm : UserControl
     {
         string id = "0";
         
@@ -151,7 +151,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            
         }
 
         private void ConvertMdArticleToHtml(string article_text)
