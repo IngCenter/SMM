@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
-    public partial class Comments : Form
+    public partial class Comments : UserControl
     {
         int articleId = -1;
         public Comments(int _articleId = -1, string _author = "")
@@ -69,6 +69,11 @@ namespace WindowsFormsApp2
             }
             AddComment acForm = new AddComment(articleId);
             acForm.ShowDialog();
+        }
+
+        private void Comments_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

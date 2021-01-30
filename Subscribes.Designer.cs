@@ -70,6 +70,7 @@
             this.Controls.Add(this.SubPanel);
             this.Name = "Subscribes";
             this.Text = "Subscribes";
+            this.Load += new System.EventHandler(this.Subscribes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

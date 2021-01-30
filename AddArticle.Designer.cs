@@ -47,7 +47,7 @@
             this.AddButton.Location = new System.Drawing.Point(0, 450);
             this.AddButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(849, 43);
+            this.AddButton.Size = new System.Drawing.Size(894, 43);
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Сохранить";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -58,16 +58,16 @@
             this.NameTB.Location = new System.Drawing.Point(119, 6);
             this.NameTB.Margin = new System.Windows.Forms.Padding(5);
             this.NameTB.Name = "NameTB";
-            this.NameTB.Size = new System.Drawing.Size(718, 29);
+            this.NameTB.Size = new System.Drawing.Size(718, 34);
             this.NameTB.TabIndex = 1;
             // 
             // ArticleNameLabel
             // 
             this.ArticleNameLabel.AutoSize = true;
-            this.ArticleNameLabel.Location = new System.Drawing.Point(14, 9);
+            this.ArticleNameLabel.Location = new System.Drawing.Point(-5, 9);
             this.ArticleNameLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ArticleNameLabel.Name = "ArticleNameLabel";
-            this.ArticleNameLabel.Size = new System.Drawing.Size(97, 24);
+            this.ArticleNameLabel.Size = new System.Drawing.Size(126, 29);
             this.ArticleNameLabel.TabIndex = 2;
             this.ArticleNameLabel.Text = "Название";
             // 
@@ -83,10 +83,10 @@
             // TagsLabel
             // 
             this.TagsLabel.AutoSize = true;
-            this.TagsLabel.Location = new System.Drawing.Point(14, 46);
+            this.TagsLabel.Location = new System.Drawing.Point(-5, 46);
             this.TagsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.TagsLabel.Name = "TagsLabel";
-            this.TagsLabel.Size = new System.Drawing.Size(53, 24);
+            this.TagsLabel.Size = new System.Drawing.Size(69, 29);
             this.TagsLabel.TabIndex = 4;
             this.TagsLabel.Text = "Теги";
             // 
@@ -94,7 +94,7 @@
             // 
             this.TagsTB.Location = new System.Drawing.Point(119, 43);
             this.TagsTB.Name = "TagsTB";
-            this.TagsTB.Size = new System.Drawing.Size(383, 29);
+            this.TagsTB.Size = new System.Drawing.Size(383, 34);
             this.TagsTB.TabIndex = 5;
             // 
             // toolTip1
@@ -105,10 +105,10 @@
             // TopicLabel
             // 
             this.TopicLabel.AutoSize = true;
-            this.TopicLabel.Location = new System.Drawing.Point(510, 46);
+            this.TopicLabel.Location = new System.Drawing.Point(501, 48);
             this.TopicLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.TopicLabel.Name = "TopicLabel";
-            this.TopicLabel.Size = new System.Drawing.Size(56, 24);
+            this.TopicLabel.Size = new System.Drawing.Size(74, 29);
             this.TopicLabel.TabIndex = 6;
             this.TopicLabel.Text = "Тема";
             // 
@@ -116,7 +116,7 @@
             // 
             this.TopicTB.Location = new System.Drawing.Point(574, 43);
             this.TopicTB.Name = "TopicTB";
-            this.TopicTB.Size = new System.Drawing.Size(263, 29);
+            this.TopicTB.Size = new System.Drawing.Size(263, 34);
             this.TopicTB.TabIndex = 7;
             // 
             // checkBox1
@@ -124,16 +124,16 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(119, 78);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(414, 28);
+            this.checkBox1.Size = new System.Drawing.Size(529, 33);
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Использовать форматирование MarkDown";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // AddArticle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 493);
+            this.ClientSize = new System.Drawing.Size(894, 493);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.TopicTB);
             this.Controls.Add(this.TopicLabel);
@@ -147,6 +147,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AddArticle";
             this.Text = "Добавить статью";
+            this.Load += new System.EventHandler(this.AddArticle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

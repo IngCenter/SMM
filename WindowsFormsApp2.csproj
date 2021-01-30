@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddArticle.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AddArticle.Designer.cs">
       <DependentUpon>AddArticle.cs</DependentUpon>
@@ -74,7 +74,7 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Comments.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Comments.Designer.cs">
       <DependentUpon>Comments.cs</DependentUpon>
@@ -86,7 +86,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ArticleForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ArticleForm.Designer.cs">
       <DependentUpon>ArticleForm.cs</DependentUpon>
@@ -106,7 +106,7 @@
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Search.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
@@ -118,13 +118,13 @@
       <DependentUpon>SignInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Subscribes.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Subscribes.Designer.cs">
       <DependentUpon>Subscribes.cs</DependentUpon>
     </Compile>
     <Compile Include="UserArticles.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserArticles.Designer.cs">
       <DependentUpon>UserArticles.cs</DependentUpon>
