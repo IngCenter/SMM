@@ -25,9 +25,17 @@ namespace WindowsFormsApp2
     public partial class MainForm : Form
     {
         public static bool disableAd = false;
+
+        public static Panel mainPanel;
         public MainForm()
         {
             InitializeComponent();
+            mainPanel = ArticlesPanel;
+
+            /*Search search = new Search();
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(search);*/
+
             GetArticlesByFilter();
 
             // Заполнение ComboBox'ов "теги", "тема" и "автор"
@@ -259,6 +267,32 @@ namespace WindowsFormsApp2
         }
 
         private void TagFilterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            Search comments = new Search();
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(comments);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Comments comments = new Comments();
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(comments);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            RegistrationForm comments = new RegistrationForm();
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(comments);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }

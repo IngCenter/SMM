@@ -100,7 +100,8 @@ namespace WindowsFormsApp2
         {
             Label lbl = (Label)sender;
             ArticleForm af = new ArticleForm(lbl.AccessibleDescription);
-            af.Show();
+            MainForm.mainPanel.Controls.Clear();
+            MainForm.mainPanel.Controls.Add(af);
         }
 
 

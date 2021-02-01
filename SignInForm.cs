@@ -46,7 +46,8 @@ namespace WindowsFormsApp2
         private void SignInLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegistrationForm Registration = new RegistrationForm();
-            Registration.Show();
+            MainForm.mainPanel.Controls.Clear();
+            MainForm.mainPanel.Controls.Add(Registration);
         }
 
         private void SignInForm_Load(object sender, EventArgs e)
