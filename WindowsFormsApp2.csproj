@@ -233,5 +233,23 @@
   <ItemGroup>
     <None Include="7za.exe" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Поиск.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Комментарии.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Мой профиль.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Добавить статью.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Добавить статью1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Подписчики.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
