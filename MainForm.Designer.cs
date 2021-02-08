@@ -317,6 +317,7 @@ namespace WindowsFormsApp2
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox11.Image = global::WindowsFormsApp2.Properties.Resources.Поиск;
             this.pictureBox11.Location = new System.Drawing.Point(-1, 3);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(174, 62);
@@ -369,6 +370,7 @@ namespace WindowsFormsApp2
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox6.Image = global::WindowsFormsApp2.Properties.Resources.Подписчики;
             this.pictureBox6.Location = new System.Drawing.Point(0, 206);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(174, 39);
@@ -379,16 +381,19 @@ namespace WindowsFormsApp2
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox5.Image = global::WindowsFormsApp2.Properties.Resources.Добавить_статью1;
             this.pictureBox5.Location = new System.Drawing.Point(1, 160);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(174, 40);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox3.Image = global::WindowsFormsApp2.Properties.Resources.Мой_профиль;
             this.pictureBox3.Location = new System.Drawing.Point(0, 115);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(174, 39);
@@ -400,7 +405,7 @@ namespace WindowsFormsApp2
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox4.Image = global::WindowsFormsApp2.Properties.Resources.Comm;
+            this.pictureBox4.Image = global::WindowsFormsApp2.Properties.Resources.Комментарии;
             this.pictureBox4.Location = new System.Drawing.Point(0, 71);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(174, 38);
