@@ -40,7 +40,9 @@
             this.TagFilterBox = new System.Windows.Forms.ComboBox();
             this.findButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.filterPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // filterPanel
@@ -168,12 +170,21 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.checkedListBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 104);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(893, 338);
             this.panel1.TabIndex = 5;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(204, 110);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 79);
+            this.checkedListBox1.TabIndex = 0;
             // 
             // Search
             // 
@@ -188,6 +199,7 @@
             this.Load += new System.EventHandler(this.Search_Load);
             this.filterPanel.ResumeLayout(false);
             this.filterPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -206,5 +218,6 @@
         private System.Windows.Forms.ComboBox TagFilterBox;
         private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
