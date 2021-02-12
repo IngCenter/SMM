@@ -31,6 +31,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             mainPanel = ArticlesPanel;
+            AdminForm.color = Properties.Settings.Default.Color;
 
             /*Search search = new Search();
             ArticlesPanel.Controls.Clear();
@@ -149,6 +150,8 @@ namespace WindowsFormsApp2
             // Отключаем рекламу в текущей "сессии", если того хочет Админ или DarkCat09 (Disabling Advert)
             if (disableAd)
                 Controls.Remove(AdvertistingPanel);
+
+            AdminForm.ApplyDesign(this);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -301,5 +304,13 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Color = AdminForm.color;
+            Properties.Settings.Default.Save();
+        }
+
+       
     }
 } 

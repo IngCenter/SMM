@@ -11,25 +11,18 @@ namespace WindowsFormsApp2
             System.IO.Directory.GetDirectoryRoot(Environment.SystemDirectory) + "Users\\" +
             Environment.UserName + "\\AppData\\Local\\Programs\\Python38\\pythonw.exe";
         
-        public Color color;
-        public AdminForm()
+        public static Color color;
 
+        public static void ApplyDesign(Control form)
         {
-            public static void ApplyDesign(Control form)
-            {
-                form.BackColor = color;
-                form.Font = font;
-                form.ForeColor = foreColor;
-            }
-
-            {
-            InitializeComponent();
+            form.BackColor = color;
+            //form.Font = font;
+            //form.ForeColor = foreColor;
         }
-
+        public AdminForm()
+        {
+            InitializeComponent();
         
-
-
-        InitializeComponent();
             openFileDialog1.InitialDirectory = new System.IO.FileInfo(pythonPath).DirectoryName;
             openFileDialog1.Filter = "Исполняемые файлы (*.exe)|*.exe|Все файлы (*.*)|*.*";
             openFileDialog1.RestoreDirectory = true;

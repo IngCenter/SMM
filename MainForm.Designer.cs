@@ -445,6 +445,7 @@ namespace WindowsFormsApp2
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.Text = "Кликни, чтобы открыть статью";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ArticlesPanel.ResumeLayout(false);
             this.filterPanel.ResumeLayout(false);
