@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace WindowsFormsApp2
 {
@@ -9,10 +10,26 @@ namespace WindowsFormsApp2
         string pythonPath =
             System.IO.Directory.GetDirectoryRoot(Environment.SystemDirectory) + "Users\\" +
             Environment.UserName + "\\AppData\\Local\\Programs\\Python38\\pythonw.exe";
-
+        
+        public Color color;
         public AdminForm()
+
         {
+            public static void ApplyDesign(Control form)
+            {
+                form.BackColor = color;
+                form.Font = font;
+                form.ForeColor = foreColor;
+            }
+
+            {
             InitializeComponent();
+        }
+
+        
+
+
+        InitializeComponent();
             openFileDialog1.InitialDirectory = new System.IO.FileInfo(pythonPath).DirectoryName;
             openFileDialog1.Filter = "Исполняемые файлы (*.exe)|*.exe|Все файлы (*.*)|*.*";
             openFileDialog1.RestoreDirectory = true;
@@ -195,6 +212,76 @@ namespace WindowsFormsApp2
              * (c) 2020 DarkCat09
              * 
              */
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+                color = Color.WhiteSmoke;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Gray;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Silver;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.RosyBrown;
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Salmon;
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Bisque;
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Orange;
+        }
+
+        private void radioButton8_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Khaki;
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.DarkSeaGreen;
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.LightGreen;
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.SkyBlue;
+        }
+
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.MediumPurple;
+        }
+
+        private void radioButton13_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Plum;
+        }
+
+        private void radioButton14_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Pink;
         }
     }
 }
