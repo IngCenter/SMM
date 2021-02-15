@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.filterPanel = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TopicFilterBox = new System.Windows.Forms.ComboBox();
-            this.FilterTB = new System.Windows.Forms.TextBox();
             this.AuthorFilterBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,16 +38,12 @@
             this.TagFilterBox = new System.Windows.Forms.ComboBox();
             this.findButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.filterPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // filterPanel
             // 
-            this.filterPanel.Controls.Add(this.comboBox1);
             this.filterPanel.Controls.Add(this.TopicFilterBox);
-            this.filterPanel.Controls.Add(this.FilterTB);
             this.filterPanel.Controls.Add(this.AuthorFilterBox);
             this.filterPanel.Controls.Add(this.label5);
             this.filterPanel.Controls.Add(this.label4);
@@ -64,18 +58,6 @@
             this.filterPanel.Size = new System.Drawing.Size(893, 104);
             this.filterPanel.TabIndex = 4;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Alpha;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Кухня"});
-            this.comboBox1.Location = new System.Drawing.Point(507, 5);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(256, 33);
-            this.comboBox1.TabIndex = 5;
-            // 
             // TopicFilterBox
             // 
             this.TopicFilterBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -85,15 +67,6 @@
             this.TopicFilterBox.Name = "TopicFilterBox";
             this.TopicFilterBox.Size = new System.Drawing.Size(178, 33);
             this.TopicFilterBox.TabIndex = 5;
-            // 
-            // FilterTB
-            // 
-            this.FilterTB.Location = new System.Drawing.Point(9, 5);
-            this.FilterTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FilterTB.Name = "FilterTB";
-            this.FilterTB.Size = new System.Drawing.Size(295, 30);
-            this.FilterTB.TabIndex = 2;
-            this.FilterTB.TextChanged += new System.EventHandler(this.FilterTB_TextChanged);
             // 
             // AuthorFilterBox
             // 
@@ -170,21 +143,13 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.checkedListBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 104);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(893, 338);
             this.panel1.TabIndex = 5;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(204, 110);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 79);
-            this.checkedListBox1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Search
             // 
@@ -199,7 +164,6 @@
             this.Load += new System.EventHandler(this.Search_Load);
             this.filterPanel.ResumeLayout(false);
             this.filterPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,9 +171,7 @@
         #endregion
 
         private System.Windows.Forms.Panel filterPanel;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox TopicFilterBox;
-        private System.Windows.Forms.TextBox FilterTB;
         private System.Windows.Forms.ComboBox AuthorFilterBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -218,6 +180,5 @@
         private System.Windows.Forms.ComboBox TagFilterBox;
         private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
