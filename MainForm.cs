@@ -290,7 +290,7 @@ namespace WindowsFormsApp2
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            RegistrationForm comments = new RegistrationForm();
+            UserForm comments = new UserForm();
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
         }
@@ -302,7 +302,9 @@ namespace WindowsFormsApp2
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-
+            AddArticle comments = new AddArticle();
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(comments);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -311,6 +313,11 @@ namespace WindowsFormsApp2
             Properties.Settings.Default.Save();
         }
 
-       
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Subscribes comments = new Subscribes();
+            ArticlesPanel.Controls.Clear();
+            ArticlesPanel.Controls.Add(comments);
+        }
     }
 } 
