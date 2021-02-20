@@ -32,7 +32,8 @@ namespace WindowsFormsApp2
             InitializeComponent();
             mainPanel = ArticlesPanel;
             AdminForm.color = Properties.Settings.Default.Color;
-
+            AdminForm.fontcolor = Properties.Settings.Default.FontColor;
+            AdminForm.font = Properties.Settings.Default.Font;
             /*Search search = new Search();
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(search);*/
@@ -309,7 +310,13 @@ namespace WindowsFormsApp2
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Program.Insert("DELETE FROM Settings WHERE name = 'Font'");
+            Program.Insert("INSERT INTO Settings (name, value)") +
+                "VALUES('Font', '" + AdminForm.font.Tostring() + "')'";
+
             Properties.Settings.Default.Color = AdminForm.color;
+            Properties.Settings.Default.Font = AdminForm.font;
+            Properties.Settings.Default.FontColor = AdminForm.fontcolor;
             Properties.Settings.Default.Save();
         }
 

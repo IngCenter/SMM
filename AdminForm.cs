@@ -16,8 +16,8 @@ namespace WindowsFormsApp2
         public static void ApplyDesign(Control form)
         {
             form.BackColor = color;
-            //form.Font = font;
-            //form.ForeColor = foreColor;
+            form.Font = font;
+            form.FontColor = fontColor;
         }
         public AdminForm()
         {
@@ -275,6 +275,11 @@ namespace WindowsFormsApp2
         private void radioButton14_CheckedChanged(object sender, EventArgs e)
         {
             color = Color.Pink;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
