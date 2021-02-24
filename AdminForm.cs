@@ -12,8 +12,9 @@ namespace WindowsFormsApp2
             Environment.UserName + "\\AppData\\Local\\Programs\\Python38\\pythonw.exe";
         
         public static Color color;
-
-        public static void ApplyDesign(Control form)
+        public static Font font;
+        public static FontColor fontColor;
+       public static void ApplyDesign(Control form)
         {
             form.BackColor = color;
             form.Font = font;
@@ -281,5 +282,9 @@ namespace WindowsFormsApp2
         {
 
         }
+    }
+
+    public class FontColor
+    {
     }
 }

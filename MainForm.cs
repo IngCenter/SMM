@@ -32,7 +32,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
             mainPanel = ArticlesPanel;
             AdminForm.color = Properties.Settings.Default.Color;
-            AdminForm.fontcolor = Properties.Settings.Default.FontColor;
+            AdminForm.fontColor = Properties.Settings.Default.FontColor;
             AdminForm.font = Properties.Settings.Default.Font;
             /*Search search = new Search();
             ArticlesPanel.Controls.Clear();
@@ -316,7 +316,7 @@ namespace WindowsFormsApp2
 
             Properties.Settings.Default.Color = AdminForm.color;
             Properties.Settings.Default.Font = AdminForm.font;
-            Properties.Settings.Default.FontColor = AdminForm.fontcolor;
+            Properties.Settings.Default.FontColor = AdminForm.fontColor;
             Properties.Settings.Default.Save();
         }
 
