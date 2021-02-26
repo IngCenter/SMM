@@ -13,12 +13,12 @@ namespace WindowsFormsApp2
         
         public static Color color;
         public static Font font;
-        public static FontColor fontColor;
+        public static Color fontColor;
        public static void ApplyDesign(Control form)
         {
             form.BackColor = color;
             form.Font = font;
-            form.FontColor = fontColor;
+            form.ForeColor = fontColor;
         }
         public AdminForm()
         {
