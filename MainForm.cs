@@ -27,9 +27,79 @@ namespace WindowsFormsApp2
         public static bool disableAd = false;
 
         public static Panel mainPanel;
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Color = AdminForm.color;
+            Properties.Settings.Default.Font = AdminForm.font;
+            Properties.Settings.Default.FontColor = AdminForm.fontColor;
+            Properties.Settings.Default.Save();
+
+
+            File.WriteAllText("Menu.txt", "");
+
+            foreach (ToolStripMenuItem punkt in viewToolStripMenuItem.DropDownItems)
+            {
+                string visible = " = false";
+                if (punkt.Checked)
+                    visible = " = true";
+                File.AppendAllText("Menu.txt", punkt.Text + visible + Environment.NewLine);
+            }
+        }
+
+
+
+        private void ShowPicture(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+
+            foreach (Control picture in panel2.Controls)
+            {
+                if (picture is PictureBox && 
+                    picture.Tag != null && 
+                    picture.Tag.ToString() == item.Text)
+                {
+                    picture.Visible = item.Checked;
+                }
+            }
+        }
         public MainForm()
         {
             InitializeComponent();
+
+            foreach (Control ctrl in panel2.Controls)
+            {
+                if (ctrl is PictureBox && ctrl.Tag != null)
+                {
+                    ToolStripMenuItem item = new ToolStripMenuItem();
+                    item.Checked = true;
+                    item.CheckOnClick = true;
+                    item.CheckState = CheckState.Checked;
+                    item.Text = ctrl.Tag.ToString();
+                    item.Click += new EventHandler(ShowPicture);
+
+                    viewToolStripMenuItem.DropDownItems.Add(item);
+                }
+            }
+
+            string[] lines = File.ReadAllLines("Menu.txt");
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(new string[] { " = " }, StringSplitOptions.None);
+
+                foreach (ToolStripMenuItem punkt in viewToolStripMenuItem.DropDownItems)
+                {
+                    if (punkt.Text == parts[0])
+                    {
+                        if (parts[1] == "false")
+                        {
+                            punkt.PerformClick();
+                        }
+                    }
+                }
+            }
+
+
             mainPanel = ArticlesPanel;
             AdminForm.color = Properties.Settings.Default.Color;
             AdminForm.fontColor = Properties.Settings.Default.FontColor;
@@ -104,7 +174,7 @@ namespace WindowsFormsApp2
                 };
                 System.Diagnostics.Process.Start(sevenz_psi);
 
-                MessageBox.Show("Файлы для MarkDown готовы!", "Отладка"); //for debug
+                //MessageBox.Show("Файлы для MarkDown готовы!", "Отладка"); //for debug
             }
             catch (Exception ex)
             {
@@ -308,23 +378,16 @@ namespace WindowsFormsApp2
             ArticlesPanel.Controls.Add(comments);
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            /*Program.Insert("DELETE FROM Settings WHERE name = 'Font'");
-            Program.Insert("INSERT INTO Settings (name, value)" +
-                "VALUES('Font', '" + AdminForm.font.ToString() + "')'");
-            */
-            Properties.Settings.Default.Color = AdminForm.color;
-            Properties.Settings.Default.Font = AdminForm.font;
-            Properties.Settings.Default.FontColor = AdminForm.fontColor;
-            Properties.Settings.Default.Save();
-        }
-
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             Subscribes comments = new Subscribes();
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
+        }
+
+        private void панельАвторизацииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AuthPanel.Visible = панельАвторизацииToolStripMenuItem.Checked;
         }
     }
 } 

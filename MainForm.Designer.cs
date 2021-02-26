@@ -63,6 +63,9 @@ namespace WindowsFormsApp2
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.панельАвторизацииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ArticlesPanel.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.AuthPanel.SuspendLayout();
@@ -79,6 +82,7 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ArticlesPanel
@@ -86,10 +90,10 @@ namespace WindowsFormsApp2
             this.ArticlesPanel.Controls.Add(this.panel1);
             this.ArticlesPanel.Controls.Add(this.filterPanel);
             this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArticlesPanel.Location = new System.Drawing.Point(178, 44);
+            this.ArticlesPanel.Location = new System.Drawing.Point(178, 72);
             this.ArticlesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ArticlesPanel.Name = "ArticlesPanel";
-            this.ArticlesPanel.Size = new System.Drawing.Size(897, 440);
+            this.ArticlesPanel.Size = new System.Drawing.Size(897, 438);
             this.ArticlesPanel.TabIndex = 1;
             // 
             // panel1
@@ -98,7 +102,7 @@ namespace WindowsFormsApp2
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(897, 367);
+            this.panel1.Size = new System.Drawing.Size(897, 365);
             this.panel1.TabIndex = 4;
             // 
             // filterPanel
@@ -248,7 +252,7 @@ namespace WindowsFormsApp2
             this.AuthPanel.Controls.Add(this.SignInButton);
             this.AuthPanel.Controls.Add(this.SignInLabel);
             this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AuthPanel.Location = new System.Drawing.Point(0, 0);
+            this.AuthPanel.Location = new System.Drawing.Point(0, 28);
             this.AuthPanel.Name = "AuthPanel";
             this.AuthPanel.Size = new System.Drawing.Size(1075, 44);
             this.AuthPanel.TabIndex = 2;
@@ -292,9 +296,9 @@ namespace WindowsFormsApp2
             this.AdvertistingPanel.Controls.Add(this.pictureBox2);
             this.AdvertistingPanel.Controls.Add(this.pictureBox1);
             this.AdvertistingPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.AdvertistingPanel.Location = new System.Drawing.Point(0, 44);
+            this.AdvertistingPanel.Location = new System.Drawing.Point(0, 72);
             this.AdvertistingPanel.Name = "AdvertistingPanel";
-            this.AdvertistingPanel.Size = new System.Drawing.Size(178, 440);
+            this.AdvertistingPanel.Size = new System.Drawing.Size(178, 438);
             this.AdvertistingPanel.TabIndex = 3;
             // 
             // panel2
@@ -311,7 +315,7 @@ namespace WindowsFormsApp2
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 440);
+            this.panel2.Size = new System.Drawing.Size(178, 438);
             this.panel2.TabIndex = 4;
             // 
             // pictureBox11
@@ -324,6 +328,7 @@ namespace WindowsFormsApp2
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 8;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Tag = "Поиск";
             this.toolTip1.SetToolTip(this.pictureBox11, "Главная");
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
@@ -377,6 +382,7 @@ namespace WindowsFormsApp2
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Tag = "Подписчики";
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox5
@@ -389,6 +395,7 @@ namespace WindowsFormsApp2
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "Новая статья";
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox3
@@ -401,6 +408,7 @@ namespace WindowsFormsApp2
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "Мой профиль";
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
@@ -413,6 +421,7 @@ namespace WindowsFormsApp2
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "Комментарии";
             this.toolTip1.SetToolTip(this.pictureBox4, "Комментарии");
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
@@ -434,14 +443,44 @@ namespace WindowsFormsApp2
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1075, 28);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.панельАвторизацииToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.viewToolStripMenuItem.Text = "Вид";
+            // 
+            // панельАвторизацииToolStripMenuItem
+            // 
+            this.панельАвторизацииToolStripMenuItem.Checked = true;
+            this.панельАвторизацииToolStripMenuItem.CheckOnClick = true;
+            this.панельАвторизацииToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.панельАвторизацииToolStripMenuItem.Name = "панельАвторизацииToolStripMenuItem";
+            this.панельАвторизацииToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.панельАвторизацииToolStripMenuItem.Text = "Панель авторизации";
+            this.панельАвторизацииToolStripMenuItem.Click += new System.EventHandler(this.панельАвторизацииToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 484);
+            this.ClientSize = new System.Drawing.Size(1075, 510);
             this.Controls.Add(this.ArticlesPanel);
             this.Controls.Add(this.AdvertistingPanel);
             this.Controls.Add(this.AuthPanel);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
@@ -465,7 +504,10 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -505,5 +547,8 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem панельАвторизацииToolStripMenuItem;
     }
 }
