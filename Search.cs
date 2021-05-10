@@ -16,45 +16,42 @@ namespace WindowsFormsApp2
     public partial class Search : UserControl
     {
         public Search()
-        {
-           
-                InitializeComponent();
-                GetArticlesByFilter();
+        {           
+            InitializeComponent();
+            GetArticlesByFilter();
 
-                // Заполнение ComboBox'ов "теги", "тема" и "автор"
-                List<string> tags = Program.Select("SELECT Tags FROM Articles");
-                foreach (string tag in tags.ToArray())
+            // Заполнение ComboBox'ов "теги", "тема" и "автор"
+            List<string> tags = Program.Select("SELECT Tags FROM Articles");
+            foreach (string tag in tags.ToArray())
+            {
+                string[] parts = tag.Split(new string[] { ", " }, StringSplitOptions.None);
+                foreach (string part in parts)
                 {
-                    string[] parts = tag.Split(new string[] { ", " }, StringSplitOptions.None);
-                    foreach (string part in parts)
-                    {
-                        if (!tags.Contains(part) && part.Trim() != "")
-                            tags.Add(part);
-                    }
+                    if (!tags.Contains(part) && part.Trim() != "")
+                        tags.Add(part);
                 }
-                tags.Sort();
-                TagFilterBox.Items.Clear();
-                TagFilterBox.Items.Add("");
-                TagFilterBox.Items.AddRange(tags.ToArray());
+            }
+            tags.Sort();
+            TagFilterBox.Items.Clear();
+            TagFilterBox.Items.Add("");
+            TagFilterBox.Items.AddRange(tags.ToArray());
 
-                TopicFilterBox.Items.Clear();
-                TopicFilterBox.Items.Add("");
-                Program.Select("SELECT DISTINCT Topic FROM Articles ORDER BY Topic").ForEach((string topic) =>
-                {
-                    if (topic.Trim() != "")
-                        TopicFilterBox.Items.Add(topic);
-                });
+            TopicFilterBox.Items.Clear();
+            TopicFilterBox.Items.Add("");
+            Program.Select("SELECT DISTINCT Topic FROM Articles ORDER BY Topic").ForEach((string topic) =>
+            {
+                if (topic.Trim() != "")
+                    TopicFilterBox.Items.Add(topic);
+            });
 
 
-                AuthorFilterBox.Items.Clear();
-                AuthorFilterBox.Items.Add("");
-                Program.Select("SELECT DISTINCT Login FROM Users ORDER BY Login").ForEach((string author_name) =>
-                {
-                    if (author_name.Trim() != "")
-                        AuthorFilterBox.Items.Add(author_name);
-                }); // DISTINCT - на всякий пожарный случай
-            
-
+            AuthorFilterBox.Items.Clear();
+            AuthorFilterBox.Items.Add("");
+            Program.Select("SELECT DISTINCT Login FROM Users ORDER BY Login").ForEach((string author_name) =>
+            {
+                if (author_name.Trim() != "")
+                    AuthorFilterBox.Items.Add(author_name);
+            }); // DISTINCT - на всякий пожарный случай
         }
 
         private void FilterTB_TextChanged(object sender, EventArgs e)
@@ -111,6 +108,7 @@ namespace WindowsFormsApp2
         {
             Label lbl = (Label)sender;
             ArticleForm af = new ArticleForm(lbl.AccessibleDescription);
+            af.Dock = DockStyle.Fill;
             MainForm.mainPanel.Controls.Clear();
             MainForm.mainPanel.Controls.Add(af);
         }
@@ -127,6 +125,11 @@ namespace WindowsFormsApp2
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TagFilterBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -55,7 +55,7 @@
             this.filterPanel.Location = new System.Drawing.Point(0, 0);
             this.filterPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.filterPanel.Name = "filterPanel";
-            this.filterPanel.Size = new System.Drawing.Size(893, 104);
+            this.filterPanel.Size = new System.Drawing.Size(972, 104);
             this.filterPanel.TabIndex = 4;
             // 
             // TopicFilterBox
@@ -105,7 +105,7 @@
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(771, 58);
+            this.label3.Size = new System.Drawing.Size(850, 58);
             this.label3.TabIndex = 0;
             this.label3.Text = "Все статьи";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -127,11 +127,12 @@
             this.TagFilterBox.Name = "TagFilterBox";
             this.TagFilterBox.Size = new System.Drawing.Size(154, 33);
             this.TagFilterBox.TabIndex = 2;
+            this.TagFilterBox.SelectedIndexChanged += new System.EventHandler(this.TagFilterBox_SelectedIndexChanged);
             // 
             // findButton
             // 
             this.findButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.findButton.Location = new System.Drawing.Point(771, 0);
+            this.findButton.Location = new System.Drawing.Point(850, 0);
             this.findButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.findButton.Name = "findButton";
             this.findButton.Size = new System.Drawing.Size(122, 104);
@@ -147,7 +148,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 104);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(893, 338);
+            this.panel1.Size = new System.Drawing.Size(972, 399);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -160,7 +161,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Search";
-            this.Size = new System.Drawing.Size(893, 442);
+            this.Size = new System.Drawing.Size(972, 503);
             this.Load += new System.EventHandler(this.Search_Load);
             this.filterPanel.ResumeLayout(false);
             this.filterPanel.PerformLayout();

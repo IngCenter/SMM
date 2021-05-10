@@ -6,7 +6,7 @@ namespace WindowsFormsApp2
 {   
     public partial class ArticleForm : UserControl
     {
-        string id = "0";
+        readonly string id = "0";
         
         public ArticleForm(string Id, bool administrating = false)
         {

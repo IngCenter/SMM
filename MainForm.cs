@@ -34,44 +34,12 @@ namespace WindowsFormsApp2
             AdminForm.color = Properties.Settings.Default.Color;
             AdminForm.fontColor = Properties.Settings.Default.FontColor;
             AdminForm.font = Properties.Settings.Default.Font;
-            /*Search search = new Search();
+            
+            Search search = new Search();
+            search.Dock = DockStyle.Fill;
             ArticlesPanel.Controls.Clear();
-            ArticlesPanel.Controls.Add(search);*/
-
-            GetArticlesByFilter();
-
-            // Заполнение ComboBox'ов "теги", "тема" и "автор"
-            List<string> tags = Program.Select("SELECT Tags FROM Articles");
-            foreach (string tag in tags.ToArray())
-            {
-                string[] parts = tag.Split(new string[] { ", " }, StringSplitOptions.None);
-                foreach (string part in parts)
-                {
-                    if (!tags.Contains(part) && part.Trim() != "")
-                        tags.Add(part);
-                }
-            }
-            tags.Sort();
-            TagFilterBox.Items.Clear();
-            TagFilterBox.Items.Add("");
-            TagFilterBox.Items.AddRange(tags.ToArray());
-
-            TopicFilterBox.Items.Clear();
-            TopicFilterBox.Items.Add("");
-            Program.Select("SELECT DISTINCT Topic FROM Articles ORDER BY Topic").ForEach((string topic) =>
-            {
-                if (topic.Trim() != "")
-                    TopicFilterBox.Items.Add(topic);
-            });
-
-            AuthorFilterBox.Items.Clear();
-            AuthorFilterBox.Items.Add("");
-            Program.Select("SELECT DISTINCT Login FROM Users ORDER BY Login").ForEach((string author_name) =>
-            {
-                if (author_name.Trim() != "")
-                    AuthorFilterBox.Items.Add(author_name);
-            }); // DISTINCT - на всякий пожарный случай
-           
+            ArticlesPanel.Controls.Add(search);
+                                               
             // Всё, нужное для MarkDown'а:
             try
             {
@@ -170,6 +138,7 @@ namespace WindowsFormsApp2
         {
             // И вот сюда личный кабинет вместо войти
             UserForm UserInfo = new UserForm();
+            UserInfo.Dock = DockStyle.Fill;
            
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(UserInfo);
@@ -178,6 +147,7 @@ namespace WindowsFormsApp2
         private void button1_Click_2(object sender, EventArgs e)
         {
             AdminForm AdminInfo = new AdminForm();
+            AdminInfo.Dock = DockStyle.Fill;
 
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(AdminInfo);
@@ -225,59 +195,10 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void findButton_Click(object sender, EventArgs e)
-        {
-            GetArticlesByFilter(TagFilterBox.Text, TopicFilterBox.Text, AuthorFilterBox.Text);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          //comboBox1.Items.Add = "SELECT Tag FROM Articles WHERE 1";
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TopicFilterBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AuthorFilterBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TagFilterBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox11_Click(object sender, EventArgs e)
         {
             Search comments = new Search();
+            comments.Dock = DockStyle.Fill;
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
         }
@@ -285,6 +206,7 @@ namespace WindowsFormsApp2
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             Comments comments = new Comments();
+            comments.Dock = DockStyle.Fill;
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
         }
@@ -292,6 +214,7 @@ namespace WindowsFormsApp2
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             UserForm comments = new UserForm();
+            comments.Dock = DockStyle.Fill;
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
         }
@@ -304,16 +227,13 @@ namespace WindowsFormsApp2
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             AddArticle comments = new AddArticle();
+            comments.Dock = DockStyle.Fill;
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*Program.Insert("DELETE FROM Settings WHERE name = 'Font'");
-            Program.Insert("INSERT INTO Settings (name, value)" +
-                "VALUES('Font', '" + AdminForm.font.ToString() + "')'");
-            */
             Properties.Settings.Default.Color = AdminForm.color;
             Properties.Settings.Default.Font = AdminForm.font;
             Properties.Settings.Default.FontColor = AdminForm.fontColor;
@@ -323,6 +243,7 @@ namespace WindowsFormsApp2
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             Subscribes comments = new Subscribes();
+            comments.Dock = DockStyle.Fill;
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
         }

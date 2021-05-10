@@ -57,6 +57,8 @@
             // 
             // textLabel
             // 
+            this.textLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textLabel.Location = new System.Drawing.Point(12, 74);
             this.textLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -86,6 +88,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(865, 463);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -136,6 +139,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(932, 14);
@@ -149,7 +153,8 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(611, 11);
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveButton.Location = new System.Drawing.Point(843, 11);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(83, 27);
             this.SaveButton.TabIndex = 11;
@@ -163,7 +168,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(964, 580);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DislikePB);
@@ -176,7 +180,7 @@
             this.Controls.Add(this.nameLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ArticleForm";
-            this.Text = "Статья";
+            this.Size = new System.Drawing.Size(964, 580);
             ((System.ComponentModel.ISupportInitialize)(this.DislikePB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CommPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LikePB)).EndInit();
