@@ -40,20 +40,22 @@
             // SignInLabel
             // 
             this.SignInLabel.AutoSize = true;
-            this.SignInLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SignInLabel.Location = new System.Drawing.Point(15, 11);
+            this.SignInLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.SignInLabel.Location = new System.Drawing.Point(28, 20);
+            this.SignInLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SignInLabel.Name = "SignInLabel";
-            this.SignInLabel.Size = new System.Drawing.Size(147, 17);
+            this.SignInLabel.Size = new System.Drawing.Size(260, 29);
             this.SignInLabel.TabIndex = 0;
             this.SignInLabel.Text = "Выполните вход или ";
             // 
             // SignInLLabel
             // 
             this.SignInLLabel.AutoSize = true;
-            this.SignInLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SignInLLabel.Location = new System.Drawing.Point(156, 11);
+            this.SignInLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.SignInLLabel.Location = new System.Drawing.Point(286, 20);
+            this.SignInLLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SignInLLabel.Name = "SignInLLabel";
-            this.SignInLLabel.Size = new System.Drawing.Size(134, 17);
+            this.SignInLLabel.Size = new System.Drawing.Size(236, 29);
             this.SignInLLabel.TabIndex = 1;
             this.SignInLLabel.TabStop = true;
             this.SignInLLabel.Text = "зарегистрируйтесь";
@@ -62,20 +64,22 @@
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginLabel.Location = new System.Drawing.Point(15, 42);
+            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.LoginLabel.Location = new System.Drawing.Point(36, 76);
+            this.LoginLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(55, 18);
+            this.LoginLabel.Size = new System.Drawing.Size(88, 29);
             this.LoginLabel.TabIndex = 5;
             this.LoginLabel.Text = "Логин";
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PasswordLabel.Location = new System.Drawing.Point(15, 80);
+            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.PasswordLabel.Location = new System.Drawing.Point(34, 145);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(67, 18);
+            this.PasswordLabel.Size = new System.Drawing.Size(106, 29);
             this.PasswordLabel.TabIndex = 6;
             this.PasswordLabel.Text = "Пароль";
             // 
@@ -83,10 +87,10 @@
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(0, 111);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(0, 201);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(313, 31);
+            this.button1.Size = new System.Drawing.Size(587, 56);
             this.button1.TabIndex = 7;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
@@ -94,26 +98,25 @@
             // 
             // LoginTB
             // 
-            this.LoginTB.Location = new System.Drawing.Point(96, 42);
-            this.LoginTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LoginTB.Location = new System.Drawing.Point(180, 76);
+            this.LoginTB.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.LoginTB.Name = "LoginTB";
-            this.LoginTB.Size = new System.Drawing.Size(198, 22);
+            this.LoginTB.Size = new System.Drawing.Size(368, 36);
             this.LoginTB.TabIndex = 8;
             // 
             // PasswordMTB
             // 
-            this.PasswordMTB.Location = new System.Drawing.Point(96, 79);
-            this.PasswordMTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PasswordMTB.Location = new System.Drawing.Point(180, 143);
+            this.PasswordMTB.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.PasswordMTB.Name = "PasswordMTB";
-            this.PasswordMTB.Size = new System.Drawing.Size(199, 22);
+            this.PasswordMTB.Size = new System.Drawing.Size(370, 36);
             this.PasswordMTB.TabIndex = 9;
             this.PasswordMTB.UseSystemPasswordChar = true;
             // 
             // SignInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 142);
             this.Controls.Add(this.PasswordMTB);
             this.Controls.Add(this.LoginTB);
             this.Controls.Add(this.button1);
@@ -121,9 +124,10 @@
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.SignInLLabel);
             this.Controls.Add(this.SignInLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "SignInForm";
-            this.Text = "Вход";
+            this.Size = new System.Drawing.Size(587, 257);
             this.Load += new System.EventHandler(this.SignInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
