@@ -121,8 +121,10 @@ namespace WindowsFormsApp2
         
         private void CommPB_Click(object sender, EventArgs e)
         {
-            Comments Comm = new Comments(Convert.ToInt32(id));
-            Comm.Show();
+            Comments comments = new Comments(Convert.ToInt32(id));
+            comments.Dock = DockStyle.Fill;
+            MainForm.mainPanel.Controls.Clear();
+            MainForm.mainPanel.Controls.Add(comments);
         }
 
         private void DislikePB_Click(object sender, EventArgs e)
@@ -151,7 +153,10 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Search comments = new Search();
+            comments.Dock = DockStyle.Fill;
+            MainForm.mainPanel.Controls.Clear();
+            MainForm.mainPanel.Controls.Add(comments);
         }
 
         private void ConvertMdArticleToHtml(string article_text)

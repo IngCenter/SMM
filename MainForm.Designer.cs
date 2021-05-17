@@ -35,7 +35,6 @@ namespace WindowsFormsApp2
             this.SignInLabel = new System.Windows.Forms.Label();
             this.SignInButton = new System.Windows.Forms.Button();
             this.AuthPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.UserInfoButton = new System.Windows.Forms.Button();
             this.AdminButton = new System.Windows.Forms.Button();
             this.AdvertistingPanel = new System.Windows.Forms.Panel();
@@ -112,7 +111,6 @@ namespace WindowsFormsApp2
             // 
             // AuthPanel
             // 
-            this.AuthPanel.Controls.Add(this.button2);
             this.AuthPanel.Controls.Add(this.UserInfoButton);
             this.AuthPanel.Controls.Add(this.AdminButton);
             this.AuthPanel.Controls.Add(this.SignInButton);
@@ -122,17 +120,6 @@ namespace WindowsFormsApp2
             this.AuthPanel.Name = "AuthPanel";
             this.AuthPanel.Size = new System.Drawing.Size(1191, 44);
             this.AuthPanel.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(964, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(227, 44);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Обновить данные";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // UserInfoButton
             // 
@@ -345,7 +332,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Button UserInfoButton;
         private System.Windows.Forms.Button AdminButton;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel AdvertistingPanel;
         private System.Windows.Forms.Panel panel2;

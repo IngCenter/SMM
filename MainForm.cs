@@ -247,5 +247,10 @@ namespace WindowsFormsApp2
             ArticlesPanel.Controls.Clear();
             ArticlesPanel.Controls.Add(comments);
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 } 

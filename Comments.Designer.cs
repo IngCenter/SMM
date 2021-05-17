@@ -44,12 +44,12 @@
             this.CommLable.Name = "CommLable";
             this.CommLable.ReadOnly = true;
             this.CommLable.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.CommLable.Size = new System.Drawing.Size(1153, 488);
+            this.CommLable.Size = new System.Drawing.Size(1003, 488);
             this.CommLable.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1063, 2);
+            this.button1.Location = new System.Drawing.Point(912, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 42);
@@ -89,7 +89,7 @@
             this.comboBox2.Location = new System.Drawing.Point(399, 6);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(653, 37);
+            this.comboBox2.Size = new System.Drawing.Size(503, 37);
             this.comboBox2.TabIndex = 10;
             // 
             // label2
@@ -106,7 +106,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 550);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -116,7 +115,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Comments";
-            this.Text = "Комментарии";
+            this.Size = new System.Drawing.Size(1026, 550);
             this.Load += new System.EventHandler(this.Comments_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
