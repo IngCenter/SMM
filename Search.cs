@@ -20,9 +20,11 @@ namespace WindowsFormsApp2
             InitializeComponent();
             GetArticlesByFilter();
 
+            //Тэги из БД
+            List<string> tagsFromBD = Program.Select("SELECT Tags FROM Articles");
             // Заполнение ComboBox'ов "теги", "тема" и "автор"
-            List<string> tags = Program.Select("SELECT Tags FROM Articles");
-            foreach (string tag in tags.ToArray())
+            List<string> tags = new List<string>();
+            foreach (string tag in tagsFromBD)
             {
                 string[] parts = tag.Split(new string[] { ", " }, StringSplitOptions.None);
                 foreach (string part in parts)
