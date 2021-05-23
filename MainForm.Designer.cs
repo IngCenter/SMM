@@ -1,4 +1,5 @@
-namespace WindowsFormsApp2
+﻿
+namespace ADoors
 {
     partial class MainForm
     {
@@ -27,325 +28,327 @@ namespace WindowsFormsApp2
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
-        {         
-            this.components = new System.ComponentModel.Container();
-            this.ArticlesPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SignInLabel = new System.Windows.Forms.Label();
-            this.SignInButton = new System.Windows.Forms.Button();
-            this.AuthPanel = new System.Windows.Forms.Panel();
-            this.UserInfoButton = new System.Windows.Forms.Button();
-            this.AdminButton = new System.Windows.Forms.Button();
-            this.AdvertistingPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ArticlesPanel.SuspendLayout();
-            this.AuthPanel.SuspendLayout();
-            this.AdvertistingPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+        {
+            this.OptionsPanel = new System.Windows.Forms.Panel();
+            this.ComputeButton = new System.Windows.Forms.Button();
+            this.DoorCountChoice = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PlatbandChoice = new System.Windows.Forms.CheckBox();
+            this.DoorHandleChoice = new System.Windows.Forms.CheckBox();
+            this.WidthChoice = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TypeChoice = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ColorChoice = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ModelChoice = new System.Windows.Forms.ComboBox();
+            this.DoorPanel = new System.Windows.Forms.Panel();
+            this.DoorPB = new System.Windows.Forms.PictureBox();
+            this.CostInfoPanel = new System.Windows.Forms.Panel();
+            this.Textpricelabel = new System.Windows.Forms.Label();
+            this.Pricelabel = new System.Windows.Forms.Label();
+            this.OptionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WidthChoice)).BeginInit();
+            this.DoorPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DoorPB)).BeginInit();
+            this.CostInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ArticlesPanel
+            // OptionsPanel
             // 
-            this.ArticlesPanel.Controls.Add(this.panel1);
-            this.ArticlesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArticlesPanel.Location = new System.Drawing.Point(178, 44);
-            this.ArticlesPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.ArticlesPanel.Name = "ArticlesPanel";
-            this.ArticlesPanel.Size = new System.Drawing.Size(1013, 497);
-            this.ArticlesPanel.TabIndex = 1;
+            this.OptionsPanel.BackColor = System.Drawing.Color.Peru;
+            this.OptionsPanel.Controls.Add(this.ComputeButton);
+            this.OptionsPanel.Controls.Add(this.DoorCountChoice);
+            this.OptionsPanel.Controls.Add(this.label5);
+            this.OptionsPanel.Controls.Add(this.PlatbandChoice);
+            this.OptionsPanel.Controls.Add(this.DoorHandleChoice);
+            this.OptionsPanel.Controls.Add(this.WidthChoice);
+            this.OptionsPanel.Controls.Add(this.label4);
+            this.OptionsPanel.Controls.Add(this.TypeChoice);
+            this.OptionsPanel.Controls.Add(this.label3);
+            this.OptionsPanel.Controls.Add(this.ColorChoice);
+            this.OptionsPanel.Controls.Add(this.label2);
+            this.OptionsPanel.Controls.Add(this.label1);
+            this.OptionsPanel.Controls.Add(this.ModelChoice);
+            this.OptionsPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.OptionsPanel.Location = new System.Drawing.Point(0, 0);
+            this.OptionsPanel.Name = "OptionsPanel";
+            this.OptionsPanel.Size = new System.Drawing.Size(200, 216);
+            this.OptionsPanel.TabIndex = 0;
             // 
-            // panel1
+            // ComputeButton
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1013, 497);
-            this.panel1.TabIndex = 4;
+            this.ComputeButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ComputeButton.Location = new System.Drawing.Point(0, 193);
+            this.ComputeButton.Name = "ComputeButton";
+            this.ComputeButton.Size = new System.Drawing.Size(200, 23);
+            this.ComputeButton.TabIndex = 12;
+            this.ComputeButton.Text = "Рассчитать!";
+            this.ComputeButton.UseVisualStyleBackColor = true;
+            this.ComputeButton.Click += new System.EventHandler(this.ComputeButton_Click);
             // 
-            // timer1
+            // DoorCountChoice
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.DoorCountChoice.Location = new System.Drawing.Point(90, 157);
+            this.DoorCountChoice.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.DoorCountChoice.Name = "DoorCountChoice";
+            this.DoorCountChoice.Size = new System.Drawing.Size(107, 20);
+            this.DoorCountChoice.TabIndex = 11;
+            this.DoorCountChoice.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.DoorCountChoice.ValueChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
-            // SignInLabel
+            // label5
             // 
-            this.SignInLabel.Location = new System.Drawing.Point(12, 12);
-            this.SignInLabel.Name = "SignInLabel";
-            this.SignInLabel.Size = new System.Drawing.Size(292, 29);
-            this.SignInLabel.TabIndex = 2;
-            this.SignInLabel.Text = "Вы ещё не вошли в аккаунт";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Кол-во дверей";
             // 
-            // SignInButton
+            // PlatbandChoice
             // 
-            this.SignInButton.Location = new System.Drawing.Point(298, 5);
-            this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(92, 35);
-            this.SignInButton.TabIndex = 6;
-            this.SignInButton.Text = "Войти";
-            this.SignInButton.Click += new System.EventHandler(this.button2_Click);
+            this.PlatbandChoice.AutoSize = true;
+            this.PlatbandChoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PlatbandChoice.Location = new System.Drawing.Point(3, 135);
+            this.PlatbandChoice.Name = "PlatbandChoice";
+            this.PlatbandChoice.Size = new System.Drawing.Size(75, 17);
+            this.PlatbandChoice.TabIndex = 9;
+            this.PlatbandChoice.Text = "Наличник";
+            this.PlatbandChoice.UseVisualStyleBackColor = true;
+            this.PlatbandChoice.CheckStateChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
-            // AuthPanel
+            // DoorHandleChoice
             // 
-            this.AuthPanel.Controls.Add(this.UserInfoButton);
-            this.AuthPanel.Controls.Add(this.AdminButton);
-            this.AuthPanel.Controls.Add(this.SignInButton);
-            this.AuthPanel.Controls.Add(this.SignInLabel);
-            this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AuthPanel.Location = new System.Drawing.Point(0, 0);
-            this.AuthPanel.Name = "AuthPanel";
-            this.AuthPanel.Size = new System.Drawing.Size(1191, 44);
-            this.AuthPanel.TabIndex = 2;
+            this.DoorHandleChoice.AutoSize = true;
+            this.DoorHandleChoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DoorHandleChoice.Location = new System.Drawing.Point(3, 112);
+            this.DoorHandleChoice.Name = "DoorHandleChoice";
+            this.DoorHandleChoice.Size = new System.Drawing.Size(73, 17);
+            this.DoorHandleChoice.TabIndex = 8;
+            this.DoorHandleChoice.Text = "Ручка      ";
+            this.DoorHandleChoice.UseVisualStyleBackColor = true;
+            this.DoorHandleChoice.CheckStateChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
-            // UserInfoButton
+            // WidthChoice
             // 
-            this.UserInfoButton.Location = new System.Drawing.Point(298, 3);
-            this.UserInfoButton.Name = "UserInfoButton";
-            this.UserInfoButton.Size = new System.Drawing.Size(186, 38);
-            this.UserInfoButton.TabIndex = 4;
-            this.UserInfoButton.Text = "Личный кабинет";
-            this.UserInfoButton.UseVisualStyleBackColor = true;
-            this.UserInfoButton.Visible = false;
-            this.UserInfoButton.Click += new System.EventHandler(this.button1_Click_1);
+            this.WidthChoice.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.WidthChoice.Location = new System.Drawing.Point(56, 86);
+            this.WidthChoice.Maximum = new decimal(new int[] {
+            900,
+            0,
+            0,
+            0});
+            this.WidthChoice.Minimum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.WidthChoice.Name = "WidthChoice";
+            this.WidthChoice.Size = new System.Drawing.Size(141, 20);
+            this.WidthChoice.TabIndex = 7;
+            this.WidthChoice.Value = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.WidthChoice.ValueChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
-            // AdminButton
+            // label4
             // 
-            this.AdminButton.Location = new System.Drawing.Point(490, 3);
-            this.AdminButton.Name = "AdminButton";
-            this.AdminButton.Size = new System.Drawing.Size(352, 38);
-            this.AdminButton.TabIndex = 5;
-            this.AdminButton.Text = "Администрирование";
-            this.AdminButton.UseVisualStyleBackColor = true;
-            this.AdminButton.Visible = false;
-            this.AdminButton.Click += new System.EventHandler(this.button1_Click_2);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ширина";
             // 
-            // AdvertistingPanel
+            // TypeChoice
             // 
-            this.AdvertistingPanel.Controls.Add(this.panel2);
-            this.AdvertistingPanel.Controls.Add(this.pictureBox2);
-            this.AdvertistingPanel.Controls.Add(this.pictureBox1);
-            this.AdvertistingPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.AdvertistingPanel.Location = new System.Drawing.Point(0, 44);
-            this.AdvertistingPanel.Name = "AdvertistingPanel";
-            this.AdvertistingPanel.Size = new System.Drawing.Size(178, 497);
-            this.AdvertistingPanel.TabIndex = 3;
+            this.TypeChoice.FormattingEnabled = true;
+            this.TypeChoice.Items.AddRange(new object[] {
+            "Без стеклянных элементов",
+            "Частично остеклённый",
+            "Остеклённый",
+            "Частично остеклённый (Матовое стекло)",
+            "Остеклённый (Матовое стекло)",
+            "Частично остеклённый (Искажённое стекло)",
+            "Остеклённый (Искажённое стекло)"});
+            this.TypeChoice.Location = new System.Drawing.Point(55, 59);
+            this.TypeChoice.Name = "TypeChoice";
+            this.TypeChoice.Size = new System.Drawing.Size(142, 21);
+            this.TypeChoice.TabIndex = 5;
+            this.TypeChoice.SelectedIndexChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
-            // panel2
+            // label3
             // 
-            this.panel2.Controls.Add(this.pictureBox11);
-            this.panel2.Controls.Add(this.pictureBox10);
-            this.panel2.Controls.Add(this.pictureBox9);
-            this.panel2.Controls.Add(this.pictureBox8);
-            this.panel2.Controls.Add(this.pictureBox7);
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 497);
-            this.panel2.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Тип";
             // 
-            // pictureBox11
+            // ColorChoice
             // 
-            this.pictureBox11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox11.Image = global::WindowsFormsApp2.Properties.Resources.Поиск;
-            this.pictureBox11.Location = new System.Drawing.Point(-1, 3);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(174, 62);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 8;
-            this.pictureBox11.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox11, "Главная");
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            this.ColorChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ColorChoice.FormattingEnabled = true;
+            this.ColorChoice.Items.AddRange(new object[] {
+            "Эмаль",
+            "Бреннерский орех",
+            "Венге"});
+            this.ColorChoice.Location = new System.Drawing.Point(55, 34);
+            this.ColorChoice.Name = "ColorChoice";
+            this.ColorChoice.Size = new System.Drawing.Size(142, 21);
+            this.ColorChoice.TabIndex = 3;
+            this.ColorChoice.SelectedIndexChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
-            // pictureBox10
+            // label2
             // 
-            this.pictureBox10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox10.Location = new System.Drawing.Point(1, 393);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(174, 41);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 7;
-            this.pictureBox10.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Цвет";
             // 
-            // pictureBox9
+            // label1
             // 
-            this.pictureBox9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox9.Location = new System.Drawing.Point(1, 346);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(174, 41);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Модель";
             // 
-            // pictureBox8
+            // ModelChoice
             // 
-            this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox8.Location = new System.Drawing.Point(1, 298);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(174, 42);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 5;
-            this.pictureBox8.TabStop = false;
+            this.ModelChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ModelChoice.FormattingEnabled = true;
+            this.ModelChoice.Items.AddRange(new object[] {
+            "Леонардо",
+            "Трио",
+            "Черчилль",
+            "Рузвельт",
+            "Маргарет"});
+            this.ModelChoice.Location = new System.Drawing.Point(55, 6);
+            this.ModelChoice.Name = "ModelChoice";
+            this.ModelChoice.Size = new System.Drawing.Size(142, 21);
+            this.ModelChoice.TabIndex = 0;
+            this.ModelChoice.SelectedIndexChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
-            // pictureBox7
+            // DoorPanel
             // 
-            this.pictureBox7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox7.Location = new System.Drawing.Point(0, 251);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(174, 41);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 4;
-            this.pictureBox7.TabStop = false;
+            this.DoorPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.DoorPanel.Controls.Add(this.DoorPB);
+            this.DoorPanel.Controls.Add(this.CostInfoPanel);
+            this.DoorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DoorPanel.Location = new System.Drawing.Point(200, 0);
+            this.DoorPanel.Name = "DoorPanel";
+            this.DoorPanel.Size = new System.Drawing.Size(260, 216);
+            this.DoorPanel.TabIndex = 1;
             // 
-            // pictureBox6
+            // DoorPB
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox6.Image = global::WindowsFormsApp2.Properties.Resources.Подписчики;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 206);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(174, 39);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.DoorPB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DoorPB.Image = global::ADoors.Properties.Resources.door_cherchill;
+            this.DoorPB.Location = new System.Drawing.Point(0, 0);
+            this.DoorPB.Margin = new System.Windows.Forms.Padding(2);
+            this.DoorPB.Name = "DoorPB";
+            this.DoorPB.Size = new System.Drawing.Size(260, 196);
+            this.DoorPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DoorPB.TabIndex = 2;
+            this.DoorPB.TabStop = false;
             // 
-            // pictureBox5
+            // CostInfoPanel
             // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox5.Image = global::WindowsFormsApp2.Properties.Resources.Добавить_статью1;
-            this.pictureBox5.Location = new System.Drawing.Point(1, 160);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(174, 40);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.CostInfoPanel.Controls.Add(this.Textpricelabel);
+            this.CostInfoPanel.Controls.Add(this.Pricelabel);
+            this.CostInfoPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CostInfoPanel.Location = new System.Drawing.Point(0, 196);
+            this.CostInfoPanel.Name = "CostInfoPanel";
+            this.CostInfoPanel.Size = new System.Drawing.Size(260, 20);
+            this.CostInfoPanel.TabIndex = 3;
             // 
-            // pictureBox3
+            // Textpricelabel
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox3.Image = global::WindowsFormsApp2.Properties.Resources.Мой_профиль;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 115);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(174, 39);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.Textpricelabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Textpricelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Textpricelabel.Location = new System.Drawing.Point(0, 0);
+            this.Textpricelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Textpricelabel.Name = "Textpricelabel";
+            this.Textpricelabel.Size = new System.Drawing.Size(99, 20);
+            this.Textpricelabel.TabIndex = 1;
+            this.Textpricelabel.Text = "Итоговая цена:";
+            this.Textpricelabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox4
+            // Pricelabel
             // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox4.Image = global::WindowsFormsApp2.Properties.Resources.Комментарии;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 71);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(174, 38);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox4, "Комментарии");
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 59);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(174, 50);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Pricelabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Pricelabel.Location = new System.Drawing.Point(103, 0);
+            this.Pricelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Pricelabel.Name = "Pricelabel";
+            this.Pricelabel.Size = new System.Drawing.Size(157, 20);
+            this.Pricelabel.TabIndex = 0;
+            this.Pricelabel.Text = "нажмите \"Рассчитать!\"";
+            this.Pricelabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MainForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1191, 541);
-            this.Controls.Add(this.ArticlesPanel);
-            this.Controls.Add(this.AdvertistingPanel);
-            this.Controls.Add(this.AuthPanel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(460, 216);
+            this.Controls.Add(this.DoorPanel);
+            this.Controls.Add(this.OptionsPanel);
             this.Name = "MainForm";
-            this.Text = "Кликни, чтобы открыть статью";
+            this.Text = "Калькулятор стоимости двери";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.ArticlesPanel.ResumeLayout(false);
-            this.AuthPanel.ResumeLayout(false);
-            this.AdvertistingPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.OptionsPanel.ResumeLayout(false);
+            this.OptionsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WidthChoice)).EndInit();
+            this.DoorPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DoorPB)).EndInit();
+            this.CostInfoPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel ArticlesPanel;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel AuthPanel;
-        private System.Windows.Forms.Button SignInButton;
-        private System.Windows.Forms.Label SignInLabel;
-        private System.Windows.Forms.Button UserInfoButton;
-        private System.Windows.Forms.Button AdminButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel AdvertistingPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel OptionsPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox ModelChoice;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox PlatbandChoice;
+        private System.Windows.Forms.CheckBox DoorHandleChoice;
+        private System.Windows.Forms.NumericUpDown WidthChoice;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox TypeChoice;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox ColorChoice;
+        private System.Windows.Forms.Button ComputeButton;
+        private System.Windows.Forms.NumericUpDown DoorCountChoice;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel DoorPanel;
+        private System.Windows.Forms.Label Pricelabel;
+        private System.Windows.Forms.Label Textpricelabel;
+        private System.Windows.Forms.PictureBox DoorPB;
+        private System.Windows.Forms.Panel CostInfoPanel;
     }
 }
+
